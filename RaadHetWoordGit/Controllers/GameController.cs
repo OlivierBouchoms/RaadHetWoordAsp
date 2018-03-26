@@ -20,6 +20,9 @@ namespace RaadHetWoordGit.Controllers
         private GameLogic _gameLogic;
         private WordListLogic _wordListLogic;
 
+        /// <summary>
+        /// Opening the Index page for the first time.
+        /// </summary>
         public ActionResult Index()
         {
             var viewModel = new GameViewModel();
@@ -28,13 +31,13 @@ namespace RaadHetWoordGit.Controllers
 
             return View(viewModel);
         }
-         
+        
+        /// <summary>
+        /// The Index page after teams and maxscore have been entered.
+        /// </summary>
         [HttpPost]
         public ActionResult Index(GameViewModel viewModel)
         {
-            //Postback
-            //Als een url wordt ingetikt wordt een html pagina gereturned
-
             viewModel.TeamColumnClass = "Container";
             viewModel.TeamFormClass = "hidden";
             if (ValuesAreNull(viewModel))
@@ -63,18 +66,6 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
-//Game serializen
-//        var gameJsonSerializeObject = JsonConvert.SerializeObject(viewModel.Game);
-//        HttpContext.Session.SetString("gameobject", gameJsonSerializeObject);
-
-//        public ActionResult PlayGame(GameViewModel viewModel)
-//        {
-//            //object maken
-//            var gameJsonSerializeObject = HttpContext.Session.GetString("gameobject");
-//            viewModel.Game = JsonConvert.DeserializeObject<Game>(gameJsonSerializeObject);
-//            return View(viewModel);
-//        }
-
         private bool ValuesAreNull(GameViewModel viewModel)
         {
             if (String.IsNullOrWhiteSpace(viewModel.TeamOne) || String.IsNullOrWhiteSpace(viewModel.TeamTwo))
@@ -86,6 +77,10 @@ namespace RaadHetWoordGit.Controllers
 
         }
 
+        /// <summary>
+        /// Validates the MaxScore int to prevent a too high, too low or null value.
+        /// </summary>
+        /// <param name="input">Input from view.</param>
         private int MaxScore(int input)
         {
             if (input < 5)

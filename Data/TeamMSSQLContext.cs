@@ -9,6 +9,11 @@ namespace Data
 {
     public class TeamMSSQLContext : ITeamContext
     {
+        /// <summary>
+        /// Checks if a team already exists in the database.
+        /// </summary>
+        /// <param name="team">Input team</param>
+        /// <returns>True/false value</returns>
         public bool CheckIfExists(Team team)
         {
             string result = String.Empty;
@@ -51,6 +56,11 @@ namespace Data
             return result == team.Name;
         }
 
+        /// <summary>
+        /// Adds a team to the database
+        /// </summary>
+        /// <param name="team">Input team</param>
+        /// <returns>True/false value</returns>
         public bool AddTeam(Team team)
         {
             string query = String.Format(
@@ -70,32 +80,30 @@ namespace Data
             }
         }
 
-        public bool DeleteTeam(string name)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>A list with teams, sorted by alphabet (a-z)</returns>
         public List<Team> GetTeamsByAlphabet()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>A list with teams, sorted by score</returns>
         public List<Team> GetTeamsByScore()
         {
             throw new NotImplementedException();
         }
 
-        public List<Team> GetTeamByTurns()
-        {
-            throw new NotImplementedException();
-        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>A list with teams, sorted by wins</returns>
         public List<Team> GetTeamsByWins()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Team> GetTeamsByWinLoss()
         {
             throw new NotImplementedException();
         }
