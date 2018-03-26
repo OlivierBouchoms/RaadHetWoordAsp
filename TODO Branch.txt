@@ -1,0 +1,1 @@
+- Use AJAX with Javascript to register scores
