@@ -18,3 +18,7 @@ $(document).ready(function () {
             });
         });
 });
+
+function formatItem(item) {
+    return item.name + ': \u20AC ' + item.sales + ' (id = ' + item.id + ')';
+}

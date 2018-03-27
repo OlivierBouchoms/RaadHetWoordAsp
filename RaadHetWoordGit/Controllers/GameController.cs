@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Data;
 using Logic;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Azure.KeyVault.Models;
 using Models;
-using Newtonsoft.Json;
 using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
