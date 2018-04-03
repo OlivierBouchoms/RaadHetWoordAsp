@@ -4,15 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<head>
-    <meta charset="utf-8" />
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/Scripts.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/StyleSheet.css">
-    <title>WebAPI test</title>
-</head>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/Scripts.js"></script>
+<title>WebAPI test</title>
 
-<body>
 <h2>Producten in database:</h2>
 <ul id="products"></ul>
 <div>
@@ -22,4 +17,15 @@
     <p>sales van item verhogen via deze view via de API.</p>
     <p>sales van item verlagen via deze view via de API.</p>
 </div>
-</body>
+
+@*<form id="container" method="post">*@
+@*    <input asp-for="name" type="text" id="productText" />*@
+@*    <input asp-for="value" type="number" id="productSale" />*@
+@*    <input type="submit" />*@
+@*</form>*@
+
+<div id="container">
+    <input type="text" id="productText" />
+    <input type="number" id="productSale" />
+    <input type="button" onclick="insertProduct()" />
+</div>

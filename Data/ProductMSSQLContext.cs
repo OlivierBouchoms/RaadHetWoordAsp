@@ -9,20 +9,12 @@ namespace Data
 {
     public class ProductMSSQLContext
     {
-        private string _connectionstring;
-
-        public ProductMSSQLContext()
-        {
-            _connectionstring =
-                @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebAPITutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-        }
         /// <summary>
         /// Returns a list of all products in the database.
         /// </summary>
         private List<Product> GetProducts()
         {
-            var sqlConnection = new SqlConnection(_connectionstring);
+            var sqlConnection = DataBase._ProductSqlConn;
             try
             {
                 sqlConnection.Open();
@@ -53,7 +45,7 @@ namespace Data
         /// </summary>
         private bool InsertProduct(Product product)
         {
-            var sqlConnection = new SqlConnection(_connectionstring);
+            var sqlConnection = DataBase._ProductSqlConn;
             try
             {
                 sqlConnection.Open();
@@ -81,7 +73,7 @@ namespace Data
         /// </summary>
         private bool RemoveProduct(int id)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase._ProductSqlConn;
             try
             {
                 sqlConnection.Open();

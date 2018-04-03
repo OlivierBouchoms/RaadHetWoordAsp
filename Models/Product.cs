@@ -1,4 +1,6 @@
-﻿namespace Models
+﻿using System;
+
+namespace Models
 {
     public class Product
     {
@@ -9,6 +11,10 @@
 
         public Product(string name, int sales)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException();
+            }
             Name = name;
             Sales = sales;
         }

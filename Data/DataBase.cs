@@ -12,5 +12,13 @@ namespace Data
             }
         }
 
+        public static SqlConnection _ProductSqlConn
+        {
+            get
+            {
+                return new SqlConnection(DataBaseResources.ConnectionString);
+            }
+        }
+
     }
 }

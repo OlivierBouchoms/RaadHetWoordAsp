@@ -121,4 +121,8 @@
     <value>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RaadHetWoordDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</value>
     <comment>The connectionstring for the database.</comment>
   </data>
+  <data name="ConnectionStringProduct" xml:space="preserve">
+    <value>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebAPITutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;</value>
+    <comment>The connectionstring for the product database.</comment>
+  </data>
 </root>

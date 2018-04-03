@@ -4,8 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RaadHetWoordGit.ViewModels;
 
 namespace MicrosoftWebAPITutorial.Controllers
 {
@@ -48,20 +52,19 @@ namespace MicrosoftWebAPITutorial.Controllers
         }
 
         /// <summary>
-        /// Adds a product to the memory context.
+        /// Adds a product to the database.
         /// </summary>
         [HttpPost]
-        public IActionResult Create(string name, int sales)
+        public IActionResult Create(ProductViewModel viewModel)
         {
-            Product product = new Product();
+            var product = new Product();
             try
             {
-                product = new Product(name, sales);
+                product = new Product(viewModel.name, viewModel.sales);
             }
             catch (Exception e)
             {
                 product = null;
-                Debug.WriteLine(e.Message);
             }
             if (product == null)
             {
@@ -71,7 +74,6 @@ namespace MicrosoftWebAPITutorial.Controllers
             InsertProduct(product);
 
             product = null;
-            GC.Collect();
             return new ObjectResult(GetProducts().Last());
         }
 

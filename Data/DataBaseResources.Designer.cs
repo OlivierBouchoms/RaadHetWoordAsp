@@ -68,5 +68,14 @@ namespace Data {
                 return ResourceManager.GetString("ConnectionString", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebAPITutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;.
+        /// </summary>
+        internal static string ConnectionStringProduct {
+            get {
+                return ResourceManager.GetString("ConnectionStringProduct", resourceCulture);
+            }
+        }
     }
 }
