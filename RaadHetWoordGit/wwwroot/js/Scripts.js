@@ -4,6 +4,8 @@ var sales;
 var jsondata;
 var query;
 var productData;
+var $name;
+var $sales;
 /**
  * To get a list of products, send an HTTP GET request to URI "/api/products".
  * The jQuery getJSON function sends an AJAX request.
@@ -29,16 +31,15 @@ function formatItem(item) {
 }
 
 function insertProduct() {
-    var $name = 'naam';
-    var $price = 54;
+    $name = $("#productText").val();
+    $sales = $("#productSale").val();
       
     $.ajax({
         type: 'POST',
         url: 'api/product',
-        data: { name: "test", sales: 675 },  
+        data: { name: $name, sales: $sales },  
         dataType: "json",
-        //contentType: "application/json; charset=UTF-8",
-        success: function (data) { alert('Gelukt! :)'); },
+        success: function (data) { alert('Gelukt!'); },
         error: function () { alert('Is foutgegaan'); }
         });
 }
