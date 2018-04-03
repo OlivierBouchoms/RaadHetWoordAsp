@@ -1,3 +1,11 @@
 ﻿body {
     margin: 0;
 } 
+
+.fout {
+    background-color: red;
+}
+
+.goed {
+    background-color: green;
+}

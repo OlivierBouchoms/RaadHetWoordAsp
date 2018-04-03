@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="css/StyleSheet.css">
+</head>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,14 +20,13 @@
     <p>sales van item verlagen via deze view via de API.</p>
 </div>
 
-@*<form id="container" method="post">*@
-@*    <input asp-for="name" type="text" id="productText" />*@
-@*    <input asp-for="value" type="number" id="productSale" />*@
-@*    <input type="submit" />*@
-@*</form>*@
 
 <div id="container">
     <input type="text" id="productText" />
     <input type="number" id="productSale" />
     <input type="button" onclick="insertProduct()" />
+</div>
+
+<div class="fout" id="sale" style="width: 150px; height: 150px;" onclick="ChangeSale()">
+    <p>test</p>
 </div>

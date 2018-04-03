@@ -4,6 +4,9 @@ var sales;
 var jsondata;
 var query;
 var productData;
+var $name;
+var $sales;
+
 /**
  * To get a list of products, send an HTTP GET request to URI "/api/products".
  * The jQuery getJSON function sends an AJAX request.
@@ -11,7 +14,7 @@ var productData;
  * The done function specifies a callback that is called if the request succeeds.
  * In the callback, we update the DOM (Document Object Model) with the product information.
  */
-$(document).ready(function () {
+$(document).ready(function getItems() {
     // Send an AJAX request
     $.getJSON(uri)
         .done(function (data) {
@@ -29,16 +32,35 @@ function formatItem(item) {
 }
 
 function insertProduct() {
-    var $name = 'naam';
-    var $price = 54;
+    $name = $("#productText").val();
+    $sales = $("#productSale").val();
       
     $.ajax({
         type: 'POST',
         url: 'api/product',
-        data: { name: "test", sales: 675 },  
+        data: { name: $name, sales: $sales },  
         dataType: "json",
         //contentType: "application/json; charset=UTF-8",
-        success: function (data) { alert('Gelukt! :)'); },
+        success: function() {
+            $('<li>', { text: $("#productText").val() + ": " + $("#productSale").val() }.appendTo($('#products')));
+        },
         error: function () { alert('Is foutgegaan'); }
         });
 }
+//
+//function ChangeSale() {
+//    if ($("#sale").hasClass("fout")) {
+//        jsondata = { cmd: "Increase", id: 4 };
+//    }
+//    if ($("#sale").hasClass("goed")) {
+//        jsondata = { cmd: "Decrease", id: 4 };
+//    }
+//    $.ajax({
+//        type: 'POST',
+//        url: 'api/product/ChangeScore',
+//        data: jsondata,
+//        dataType: "json",
+//        success: function () { alert('Succes'); },
+//        error: function () { alert('Is foutgegaan'); }
+//    });
+//}

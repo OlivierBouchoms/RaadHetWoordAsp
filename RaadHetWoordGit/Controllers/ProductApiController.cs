@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
+using Data;
 using Microsoft.AspNetCore.Mvc;
 using Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RaadHetWoordGit.ViewModels;
 
-namespace MicrosoftWebAPITutorial.Controllers
+namespace RaadHetWoordGit.Controllers
 {
     [Route("api/[controller]")]
-    public class ProductController : Controller
+    public class ProductApiController : Controller
     {
         private readonly string _connectionString;
+        private ProductMSSQLContext context;
 
-        public ProductController()
+        public ProductApiController()
         {
             _connectionString =
                 @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebAPITutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            context = new ProductMSSQLContext();
         }
 
         /// <summary>
@@ -31,7 +28,7 @@ namespace MicrosoftWebAPITutorial.Controllers
         [HttpGet]
         public IEnumerable<Product> GetAll()
         {
-            return GetProducts();
+            return context.GetProducts();
         }
 
         /// <summary>
@@ -41,15 +38,34 @@ namespace MicrosoftWebAPITutorial.Controllers
         [HttpGet("{id}", Name = "GetProduct")]
         public IActionResult GetById(int id)
         {
-            var productList = GetProducts();
+            var productList = context.GetProducts();
             var item = productList.FirstOrDefault(t => t.Id == id);
             if (item == null)
             {
                 return NotFound();
             }
-            GC.Collect();
+
             return new ObjectResult(item);
         }
+
+//        /// <summary>
+//        /// Change the sales
+//        /// </summary>
+//        /// <returns></returns>
+//        [HttpPost]
+//        [ActionName("ChangeScore")]
+//        public IActionResult ChangeScore(ChangeViewModel viewModel)
+//        {
+//            if (viewModel.cmd == "Increase")
+//            {
+//                context.IncreaseSale(viewModel.id);
+//            }
+//            else
+//            {
+//                context.DecreaseSale(viewModel.id);
+//            }
+//            return null;
+//        }
 
         /// <summary>
         /// Adds a product to the database.
@@ -62,7 +78,7 @@ namespace MicrosoftWebAPITutorial.Controllers
             {
                 product = new Product(viewModel.name, viewModel.sales);
             }
-            catch (Exception e)
+            catch
             {
                 product = null;
             }
@@ -71,114 +87,27 @@ namespace MicrosoftWebAPITutorial.Controllers
                 return BadRequest();
             }
 
-            InsertProduct(product);
+            context.InsertProduct(product);
 
             product = null;
-            return new ObjectResult(GetProducts().Last());
+            return new ObjectResult(context.GetProducts().Last());
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var product = GetProducts().FirstOrDefault(p => p.Id == id);
+            var product = context.GetProducts().FirstOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            RemoveProduct(id);
-            GC.Collect();
+            context.RemoveProduct(id);
+
             return new NoContentResult();
         }
 
-        //Database:
-
-        /// <summary>
-        /// Returns a list of all products in the database.
-        /// </summary>
-        private List<Product> GetProducts()
-        {
-            var sqlConnection = new SqlConnection(_connectionString);
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-            var products = new List<Product>();
-            var query = "Select * From [Product]";
-            var sqlCommand = new SqlCommand(query, sqlConnection);
-            var sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            var dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow row in dataTable.Rows)
-            {
-                products.Add(new Product(Convert.ToInt32(row["Id"].ToString()), row["Name"].ToString(), Convert.ToInt32(row["Sales"].ToString())));
-            }
-
-            sqlConnection.Close();
-
-            return products;
-        }
-
-        /// <summary>
-        /// Insert a product into the database.
-        /// </summary>
-        private bool InsertProduct(Product product)
-        {
-            var sqlConnection = new SqlConnection(_connectionString);
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            var query = $"INSERT INTO [dbo].[Product] ([Name], [Sales]) VALUES ('{product.Name}', {product.Sales})";
-            var sqlCommand = new SqlCommand(query, sqlConnection);
-            if (sqlCommand.ExecuteNonQuery() > 0)
-            {
-                sqlConnection.Close();
-                return true;
-            }
-
-            sqlConnection.Close();
-
-            return false;
-        }
-
-        /// <summary>
-        /// Removes a product from the database.
-        /// </summary>
-        private bool RemoveProduct(int id)
-        {
-            var sqlConnection = new SqlConnection(_connectionString);
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-            var query = $"Delete from [Product] Where [Id] ={id}";
-            var sqlCommand = new SqlCommand(query, sqlConnection);
-            if (sqlCommand.ExecuteNonQuery() > 0)
-            {
-                sqlConnection.Close();
-                return true;
-            }
-
-            sqlConnection.Close();
-
-            return false;
-        }
-
+        
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Text;
 using Models;
 
@@ -12,7 +13,7 @@ namespace Data
         /// <summary>
         /// Returns a list of all products in the database.
         /// </summary>
-        private List<Product> GetProducts()
+        public List<Product> GetProducts()
         {
             var sqlConnection = DataBase._ProductSqlConn;
             try
@@ -43,7 +44,7 @@ namespace Data
         /// <summary>
         /// Insert a product into the database.
         /// </summary>
-        private bool InsertProduct(Product product)
+        public bool InsertProduct(Product product)
         {
             var sqlConnection = DataBase._ProductSqlConn;
             try
@@ -69,9 +70,70 @@ namespace Data
         }
 
         /// <summary>
+        /// Increase product sales with SQL Injection protection.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool IncreaseSale(int id)
+        {
+            var sqlConnection = DataBase._ProductSqlConn;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [dbo].[Product] SET [Sales] = [Sales] + 1 Where [Id] = @id";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("ID", SqlDbType.Int).Value = id;
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlConnection.Close();
+                return true;
+            }
+
+            sqlConnection.Close();
+            return false;
+        }
+
+        /// <summary>
+        /// Decrease product sales with SQL Injection protection.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool DecreaseSale(int id)
+        {
+            var sqlConnection = DataBase._ProductSqlConn;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [dbo].[Product] SET [Sales] = [Sales] -1 1 Where [Id] = @id";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("id", SqlDbType.Int).Value = id;
+            Debug.WriteLine(sqlCommand.CommandText);
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlConnection.Close();
+                return true;
+            }
+
+            sqlConnection.Close();
+            return false;
+        }
+
+        /// <summary>
         /// Removes a product from the database.
         /// </summary>
-        private bool RemoveProduct(int id)
+        public bool RemoveProduct(int id)
         {
             var sqlConnection = DataBase._ProductSqlConn;
             try
