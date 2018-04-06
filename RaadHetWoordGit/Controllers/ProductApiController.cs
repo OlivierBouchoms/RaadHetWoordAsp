@@ -77,6 +77,20 @@ namespace MicrosoftWebAPITutorial.Controllers
             return new ObjectResult(GetProducts().Last());
         }
 
+        [HttpPatch]
+        public IActionResult Change(ProductViewModel viewModel)
+        {
+            var product = GetProducts().FirstOrDefault(p => p.Id == viewModel.id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            ChangePrice(viewModel);
+
+            return new NoContentResult();
+        }
+
         /// <summary>
         /// Delete a product from the database.
         /// </summary>
@@ -171,6 +185,41 @@ namespace MicrosoftWebAPITutorial.Controllers
             }
 
             var query = $"Delete from [Product] Where [Id] ={id}";
+            var sqlCommand = new SqlCommand(query, sqlConnection);
+            if (sqlCommand.ExecuteNonQuery() > 0)
+            {
+                sqlConnection.Close();
+                return true;
+            }
+
+            sqlConnection.Close();
+
+            return false;
+        }
+
+        public bool ChangePrice(ProductViewModel viewModel)
+        {
+            var sqlConnection = new SqlConnection(_connectionString);
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            string query = null;
+            if (viewModel.increase)
+            {
+                query = $"UPDATE [Product] SET [Price] = [Price] + 1 WHERE [Id] = {viewModel.id}";
+            }
+
+            if (!viewModel.increase)
+            {
+                query = $"UPDATE [Product] SET [Price] = [Price] - 1 WHERE [Id] = {viewModel.id}";
+            }
+
             var sqlCommand = new SqlCommand(query, sqlConnection);
             if (sqlCommand.ExecuteNonQuery() > 0)
             {

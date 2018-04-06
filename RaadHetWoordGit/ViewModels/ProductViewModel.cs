@@ -10,5 +10,6 @@ namespace RaadHetWoordGit.ViewModels
         public string name { get; set; }
         public int sales { get; set; }
         public int id { get; set; }
+        public bool increase { get; set; }
     }
 }

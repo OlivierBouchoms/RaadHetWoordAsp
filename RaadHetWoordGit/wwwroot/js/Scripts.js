@@ -7,6 +7,7 @@ var productData;
 var $name;
 var $sales;
 var $id;
+var $increase;
 
 /**
  * To get a list of products, send an HTTP GET request to URI "/api/products".
@@ -79,6 +80,32 @@ function deleteProduct() {
                         $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                     });
                 }); },
+        error: function () { alert('Is foutgegaan'); }
+    });
+}
+
+//Increase or decrease the price of a product by 1
+function changeProductPrice() {
+    $id = $("#productID").val();
+
+    $.ajax({
+        type: 'PATCH',
+        url: 'api/product',
+        data: { id: $id },
+        dataType: "json",
+        success: function (data) {
+            $('#products').empty();
+            // Send an AJAX request
+            $.getJSON(uri)
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    // Foreach loop: iterate through all products
+                    $.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                    });
+                });
+        },
         error: function () { alert('Is foutgegaan'); }
     });
 }
