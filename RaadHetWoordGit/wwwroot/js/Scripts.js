@@ -87,11 +87,20 @@ function deleteProduct() {
 //Increase or decrease the price of a product by 1
 function changeProductPrice() {
     $id = $("#productID").val();
-
+    var $increase = false;
+    if ($("#button1").hasClass("incorrect")) {
+        $increase = true;
+        $('#button1').removeClass();
+        $('#button1').addClass("iscorrect--");
+    }
+    else {
+        $('#button1').removeClass();
+        $('#button1').addClass("incorrect");
+    }
     $.ajax({
         type: 'PATCH',
         url: 'api/product',
-        data: { id: $id },
+        data: { id: $id, increase: $increase },
         dataType: "json",
         success: function (data) {
             $('#products').empty();

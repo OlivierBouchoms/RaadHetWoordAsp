@@ -212,12 +212,12 @@ namespace MicrosoftWebAPITutorial.Controllers
             string query = null;
             if (viewModel.increase)
             {
-                query = $"UPDATE [Product] SET [Price] = [Price] + 1 WHERE [Id] = {viewModel.id}";
+                query = $"UPDATE [Product] SET [Sales] = [Sales] + 1 WHERE [Id] = {viewModel.id}";
             }
 
             if (!viewModel.increase)
             {
-                query = $"UPDATE [Product] SET [Price] = [Price] - 1 WHERE [Id] = {viewModel.id}";
+                query = $"UPDATE [Product] SET [Sales] = [Sales] - 1 WHERE [Id] = {viewModel.id}";
             }
 
             var sqlCommand = new SqlCommand(query, sqlConnection);
