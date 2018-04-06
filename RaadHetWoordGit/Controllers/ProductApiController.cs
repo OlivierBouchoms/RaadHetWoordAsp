@@ -77,17 +77,20 @@ namespace MicrosoftWebAPITutorial.Controllers
             return new ObjectResult(GetProducts().Last());
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        /// <summary>
+        /// Delete a product from the database.
+        /// </summary>
+        [HttpDelete]
+        public IActionResult Delete(ProductViewModel viewModel)
         {
-            var product = GetProducts().FirstOrDefault(p => p.Id == id);
+            var product = GetProducts().FirstOrDefault(p => p.Id == viewModel.id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            RemoveProduct(id);
-            GC.Collect();
+            RemoveProduct(viewModel.id);
+
             return new NoContentResult();
         }
 

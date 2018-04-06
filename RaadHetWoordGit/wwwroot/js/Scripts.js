@@ -6,6 +6,7 @@ var query;
 var productData;
 var $name;
 var $sales;
+var $id;
 /**
  * To get a list of products, send an HTTP GET request to URI "/api/products".
  * The jQuery getJSON function sends an AJAX request.
@@ -42,4 +43,16 @@ function insertProduct() {
         success: function (data) { alert('Gelukt!'); },
         error: function () { alert('Is foutgegaan'); }
         });
+}
+
+function deleteProduct() {
+    $id = $("#productID").val();
+    $.ajax({
+        type: 'DELETE',
+        url: 'api/product',
+        data: { id: $id },
+        dataType: "json",
+        success: function (data) { alert('Gelukt!'); },
+        error: function () { alert('Is foutgegaan'); }
+    });
 }
