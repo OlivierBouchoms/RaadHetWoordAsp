@@ -47,7 +47,7 @@ namespace MicrosoftWebAPITutorial.Controllers
             {
                 return NotFound();
             }
-            GC.Collect();
+
             return new ObjectResult(item);
         }
 
@@ -108,7 +108,7 @@ namespace MicrosoftWebAPITutorial.Controllers
             }
             catch (Exception)
             {
-                return null;
+                return new List<Product>();
             }
 
             var products = new List<Product>();
