@@ -1,4 +1,4 @@
-﻿var uri = "api/product";
+﻿var uri = "api/productapi";
 var name;
 var sales;
 var query;
@@ -9,7 +9,7 @@ var $id;
 var $increase;
 
 /**
- * To get a list of products, send an HTTP GET request to URI "/api/products".
+ * HTTP GET request to URI "/api/productsai".
  * The jQuery getJSON function sends an AJAX request.
  * The response contains array of JSON objects.
  * The done function specifies a callback that is called if the request succeeds.
@@ -84,12 +84,6 @@ function changeProductPrice() {
     var $increase = false;
     if ($("#button1").hasClass("incorrect")) {
         $increase = true;
-        $('#button1').removeClass();
-        $('#button1').addClass("iscorrect--");
-    }
-    else {
-        $('#button1').removeClass();
-        $('#button1').addClass("incorrect");
     }
     $.ajax({
         type: 'PATCH',
@@ -106,6 +100,15 @@ function changeProductPrice() {
                         $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                     });
                 });
+            if ($("#button1").hasClass("incorrect")) {
+                $increase = true;
+                $('#button1').removeClass();
+                $('#button1').addClass("iscorrect--");
+            }
+            else {
+                $('#button1').removeClass();
+                $('#button1').addClass("incorrect");
+            }
         },
         error: function () { alert('Is foutgegaan'); }
     });

@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RaadHetWoordGit.ViewModels;
 
-namespace MicrosoftWebAPITutorial.Controllers
+namespace RaadHetWoordGit.Controllers
 {
     [Route("api/[controller]")]
-    public class ProductController : Controller
+    public class ProductApiController : Controller
     {
         private readonly string _connectionString;
 
-        public ProductController()
+        public ProductApiController()
         {
             _connectionString =
                 @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WebAPITutorial;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -57,7 +53,7 @@ namespace MicrosoftWebAPITutorial.Controllers
         [HttpPost]
         public IActionResult Create(ProductViewModel viewModel)
         {
-            var product = new Product();
+            Product product;
             try
             {
                 product = new Product(viewModel.name, viewModel.sales);
@@ -73,12 +69,15 @@ namespace MicrosoftWebAPITutorial.Controllers
 
             if (InsertProduct(product))
             {
-                return new EmptyResult();
+                return new NoContentResult();
             }
 
             return BadRequest("Database failed");
         }
 
+        /// <summary>
+        /// Increase or decrease value, depending on parameter from viewModel
+        /// </summary>
         [HttpPatch]
         public IActionResult Change(ProductViewModel viewModel)
         {
@@ -90,8 +89,7 @@ namespace MicrosoftWebAPITutorial.Controllers
 
             if (ChangePrice(viewModel))
             {
-                viewModel = null;
-                return new EmptyResult();
+                return new NoContentResult();
             }
 
             return BadRequest("Database failed");
@@ -111,8 +109,7 @@ namespace MicrosoftWebAPITutorial.Controllers
 
             if (RemoveProduct(viewModel.id))
             {
-                viewModel = null;
-                return new EmptyResult();
+                return new NoContentResult();
             }
 
             return BadRequest("Database failed");
