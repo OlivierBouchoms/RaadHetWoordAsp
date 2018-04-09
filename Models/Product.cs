@@ -13,7 +13,7 @@ namespace Models
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("No name provided");
             }
             Name = name;
             Sales = sales;
@@ -26,8 +26,8 @@ namespace Models
             Sales = sales;
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Sales { get; set; }
+        public int Id { get; }
+        public string Name { get; }
+        public int Sales { get; }
     }
 }

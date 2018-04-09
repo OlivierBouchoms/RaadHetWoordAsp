@@ -1,7 +1,6 @@
 ﻿var uri = "api/product";
 var name;
 var sales;
-var jsondata;
 var query;
 var productData;
 var $name;
@@ -12,18 +11,16 @@ var $increase;
 /**
  * To get a list of products, send an HTTP GET request to URI "/api/products".
  * The jQuery getJSON function sends an AJAX request.
- * For response contains array of JSON objects.
+ * The response contains array of JSON objects.
  * The done function specifies a callback that is called if the request succeeds.
  * In the callback, we update the DOM (Document Object Model) with the product information.
  */
+
 $(document).ready(function getProducts() {
-    // Send an AJAX request
+    //Data ophalen
     $.getJSON(uri)
         .done(function (data) {
-            // On success, 'data' contains a list of products.
-            // Foreach loop: iterate through all products
             $.each(data, function (key, item) {
-                // Add a list item for the product.
                 $('<li>', { text: formatItem(item) }).appendTo($('#products'));
             });
         });
@@ -43,15 +40,13 @@ function insertProduct() {
         url: 'api/product',
         data: { name: $name, sales: $sales },  
         dataType: "json",
-        success: function (data) {
+        success: function () {
+            //Unsorted list leegmaken
             $('#products').empty();
-            // Send an AJAX request
+            //Data ophalen
             $.getJSON(uri)
                 .done(function (data) {
-                    // On success, 'data' contains a list of products.
-                    // Foreach loop: iterate through all products
                     $.each(data, function (key, item) {
-                        // Add a list item for the product.
                         $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                     });
                 });
@@ -68,18 +63,17 @@ function deleteProduct() {
         url: 'api/product',
         data: { id: $id },
         dataType: "json",
-        success: function (data) {
+        success: function () {
+            //Unsorted list leegmaken
             $('#products').empty();
-            // Send an AJAX request
+            //Data ophalen
             $.getJSON(uri)
                 .done(function (data) {
-                    // On success, 'data' contains a list of products.
-                    // Foreach loop: iterate through all products
                     $.each(data, function (key, item) {
-                        // Add a list item for the product.
                         $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                     });
-                }); },
+                });
+        },
         error: function () { alert('Is foutgegaan'); }
     });
 }
@@ -102,15 +96,13 @@ function changeProductPrice() {
         url: 'api/product',
         data: { id: $id, increase: $increase },
         dataType: "json",
-        success: function (data) {
+        success: function () {
+            //Unsorted list leegmaken
             $('#products').empty();
-            // Send an AJAX request
+            //Data ophalen
             $.getJSON(uri)
                 .done(function (data) {
-                    // On success, 'data' contains a list of products.
-                    // Foreach loop: iterate through all products
                     $.each(data, function (key, item) {
-                        // Add a list item for the product.
                         $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                     });
                 });

@@ -62,7 +62,7 @@ namespace MicrosoftWebAPITutorial.Controllers
             {
                 product = new Product(viewModel.name, viewModel.sales);
             }
-            catch (Exception e)
+            catch
             {
                 product = null;
             }
@@ -71,10 +71,12 @@ namespace MicrosoftWebAPITutorial.Controllers
                 return BadRequest();
             }
 
-            InsertProduct(product);
+            if (InsertProduct(product))
+            {
+                return new EmptyResult();
+            }
 
-            product = null;
-            return new ObjectResult(GetProducts().Last());
+            return BadRequest("Database failed");
         }
 
         [HttpPatch]
@@ -86,9 +88,13 @@ namespace MicrosoftWebAPITutorial.Controllers
                 return NotFound();
             }
 
-            ChangePrice(viewModel);
+            if (ChangePrice(viewModel))
+            {
+                viewModel = null;
+                return new EmptyResult();
+            }
 
-            return new NoContentResult();
+            return BadRequest("Database failed");
         }
 
         /// <summary>
@@ -103,9 +109,13 @@ namespace MicrosoftWebAPITutorial.Controllers
                 return NotFound();
             }
 
-            RemoveProduct(viewModel.id);
+            if (RemoveProduct(viewModel.id))
+            {
+                viewModel = null;
+                return new EmptyResult();
+            }
 
-            return new NoContentResult();
+            return BadRequest("Database failed");
         }
 
         //Database:
