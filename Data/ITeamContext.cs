@@ -13,8 +13,6 @@ namespace Data
 
         bool AddTeam(Team team);
 
-        bool DeleteTeam(string name);
-
         List<Team> GetTeamsByAlphabet();
 
         List<Team> GetTeamsByScore();
@@ -24,5 +22,7 @@ namespace Data
         List<Team> GetTeamsByWins();
 
         List<Team> GetTeamsByWinLoss();
+
+        Team FillWithData(Team team);
     }
 }

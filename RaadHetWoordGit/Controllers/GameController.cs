@@ -49,13 +49,13 @@ namespace RaadHetWoordGit.Controllers
 
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
             _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
-            
-            List<Team> teams = new List<Team>
+
+            List<Team> teams = new List<Team>(2)
             {
-                new Team(viewModel.TeamOne),
-                new Team(viewModel.TeamTwo)
+                _teamLogic.FillWithData(new Team(viewModel.TeamOne)),
+                _teamLogic.FillWithData(new Team(viewModel.TeamTwo))
             };
-            
+
             viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
             viewModel.Game.Wordlist = new Wordlist(_wordListLogic.GetWords());
 

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Xml;
 using Models;
 
 namespace Data
@@ -10,112 +9,123 @@ namespace Data
     public class TeamMSSQLContext : ITeamContext
     {
         /// <summary>
-        /// Checks if a team already exists in the database.
+        /// Checks if a team already exists in the database
         /// </summary>
-        /// <param name="team">Input team</param>
-        /// <returns>True/false value</returns>
         public bool CheckIfExists(Team team)
         {
-            string result = String.Empty;
-            using (var sqlconn = DataBase._SqlConn)
+            var sqlConnection = DataBase._SqlConn;
+            try
             {
-                sqlconn.Open();
-                string query = String.Format("Select [Name] From [Team] where [Name] ='{0}'", team.Name);
-
-                using (var sqlcommand = new SqlCommand(query, sqlconn))
-                {
-                    using (var reader = sqlcommand.ExecuteReader())
-                    {
-                        {
-                            try
-                            {
-                                if (reader.HasRows)
-                                {
-                                    sqlconn.Close();
-                                    return true;
-                                }
-                                sqlconn.Close();
-                                return false;
-                            }
-                            catch { }
-                        }
-                    }
-                }
-                sqlconn.Close();
+                sqlConnection.Open();
             }
-            return result == team.Name;
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "Select [Name] From [Team] where [Name] =@name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            var sqlDataReader = sqlCommand.ExecuteReader();
+            if (sqlDataReader.HasRows)
+            {
+                sqlConnection.Close();
+                return true;
+            }
+            sqlConnection.Close();
+            return false;
         }
 
         /// <summary>
         /// Adds a team to the database
         /// </summary>
-        /// <param name="team">Input team</param>
-        /// <returns>True/false value</returns>
         public bool AddTeam(Team team)
         {
-            string query = String.Format(
-                "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
-                "Values ('{0}', 0, 0, 0, 0)",
-                team.Name);
-            using (var sqlconn = DataBase._SqlConn)
+            var sqlConnection = DataBase._SqlConn;
+            try
             {
-                sqlconn.Open();
-                using (var sqlcommand = new SqlCommand(query, sqlconn))
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
+                              "Values @name, 0, 0, 0, 0)";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            if (sqlCommand.ExecuteNonQuery() == 1)
+            {
+                sqlConnection.Close();
+                return true;
+            }
+            sqlConnection.Close();
+            return false;
+        }
+
+        public Team FillWithData(Team team)
+        {
+            var sqlConnection = DataBase._SqlConn;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return team;
+            }
+
+            var commandText = "SELECT * From [Team] where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            var sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                if (sqlDataReader.HasRows)
                 {
-                    sqlcommand.ExecuteNonQuery();
-                    sqlconn.Close();
-                    return true;
+                    var _team = new Team(team.Name, sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(6), sqlDataReader.GetDecimal(7));
+                    sqlDataReader.Close();
+                    return _team;
                 }
             }
-        }
-
-        public bool FillTeamWithData(Team team)
-        {
-            throw new NotImplementedException();
+            return team;
         }
 
         /// <summary>
-        /// Mag weg
+        /// Get all teams sorted by alpabet
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public bool DeleteTeam(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>A list with teams, sorted by alphabet (a-z)</returns>
         public List<Team> GetTeamsByAlphabet()
         {
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// 
+        /// Get all teams sorted by score
         /// </summary>
-        /// <returns>A list with teams, sorted by score</returns>
         public List<Team> GetTeamsByScore()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Get all teams sorted by turns
+        /// </summary>
         public List<Team> GetTeamByTurns()
         {
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// 
+        /// Get all teams sorted by wins
         /// </summary>
-        /// <returns>A list with teams, sorted by wins</returns>
         public List<Team> GetTeamsByWins()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Get all teams sorted by winloss
+        /// </summary>
         public List<Team> GetTeamsByWinLoss()
         {
             throw new NotImplementedException();

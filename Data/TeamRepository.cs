@@ -20,5 +20,10 @@ namespace Data
         {
             return context.AddTeam(team);
         }
+
+        public Team FillWithData(Team team)
+        {
+            return context.FillWithData(team);
+        }
     }
 }

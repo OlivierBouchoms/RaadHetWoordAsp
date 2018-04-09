@@ -6,7 +6,7 @@ namespace Logic
 {
     public class TeamLogic
     {
-        private TeamRepository repo;
+        private readonly TeamRepository repo;
 
         public TeamLogic(TeamRepository teamRepository)
         {
@@ -20,12 +20,18 @@ namespace Logic
 
         public bool AddTeam(Team team)
         {
+            //Bestaat het team
             if (CheckIfExists(team))
             {
                 return false;
             }
 
             return repo.AddTeam(team);
+        }
+
+        public Team FillWithData(Team team)
+        {
+            return repo.FillWithData(team);
         }
     }
 }

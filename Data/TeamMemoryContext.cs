@@ -3,6 +3,9 @@ using Models;
 
 namespace Data
 {
+    /// <summary>
+    /// Wordt eigenlijk niet gebruikt
+    /// </summary>
     public class TeamMemoryContext : ITeamContext
     {
         public bool CheckIfExists(Team team)
@@ -41,6 +44,11 @@ namespace Data
         }
 
         public List<Team> GetTeamsByWinLoss()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Team FillWithData(Team team)
         {
             throw new System.NotImplementedException();
         }

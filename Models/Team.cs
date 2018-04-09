@@ -4,19 +4,34 @@ namespace Models
 {
     public class Team
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public int Score { get; private set; }
         public int Turns { get; private set; }
-        public int Wins { get; private set; }
-        public int Losses { get; private set; }
-        public decimal ScorePerTurn { get; private set; }
-        public decimal WinLoss { get; private set; }
+        public int Wins { get; }
+        public int Losses { get; }
+        public decimal ScorePerTurn { get; }
+        public decimal WinLoss { get; }
 
         public Team(string name)
         {
             Name = name;
             Score = 0;
             Turns = 0;
+            Wins = 0;
+            Losses = 0;
+            ScorePerTurn = 0;
+            WinLoss = 0;
+        }
+
+        public Team(string name, int score, int turns, int wins, int losses, decimal scorePerTurn, decimal winLoss)
+        {
+            Name = name;
+            Score = score;
+            Turns = turns;
+            Wins = wins;
+            Losses = losses;
+            ScorePerTurn = scorePerTurn;
+            WinLoss = winLoss;
         }
 
         public void IncreaseScore()
@@ -36,7 +51,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"Team {Name} - Turns {Score} - Score {Turns}";
+            return $"Team {Name} - Turns {Turns} - Score {Score}";
         }
     }
 }
