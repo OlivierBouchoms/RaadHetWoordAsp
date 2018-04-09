@@ -4,7 +4,7 @@ namespace Data
 {
     public class TeamRepository
     {
-        private ITeamContext context;
+        private readonly ITeamContext context;
 
         public TeamRepository(ITeamContext context)
         {

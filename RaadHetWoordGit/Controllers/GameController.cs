@@ -27,7 +27,7 @@ namespace RaadHetWoordGit.Controllers
         {
             var viewModel = new GameViewModel();
             viewModel.TeamColumnClass = "hidden";
-            viewModel.TeamFormClass = "Container";
+            viewModel.TeamFormClass = "visible";
 
             return View(viewModel);
         }
@@ -38,12 +38,12 @@ namespace RaadHetWoordGit.Controllers
         [HttpPost]
         public ActionResult Index(GameViewModel viewModel)
         {
-            viewModel.TeamColumnClass = "Container";
-            viewModel.TeamFormClass = "hidden";
             if (ValuesAreNull(viewModel))
             {
                 viewModel.TeamOneSuccess = false;
                 viewModel.TeamTwoSuccess = false;
+                viewModel.TeamColumnClass = "hidden";
+                viewModel.TeamFormClass = "visible";
                 return View(viewModel);
             }
 
@@ -62,6 +62,9 @@ namespace RaadHetWoordGit.Controllers
             //Teams in database plaatsen
             viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
             viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
+
+            viewModel.TeamFormClass = "hidden";
+            viewModel.TeamColumnClass = "visible";
 
             return View(viewModel);
         }

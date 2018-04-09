@@ -3021,6 +3021,14 @@ select[multiple].input-lg {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
+/* Eigen css */
+
+.custom {
+    width: 100%;
+    text-align: center
+}   
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -6755,3 +6763,4 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+

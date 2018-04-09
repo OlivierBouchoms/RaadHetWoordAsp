@@ -37,17 +37,7 @@ namespace Data
                                 sqlconn.Close();
                                 return false;
                             }
-                            catch (Exception exception)
-                            {
-                                using (StreamWriter sw = File.AppendText(@"C:\Users\Olivier\Desktop\ExceptionLog.txt")
-                                ) //create textfile if it doesn't already exist
-                                {
-                                    sw.WriteLine(exception.ToString()); //write exception details
-                                    sw.WriteLine(DateTime.Now.ToLongDateString() + " - " +
-                                                 DateTime.Now.ToLongTimeString()); //write date and time
-                                    sw.WriteLine(""); //add white space
-                                }
-                            }
+                            catch { }
                         }
                     }
                 }
@@ -67,7 +57,6 @@ namespace Data
                 "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
                 "Values ('{0}', 0, 0, 0, 0)",
                 team.Name);
-            Console.WriteLine(query);
             using (var sqlconn = DataBase._SqlConn)
             {
                 sqlconn.Open();
@@ -78,6 +67,21 @@ namespace Data
                     return true;
                 }
             }
+        }
+
+        public bool FillTeamWithData(Team team)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Mag weg
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public bool DeleteTeam(string name)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -98,12 +102,21 @@ namespace Data
             throw new NotImplementedException();
         }
 
+        public List<Team> GetTeamByTurns()
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>A list with teams, sorted by wins</returns>
         public List<Team> GetTeamsByWins()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Team> GetTeamsByWinLoss()
         {
             throw new NotImplementedException();
         }

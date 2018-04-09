@@ -1,28 +1,38 @@
 ﻿@model RaadHetWoordGit.ViewModels.GameViewModel
+    
+@if (@Model.TeamFormClass == "visible")
+{
+    <div class="@Model.TeamFormClass">
+        <h2>Voeg teams toe!</h2>
 
-<div class="@Model.TeamFormClass">
-    <h2>Voeg teams toe!</h2>
+        <form asp-action="Index" asp-controller="Game">
+            <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 5, maximaal 100." class="form-control"><br />
+            <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in." /><br />
+            <input asp-for="TeamTwo" type="text" class="form-control" placeholder="Voer naam van Team 2 in." /><br />
+            <input class="btn btn-success custom" type="submit" value="Voeg toe" />
+        </form>
+    </div>
+}
 
-    <form asp-action="Index" asp-controller="Game">
-        <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 5, maximaal 100." class="form-control"><br/>
-        <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in."/><br/>
-        <input asp-for="TeamTwo" type="text" class="form-control" placeholder="Voer naam van Team 2 in."/><br/>
-        <input class="btn btn-success" style="width: 100%; text-align: center" type="submit" value="Maak teams aan!"/>
-    </form>
-</div>
-
-<div class="@Model.TeamColumnClass">
-    <h2>Teams zijn aangemaakt!</h2>
-    <div class="row">
-        @if (@Model.TeamColumnClass != "hidden")
-        {
+<!-- Teams laten zien indien succesvol aangemaakt -->
+@if (@Model.TeamColumnClass == "visible")
+{
+    <div>
+        <h2>Teams zijn aangemaakt!</h2>
+        <div class="row">
             <div class="col-lg-6">
                 <p>@Model.Game.TeamList[0].ToString()</p>
             </div>
             <div class="col-lg-6">
                 <p>@Model.Game.TeamList[1].ToString()</p>
             </div>
-        }
+            <div class="col-lg-6">
+                <form asp-action="Index" asp-controller="Game">
+                    <input class="btn btn-success" type="submit" value="Start" />
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+}
+
 
