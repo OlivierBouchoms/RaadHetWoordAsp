@@ -63,6 +63,9 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
+        /// <summary>
+        /// The page to play a game
+        /// </summary>
         [HttpPost]
         public ActionResult PlayGame(GameViewModel viewModel)
         {

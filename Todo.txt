@@ -1,5 +1,0 @@
-Dinsdag:
-
-Moet ronde starten
-	5 woorden weergeven
-	Druk op knop score verhogen / verlagen
