@@ -38,7 +38,7 @@ namespace RaadHetWoordGit.Controllers
         [HttpPost]
         public ActionResult Index(GameViewModel viewModel)
         {
-            if (ValuesAreNull(viewModel))
+            if (!ValuesAreValid(viewModel))
             {
                 viewModel.TeamOneSuccess = false;
                 viewModel.TeamTwoSuccess = false;
@@ -69,6 +69,29 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
+
+        /// <summary>
+        /// Trim the strings and check for duplicates/empty values
+        /// </summary>
+        private bool ValuesAreValid(GameViewModel viewModel)
+        {
+            viewModel = TrimStrings(viewModel);
+            if (ValuesAreNull(viewModel))
+            {
+                return false;
+            }
+
+            if (String.Equals(viewModel.TeamOne.ToLower(), viewModel.TeamTwo.ToLower()))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Check for empty/null values
+        /// </summary>
         private bool ValuesAreNull(GameViewModel viewModel)
         {
             if (String.IsNullOrWhiteSpace(viewModel.TeamOne) || String.IsNullOrWhiteSpace(viewModel.TeamTwo))
@@ -77,7 +100,18 @@ namespace RaadHetWoordGit.Controllers
             }
 
             return false;
+        }
 
+        /// <summary>
+        /// Remove whitespace from strings
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        private GameViewModel TrimStrings(GameViewModel viewModel)
+        {
+            viewModel.TeamOne = viewModel.TeamOne.Trim();
+            viewModel.TeamTwo = viewModel.TeamTwo.Trim();
+            return viewModel;
         }
 
         /// <summary>
