@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading.Tasks;
 using Data;
 using Logic;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Azure.KeyVault.Models;
 using Models;
-using Newtonsoft.Json;
 using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
@@ -59,7 +53,6 @@ namespace RaadHetWoordGit.Controllers
             viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
             viewModel.Game.Wordlist = new Wordlist(_wordListLogic.GetWords());
 
-            //Teams in database plaatsen
             viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
             viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
 

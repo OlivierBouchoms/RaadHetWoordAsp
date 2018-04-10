@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using Models;
 
 namespace Data
 {
@@ -24,7 +22,6 @@ namespace Data
 
             string query = "SELECT [idWord], [text] FROM Word where [idWord] IN " +
                            "(SELECT [WordID] FROM [Word_and_WordCategorie] where [WordCategoryID]='0')";
-            Debug.WriteLine(query);
             var dataTable = new DataTable();
             var sqlCommand = new SqlCommand(query, sqlConnection);
             var sqlDataAdapter = new SqlDataAdapter(sqlCommand);
