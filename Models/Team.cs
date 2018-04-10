@@ -12,6 +12,11 @@ namespace Models
         public decimal ScorePerTurn { get; }
         public decimal WinLoss { get; }
 
+        public Team()
+        {
+            //Empty
+        }
+
         public Team(string name)
         {
             Name = name;

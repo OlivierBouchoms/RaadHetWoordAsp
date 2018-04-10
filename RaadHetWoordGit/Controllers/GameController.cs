@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using RaadHetWoordGit.ViewModels;
+using System.Web;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace RaadHetWoordGit.Controllers
 {
@@ -52,14 +56,17 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
             viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
-            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
 
             viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
             viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
 
             viewModel.TeamFormClass = "hidden";
             viewModel.TeamColumnClass = "visible";
+
+            var jsonString = JsonConvert.SerializeObject(viewModel);
+            Debug.WriteLine(jsonString);
             //viewmodel in sessie plaatsen
+            HttpContext.Session.SetString("", jsonString);
 
             return View(viewModel);
         }
@@ -80,9 +87,15 @@ namespace RaadHetWoordGit.Controllers
         [HttpPost]
         public ActionResult PlayGame()
         {
+            InitializeLogic();
+
+            var json = HttpContext.Session.GetString("");
+            Debug.WriteLine(json);
+            GameViewModel viewModel = JsonConvert.DeserializeObject<GameViewModel>(json);
             //viewmodel uit sessie halen
             //Nieuwe ronde starten
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
+            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
 
             viewModel.WordlistClass = "visible";
             return View(viewModel);

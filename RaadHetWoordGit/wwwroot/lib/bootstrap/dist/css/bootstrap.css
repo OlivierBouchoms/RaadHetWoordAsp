@@ -3027,7 +3027,41 @@ select[multiple].input-lg {
 .custom {
     width: 100%;
     text-align: center
-}   
+}
+
+.gameword {
+    border: 1px solid #E0DBD7;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 15%;
+    background-color: #E0DBD7;
+    color: red;
+    text-align: center;
+    text-align: center;
+}
+
+.gamewordtrue {
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 15%;
+    background-color: #E0DBD7;
+    color: green;
+    text-align: center;
+    text-align: center;
+}
+
+.gamewordtext {
+    margin: 0%;
+    line-height: 350%;
+}
+
+/* Einde eigen css*/
+
 
 .btn:focus,
 .btn:active:focus,

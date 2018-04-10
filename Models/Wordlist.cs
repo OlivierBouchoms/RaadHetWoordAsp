@@ -9,6 +9,11 @@ namespace Models
         internal string Description { get; private set; }
         public List<string> Words { get; }
 
+        public Wordlist()
+        {
+            //Empty
+        }
+
         public Wordlist(List<string> words)
         {
             Words = words;
