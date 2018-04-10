@@ -1,28 +1,26 @@
 ﻿@model RaadHetWoordGit.ViewModels.GameViewModel
 
 <head>
-    <script type="text/javascript" src="js/GameScripts.js"></script>
+    <title>@Model.Game.TeamList[0].ToString() @Model.Game.TeamList[1].ToString()</title>
+    <script src="js/GameScripts.js"></script>
 </head>
 
 <!-- Overzicht van teams -->
 <div class="row">
     <div class="col-lg-6">
-        <p>@Model.Game.TeamList[0].ToString()</p>
+        <h3>@Model.Game.TeamList[0].ToString()</h3>
     </div>
     <div class="col-lg-6">
-        <p>@Model.Game.TeamList[1].ToString()</p>
+        <h3>@Model.Game.TeamList[1].ToString()</h3>
     </div>
 </div>
 
-@if (@Model.WordlistClass == "visible")
-{
-    <!-- Overzicht van woorden -->
-    <div>
-        <div class="row" id="wordlistContainer">
-            @for (int i = 1; i <= 5; i++)
-            {
-                <div class="col-lg-2 gameword" id="word @i" onclick="changeScore()"><p class="gamewordtext">@Model.Game.Wordlist.Words[i]</p></div>
-            }
-        </div>
+<!-- Overzicht van woorden -->
+<div>
+    <div class="row" id="wordlistContainer">
+        @for (int i = 1; i <= 5; i++)
+        {
+            <div class="col-lg-2 gameword" id="word @i" onclick="changeScore()"><p class="gamewordtext">@Model.Game.Wordlist.Words[i]</p></div>
+        }
     </div>
-}
+</div>

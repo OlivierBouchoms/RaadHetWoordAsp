@@ -50,8 +50,8 @@ namespace RaadHetWoordGit.Controllers
 
             List<Team> teams = new List<Team>(2)
             {
-                _teamLogic.FillWithData(new Team(viewModel.TeamOne)),
-                _teamLogic.FillWithData(new Team(viewModel.TeamTwo))
+                new Team(viewModel.TeamOne),
+                new Team(viewModel.TeamTwo)
             };
 
             viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
@@ -64,8 +64,8 @@ namespace RaadHetWoordGit.Controllers
             viewModel.TeamColumnClass = "visible";
 
             var jsonString = JsonConvert.SerializeObject(viewModel);
-            Debug.WriteLine(jsonString);
-            //viewmodel in sessie plaatsen
+
+            //Viewmodel in sessie plaatsen
             HttpContext.Session.SetString("", jsonString);
 
             return View(viewModel);
@@ -89,11 +89,16 @@ namespace RaadHetWoordGit.Controllers
         {
             InitializeLogic();
 
-            var json = HttpContext.Session.GetString("");
-            Debug.WriteLine(json);
-            GameViewModel viewModel = JsonConvert.DeserializeObject<GameViewModel>(json);
-            //viewmodel uit sessie halen
-            //Nieuwe ronde starten
+            GameViewModel viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(""));
+
+            List<Team> teams = new List<Team>(2)
+            {
+                new Team(viewModel.TeamOne),
+                new Team(viewModel.TeamTwo)
+            };
+
+            viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game); 
+
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
             viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
 
