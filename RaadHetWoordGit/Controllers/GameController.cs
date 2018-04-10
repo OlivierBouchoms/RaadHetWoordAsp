@@ -59,6 +59,7 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.TeamFormClass = "hidden";
             viewModel.TeamColumnClass = "visible";
+            //viewmodel in sessie plaatsen
 
             return View(viewModel);
         }
@@ -77,8 +78,9 @@ namespace RaadHetWoordGit.Controllers
         /// The page to play a game
         /// </summary>
         [HttpPost]
-        public ActionResult PlayGame(GameViewModel viewModel)
+        public ActionResult PlayGame()
         {
+            //viewmodel uit sessie halen
             //Nieuwe ronde starten
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 

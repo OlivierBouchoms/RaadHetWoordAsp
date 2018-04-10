@@ -1,5 +1,5 @@
 ﻿//All Javascript logic for the game
 
-function startGame() {
+function changeScore() {
 
 }

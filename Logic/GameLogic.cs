@@ -7,7 +7,7 @@ namespace Logic
 {
     public class GameLogic
     {
-        private GameRepository repo;
+        private readonly GameRepository repo;
 
         public GameLogic(GameRepository gameRepository)
         {

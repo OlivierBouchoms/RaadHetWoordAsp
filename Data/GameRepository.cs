@@ -7,7 +7,7 @@ namespace Data
 {
     public class GameRepository
     {
-        private IGameContext context;
+        private readonly IGameContext context;
 
         public GameRepository(IGameContext context)
         {

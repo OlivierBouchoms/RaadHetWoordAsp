@@ -1,4 +1,9 @@
 ﻿@model RaadHetWoordGit.ViewModels.GameViewModel
+
+<head>
+    <script type="text/javascript" src="js/GameScripts.js"></script>
+</head>
+
 <!-- Overzicht van teams -->
 <div class="row">
     <div class="col-lg-6">
@@ -13,7 +18,7 @@
 {
     <!-- Overzicht van woorden -->
     <div>
-        <div class="row">
+        <div class="row" id="wordlistContainer">
             @for (int i = 0; i <= 5; i++)
             {
                 <div class="col-lg-2" id="word @i" onclick="changeScore()">@Model.Game.Wordlist.Words[i]</div>
