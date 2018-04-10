@@ -52,8 +52,9 @@ namespace Data
             }
 
             var commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
-                              "Values @name, 0, 0, 0, 0)";
+                              "Values (@name, 0, 0, 0, 0)";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() == 1)
             {
                 sqlConnection.Close();
