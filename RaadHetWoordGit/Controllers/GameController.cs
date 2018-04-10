@@ -42,8 +42,7 @@ namespace RaadHetWoordGit.Controllers
                 return View(viewModel);
             }
 
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+            InitializeLogic();
 
             List<Team> teams = new List<Team>(2)
             {
@@ -52,7 +51,8 @@ namespace RaadHetWoordGit.Controllers
             };
 
             viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
-            viewModel.Game.Wordlist = new Wordlist(_wordListLogic.GetWords());
+            viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
+            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
 
             viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
             viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
@@ -64,11 +64,24 @@ namespace RaadHetWoordGit.Controllers
         }
 
         /// <summary>
+        /// Initialize logic classes
+        /// </summary>
+        private void InitializeLogic()
+        {
+            _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+        }
+
+        /// <summary>
         /// The page to play a game
         /// </summary>
         [HttpPost]
         public ActionResult PlayGame(GameViewModel viewModel)
         {
+            //Nieuwe ronde starten
+            viewModel.Game.CurrentRound = new Round(viewModel.Game);
+
             viewModel.WordlistClass = "visible";
             return View(viewModel);
         }

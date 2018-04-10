@@ -5,17 +5,15 @@ namespace Data
 {
     public class GameMemoryContext: IGameContext
     {
-        public bool AddTeams(List<Team> teams, Game game)
+        public Game AddTeams(Game game, List<Team> teams)
         {
-            try
-            {
-                game.TeamList = teams;
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return new Game(game.Maxscore, teams);
+        }
+
+        public Game AddWordlist(Game game, Wordlist wordlist)
+        {
+            game.AddWordlist(wordlist);
+            return game;
         }
     }
 }

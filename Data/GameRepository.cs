@@ -14,9 +14,14 @@ namespace Data
             this.context = context;
         }
 
-        public bool AddTeams(List<Team> teams, Game game)
+        public Game AddTeams(List<Team> teams, Game game)
         {
-            return context.AddTeams(teams, game);
+            return context.AddTeams(game, teams);
+        }
+
+        public Game AddWordlist(Game game, Wordlist wordlist)
+        {
+            return context.AddWordlist(game, wordlist);
         }
     }
 }

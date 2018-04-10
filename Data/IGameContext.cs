@@ -7,6 +7,8 @@ namespace Data
 {
     public interface IGameContext
     {
-        bool AddTeams(List<Team> teams, Game game);
+        Game AddTeams(Game game, List<Team> teams);
+
+        Game AddWordlist(Game game, Wordlist wordlist);
     }
 }
