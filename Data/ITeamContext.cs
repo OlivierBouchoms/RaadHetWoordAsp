@@ -5,10 +5,6 @@ namespace Data
 {
     public interface ITeamContext
     {
-        //Moet kunnen kijken of team bestaat
-        //Moet een team kunnen toevoegen
-        //Moet een team kunnen verwijderen
-
         bool CheckIfExists(Team team);
 
         bool AddTeam(Team team);

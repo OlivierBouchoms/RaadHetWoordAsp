@@ -1,5 +1,4 @@
-﻿using System;
-using Models;
+﻿using Models;
 
 namespace RaadHetWoordGit.ViewModels
 {
@@ -11,15 +10,14 @@ namespace RaadHetWoordGit.ViewModels
         public bool TeamOneSuccess { get; set; }
         public bool TeamTwoSuccess { get; set; }
 
+        public string TeamColumnClass { get; set; }
+        public string TeamFormClass { get; set; }
+        public string WordlistClass { get; set; }
+
         //Naar Controller
         public string TeamOne { get; set; }
         public string TeamTwo { get; set; }
 
         public int MaxScore { get; set; }
-
-        //Beide kanten
-        public string TeamColumnClass { get; set; }
-        public string TeamFormClass { get; set; }
-
     }
 }

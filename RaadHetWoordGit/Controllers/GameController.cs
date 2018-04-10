@@ -22,6 +22,7 @@ namespace RaadHetWoordGit.Controllers
             var viewModel = new GameViewModel();
             viewModel.TeamColumnClass = "hidden";
             viewModel.TeamFormClass = "visible";
+            viewModel.WordlistClass = "hidden";
 
             return View(viewModel);
         }
@@ -62,6 +63,12 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult PlayGame(GameViewModel viewModel)
+        {
+            viewModel.WordlistClass = "visible";
+            return View(viewModel);
+        }
 
         /// <summary>
         /// Trim the strings and check for duplicates/empty values
@@ -98,8 +105,6 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Remove whitespace from strings
         /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
         private GameViewModel TrimStrings(GameViewModel viewModel)
         {
             viewModel.TeamOne = viewModel.TeamOne.Trim();
@@ -110,7 +115,6 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Validates the MaxScore int to prevent a too high, too low or null value.
         /// </summary>
-        /// <param name="input">Input from view.</param>
         private int MaxScore(int input)
         {
             if (input < 5)

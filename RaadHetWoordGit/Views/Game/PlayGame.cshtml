@@ -1,0 +1,25 @@
+﻿@model RaadHetWoordGit.ViewModels.GameViewModel
+
+<h2>PlayGame</h2>
+
+<!-- Overzicht van teams -->
+<div class="row">
+    <div class="col-lg-6">
+        <p>@Model.Game.TeamList[0].ToString()</p>
+    </div>
+    <div class="col-lg-6">
+        <p>@Model.Game.TeamList[1].ToString()</p>
+    </div>
+</div>
+
+@if (@Model.WordlistClass == "visible")
+{
+    <!-- Overzicht van woorden -->
+    <div>
+        <div class="row">
+             @for (int i = 0; i <= 5; i++)
+             {
+                 <div class="col-lg-2">@Model.Game.Wordlist.Words[i]</div>
+             }
+        </div>
+    </div>

@@ -20,7 +20,6 @@ namespace Logic
 
         public bool AddTeam(Team team)
         {
-            //Bestaat het team
             if (CheckIfExists(team))
             {
                 return false;
