@@ -46,7 +46,10 @@ namespace Models
 
         public void DecreaseScore()
         {
-            Score--;
+            if (Score > 0)
+            {
+                Score--;
+            }
         }
 
         public void IncreaseTurns()
