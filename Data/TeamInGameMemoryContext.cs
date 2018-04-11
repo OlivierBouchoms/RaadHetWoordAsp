@@ -2,7 +2,7 @@
 
 namespace Data
 {
-    class TeamInGameMemoryContext : ITeamInGameContext 
+    public class TeamInGameMemoryContext : ITeamInGameContext 
     {
         public Team IncreaseScore(Team team)
         {

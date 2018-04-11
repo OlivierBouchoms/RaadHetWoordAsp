@@ -103,6 +103,12 @@ namespace RaadHetWoordGit.Controllers
             viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
 
             viewModel.WordlistClass = "visible";
+
+            var jsonString = JsonConvert.SerializeObject(viewModel);
+
+            //Viewmodel in sessie plaatsen
+            HttpContext.Session.SetString("", jsonString);
+
             return View(viewModel);
         }
 

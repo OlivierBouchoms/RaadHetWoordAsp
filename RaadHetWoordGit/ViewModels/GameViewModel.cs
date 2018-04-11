@@ -18,6 +18,8 @@ namespace RaadHetWoordGit.ViewModels
         public string TeamOne { get; set; }
         public string TeamTwo { get; set; }
 
+        public bool Increase { get; set; }
+
         public int MaxScore { get; set; }
     }
 }

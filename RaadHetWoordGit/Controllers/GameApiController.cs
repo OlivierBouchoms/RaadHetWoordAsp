@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using Data;
 using Logic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Newtonsoft.Json;
 using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
@@ -22,16 +24,20 @@ namespace RaadHetWoordGit.Controllers
         [HttpPatch]
         public IActionResult ChangeScore(GameViewModel viewModel)
         {
-            bool increase = (new Random().Next() % 2 == 0);
+            var vm = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(""));
+            viewModel.Game = vm.Game;
+
+            var increase = viewModel.Increase;
             if (increase)
             {
                 _teamLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
+                return new NoContentResult();
             }
             else
             {
                 _teamLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
+                return new NoContentResult();
             }
-            return new NoContentResult();
         }
     }
 }

@@ -2,16 +2,18 @@
 
 <head>
     <title>@Model.Game.TeamList[0].ToString() @Model.Game.TeamList[1].ToString()</title>
-    <script src="js/GameScripts.js"></script>
+    <script src="/js/GameScripts.js"></script>
 </head>
 
 <!-- Overzicht van teams -->
 <div class="row">
     <div class="col-lg-6">
-        <h3>@Model.Game.TeamList[0].ToString()</h3>
+        <h3>@Model.Game.TeamList[0].Name</h3>
+        <p>@Model.Game.TeamList[0].Score.ToString()</p>
     </div>
     <div class="col-lg-6">
-        <h3>@Model.Game.TeamList[1].ToString()</h3>
+        <h3>@Model.Game.TeamList[1].Name</h3>
+        <p>@Model.Game.TeamList[1].Score.ToString()</p>
     </div>
 </div>
 
@@ -20,7 +22,7 @@
     <div class="row" id="wordlistContainer">
         @for (int i = 1; i <= 5; i++)
         {
-            <div class="col-lg-2 gameword" id="word @i" onclick="changeScore()"><p class="gamewordtext">@Model.Game.Wordlist.Words[i]</p></div>
+            <div class="col-lg-2 gameword" id="word @i" onclick="changeScore(event)"><p class="gamewordtext">@Model.Game.Wordlist.Words[i]</p></div>
         }
     </div>
 </div>

@@ -8,7 +8,7 @@ namespace Logic
 {
     public class TeamInGameLogic
     {
-        private TeamInGameRepository repo;
+        private readonly TeamInGameRepository repo;
 
         public TeamInGameLogic(TeamInGameRepository repo)
         {

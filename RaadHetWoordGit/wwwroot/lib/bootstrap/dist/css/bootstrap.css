@@ -3060,6 +3060,11 @@ select[multiple].input-lg {
     line-height: 350%;
 }
 
+.correct {
+    background-color: #7ae27a;
+    color: black;
+}	
+
 /* Einde eigen css*/
 
 

@@ -4,7 +4,7 @@ namespace Data
 {
     public class TeamInGameRepository
     {
-        private ITeamInGameContext context;
+        private readonly ITeamInGameContext context;
 
         public TeamInGameRepository(ITeamInGameContext context)
         {

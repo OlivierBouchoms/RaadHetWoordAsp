@@ -26,14 +26,6 @@ namespace Data
             return context.FillWithData(team);
         }
 
-        public Team IncreaseScore(Team team)
-        {
-            return context.IncreaseScore(team);
-        }
-
-        public Team DecreaseScore(Team team)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }
