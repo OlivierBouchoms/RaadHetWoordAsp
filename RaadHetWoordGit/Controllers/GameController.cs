@@ -66,7 +66,7 @@ namespace RaadHetWoordGit.Controllers
             var jsonString = JsonConvert.SerializeObject(viewModel);
 
             //Viewmodel in sessie plaatsen
-            HttpContext.Session.SetString("", jsonString);
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(viewModel));
 
             return View(viewModel);
         }
@@ -89,7 +89,7 @@ namespace RaadHetWoordGit.Controllers
         {
             InitializeLogic();
 
-            GameViewModel viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(""));
+            GameViewModel viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
 
             List<Team> teams = new List<Team>(2)
             {
@@ -104,10 +104,10 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.WordlistClass = "visible";
 
-            var jsonString = JsonConvert.SerializeObject(viewModel);
+            var jsonString = JsonConvert.SerializeObject(nameof(GameViewModel));
 
             //Viewmodel in sessie plaatsen
-            HttpContext.Session.SetString("", jsonString);
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(viewModel));
 
             return View(viewModel);
         }

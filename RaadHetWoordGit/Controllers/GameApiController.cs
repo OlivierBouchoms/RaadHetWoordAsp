@@ -21,23 +21,37 @@ namespace RaadHetWoordGit.Controllers
             _teamLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
         }
 
-        [HttpPatch]
-        public IActionResult ChangeScore(GameViewModel viewModel)
+        [HttpGet]
+        public IEnumerable<string> GetAll()
         {
-            var vm = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(""));
-            viewModel.Game = vm.Game;
+            var hoi = new List<string>();
+            for (int i = 0; i < 5; i++)
+            {
+                hoi.Add($"hoi {i}");
+            }
 
-            var increase = viewModel.Increase;
+            return hoi;
+        }
+
+        [HttpPatch]
+        public IActionResult ChangeScore(bool increase)
+        {
+            //Probleem: probeert een round object te maken. Dit gaat niet omdat er nog geen game object is om een ronde mee te maken
+            var vm = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
+
             if (increase)
             {
-                _teamLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
+                _teamLogic.IncreaseScore(vm.Game.CurrentRound.Team);
+
+                //Viewmodel in sessie plaatsen
+                HttpContext.Session.SetString(key: nameof(GameViewModel), value: JsonConvert.SerializeObject(vm));
                 return new NoContentResult();
             }
-            else
-            {
-                _teamLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
-                return new NoContentResult();
-            }
+            _teamLogic.DecreaseScore(vm.Game.CurrentRound.Team);
+
+            //Viewmodel in sessie plaatsen
+            HttpContext.Session.SetString(key: nameof(GameViewModel), value: JsonConvert.SerializeObject(vm));
+            return new NoContentResult();
         }
     }
 }

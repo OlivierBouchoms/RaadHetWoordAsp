@@ -8,7 +8,7 @@ namespace Models
     public class Round
     {
         public Team Team { get; set; }
-        public int Time { get; private set; }
+        public int Time { get; set; }
         public static int playerindex { get; private set; }
 
         public Round(Game game)

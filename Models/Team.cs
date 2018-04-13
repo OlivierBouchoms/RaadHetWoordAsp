@@ -4,7 +4,7 @@ namespace Models
 {
     public class Team
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public int Score { get; private set; }
         public int Turns { get; private set; }
         public int Wins { get; }
