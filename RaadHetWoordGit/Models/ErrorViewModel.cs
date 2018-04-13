@@ -1,5 +1,3 @@
-using System;
-
 namespace RaadHetWoordGit.Models
 {
     public class ErrorViewModel
