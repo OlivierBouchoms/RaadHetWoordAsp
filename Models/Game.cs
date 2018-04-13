@@ -5,7 +5,7 @@ namespace Models
     public class Game
     {
         public List<Team> TeamList { get; set; }
-        public int Maxscore { get; set'; }
+        public int Maxscore { get; set; }
         public Round CurrentRound { get; set; }
         public Wordlist Wordlist { get; set; }
 
