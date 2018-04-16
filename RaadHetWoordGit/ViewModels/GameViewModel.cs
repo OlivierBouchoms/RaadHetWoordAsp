@@ -1,7 +1,9 @@
-﻿using Models;
+﻿using System;
+using Models;
 
 namespace RaadHetWoordGit.ViewModels
 {
+    [Serializable]
     public class GameViewModel
     {
         //Naar UI

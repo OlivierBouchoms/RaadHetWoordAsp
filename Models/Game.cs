@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Models
 {
-    public class Game
+    [Serializable]
+    public class Game 
     {
         public List<Team> TeamList { get; set; }
         public int Maxscore { get; set; }

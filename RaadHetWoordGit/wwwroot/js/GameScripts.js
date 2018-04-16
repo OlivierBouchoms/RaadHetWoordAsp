@@ -11,17 +11,20 @@ function changeScore(event) {
     var id = sender.id;
     var element = document.getElementById(id);
 
-    var isCorrect = element.classList.contains("correct");
-    if (isCorrect) {
+    var _increase = element.classList.contains("correct");
+    //invert bool
+    _increase = !_increase;
+    if (_increase) {
         $.ajax({
             type: 'PATCH',
             url: uri,
-            data: { increase: isCorrect },
+            data: { increase: _increase },
             dataType: "json",
-            success: function() {
+            success: function () {
                 element.classList.remove("correct");
+                alert("correct");
             },
-            error: function() {
+            error: function () {
                 alert("fout");
             }
         });
@@ -31,7 +34,7 @@ function changeScore(event) {
         $.ajax({
             type: 'PATCH',
             url: uri,
-            data: { increase: isCorrect },
+            data: { increase: _increase },
             dataType: "json",
             success: function () {
                 element.classList.add("correct");

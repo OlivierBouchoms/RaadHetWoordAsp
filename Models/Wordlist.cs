@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Models
 {
+    [Serializable]
     public class Wordlist
     {
         internal string Title { get; private set; }

@@ -20,5 +20,9 @@ namespace Data
         List<Team> GetTeamsByWinLoss();
 
         Team FillWithData(Team team);
+
+        bool IncreaseScore(Team team);
+
+        bool DecreaseScore(Team team);
     }
 }

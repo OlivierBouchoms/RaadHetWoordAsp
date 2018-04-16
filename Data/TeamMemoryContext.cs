@@ -4,7 +4,7 @@ using Models;
 namespace Data
 {
     /// <summary>
-    /// Wordt eigenlijk niet gebruikt
+    /// Wordt niet gebruikt
     /// </summary>
     public class TeamMemoryContext : ITeamContext
     {
@@ -49,6 +49,16 @@ namespace Data
         }
 
         public Team FillWithData(Team team)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool IncreaseScore(Team team)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool DecreaseScore(Team team)
         {
             throw new System.NotImplementedException();
         }

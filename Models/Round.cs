@@ -1,10 +1,18 @@
-﻿namespace Models
+﻿using System;
+
+namespace Models
 {
+    [Serializable]
     public class Round
     {
         public Team Team { get; set; }
         public int Time { get; set; }
         public static int playerindex { get; private set; }
+
+        public Round()
+        {
+            //Empty
+        }
 
         public Round(Game game)
         {

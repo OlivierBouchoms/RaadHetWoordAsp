@@ -32,6 +32,14 @@ namespace Logic
             return repo.FillWithData(team);
         }
 
-        
+        public bool IncreaseScore(Team team)
+        {
+            return repo.IncreaseScore(team);
+        }
+
+        public bool DecreaseScore(Team team)
+        {
+            return repo.DecreaseScore(team);
+        }
     }
 }

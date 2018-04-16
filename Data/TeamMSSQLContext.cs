@@ -92,6 +92,50 @@ namespace Data
             return team;
         }
 
+        public bool IncreaseScore(Team team)
+        {
+            var sqlConnection = DataBase._SqlConn;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [Team] SET [Score] = [Score] + 1 where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool DecreaseScore(Team team)
+        {
+            var sqlConnection = DataBase._SqlConn;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Get all teams sorted by alpabet
         /// </summary>

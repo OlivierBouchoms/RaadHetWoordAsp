@@ -26,6 +26,15 @@ namespace Data
             return context.FillWithData(team);
         }
 
-        
+
+        public bool IncreaseScore(Team team)
+        {
+            return context.IncreaseScore(team);
+        }
+
+        public bool DecreaseScore(Team team)
+        {
+            return context.DecreaseScore(team);
+        }
     }
 }

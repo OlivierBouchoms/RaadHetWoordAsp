@@ -1,1 +1,5 @@
 Objecten apart serializeren, in session zetten en vervolgens apart instantieren en weer samenvoegen
+
+OF
+
+Serializable toevoegen aan alle classes
