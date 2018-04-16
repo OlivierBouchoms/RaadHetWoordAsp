@@ -3030,9 +3030,11 @@ select[multiple].input-lg {
 }
 
 .gameword {
-    border: 1px solid #E0DBD7;
+    border: 1px solid #a8a4a1;
     border-radius: 5px;
     font-size: 16px;
+    height: 40px;
+    line-height: 40px;
     margin-left: 2.5%;
     margin-right: 2.5%;
     width: 15%;
