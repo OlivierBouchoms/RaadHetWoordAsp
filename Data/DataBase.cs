@@ -8,13 +8,6 @@ namespace Data
         /// SqlConnection object that is used in all the MSSQL contexts.
         /// </summary>
         /// <returns>A SqlConnection object.</returns>
-        public static SqlConnection _SqlConn
-        {
-            get
-            {
-                return new SqlConnection(DataBaseResources.ConnectionString);
-            }
-        }
-
+        public static SqlConnection _SqlConn => new SqlConnection(DataBaseResources.ConnectionString);
     }
 }

@@ -5,11 +5,11 @@ namespace Logic
 {
     public class WordListLogic
     {
-        private WordListRepository repo;
+        private readonly WordListRepository repo;
 
         public WordListLogic(WordListRepository wordListRepository)
         {
-            this.repo = wordListRepository;
+            repo = wordListRepository;
         }
 
         public List<string> GetWords()
