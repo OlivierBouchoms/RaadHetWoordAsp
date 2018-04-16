@@ -30,13 +30,13 @@ namespace RaadHetWoordGit.Controllers
         [HttpGet]
         public IEnumerable<string> GetAll()
         {
-            var hoi = new List<string>();
+            var products = new List<string>();
             for (int i = 0; i < 5; i++)
             {
-                hoi.Add($"hoi {i}");
+                products.Add($"hoi {i}");
             }
 
-            return hoi;
+            return products;
         }
 
         [HttpPatch]
@@ -47,18 +47,14 @@ namespace RaadHetWoordGit.Controllers
 
             if (increase)
             {
-                Debug.WriteLine(viewModel.Game.CurrentRound.Team.Score);
                 _teamInGameLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
-                Debug.WriteLine(viewModel.Game.CurrentRound.Team.Score);
 
                 _teamLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
                 //Viewmodel in sessie plaatsen
                 PlaceViewModelInSession(viewModel, true);
                 return new NoContentResult();
             }
-            Debug.WriteLine(viewModel.Game.CurrentRound.Team.Score);
             _teamInGameLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
-            Debug.WriteLine(viewModel.Game.CurrentRound.Team.Score);
 
             _teamLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
 
