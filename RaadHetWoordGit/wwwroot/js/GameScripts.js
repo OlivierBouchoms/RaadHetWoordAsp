@@ -39,10 +39,9 @@ function changeScore(event) {
             success: function () {
                 element.classList.add("correct");
                 _increase = false;
-                alert("correct");
             },
             error: function () {
-                alert("fout");
+                alert("fout in backend");
             }
         });
         //Ajax request om score van huidig team te verminderen
@@ -58,7 +57,7 @@ function changeScore(event) {
                 _increase = true;
             },
             error: function () {
-                alert("fout");
+                alert("fout in backend");
             }
         });
     }
