@@ -1,0 +1,1 @@
+Objecten apart serializeren, in session zetten en vervolgens apart instantieren en weer samenvoegen
