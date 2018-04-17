@@ -42,7 +42,6 @@ namespace RaadHetWoordGit.Controllers
         [HttpPatch]
         public IActionResult ChangeScore(bool increase)
         {
-            //Probleem: probeert een round object te maken. Dit gaat niet omdat er nog geen game object is om een ronde mee te maken
             var viewModel = GetViewModelFromSession(true);
 
             if (increase)
@@ -59,6 +58,12 @@ namespace RaadHetWoordGit.Controllers
             PlaceViewModelInSession(viewModel, false);
 
             return new NoContentResult();
+        }
+
+        [HttpPost]
+        public IActionResult NextRound()
+        {
+            return Json(Url.Action("Index", "Home"));
         }
 
         /// <summary>
