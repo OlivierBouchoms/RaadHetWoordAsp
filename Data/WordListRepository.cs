@@ -13,7 +13,7 @@ namespace Data
 
         public List<string> GetWords()
         {
-            return context.GetWordsFromWordlist();
+            return context.GetWords();
         }
     }
 }

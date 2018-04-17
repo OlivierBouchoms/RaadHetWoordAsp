@@ -6,6 +6,31 @@ namespace Data
 {
     public class WordListMSSQLContext : IWordListContext
     {
+        public List<string> GetWords()
+        {
+            var words = new List<string>();
+            var sqlConnection = DataBase.MsSql;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return new List<string>();
+            }
+
+            string query = "SELECT [text] FROM Word";
+            var sqlCommand = new SqlCommand(query, sqlConnection);
+            var sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                words.Add(sqlDataReader.GetString(0));
+            }
+
+            sqlConnection.Close();
+            return words;
+        }
+
         public List<string> GetWordsFromWordlist()
         {
             var words = new List<string>();

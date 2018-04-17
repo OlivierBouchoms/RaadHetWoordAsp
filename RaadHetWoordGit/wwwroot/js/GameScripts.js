@@ -40,16 +40,18 @@ function startTimer() {
     timer = setTimeout(nextRound, 30000);
 }
 
-function nextRound(event) {
-    $.ajax({
-        type: 'POST',
-        url: uri,
-        success: function (uri) {
-            console.log(uri);
-            window.location.href = uri;
-        },
-        error: function () {
-            alert("fout in backend");
-        }
-    })
+function nextRound() {
+    $("#btnnextround").trigger("click");
 }
+
+//function nextRound(event) {
+//    $.ajax({
+//        type: 'POST',
+//        url: uri,
+//        success: function() {
+//        },
+//        error: function() {
+//            alert("fout in backend");
+//        }
+//    });
+//}

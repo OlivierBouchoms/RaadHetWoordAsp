@@ -4,6 +4,7 @@ namespace Data
 {
     public interface IWordListContext
     {
+        List<string> GetWords();
         List<string> GetWordsFromWordlist();
     }
 }
