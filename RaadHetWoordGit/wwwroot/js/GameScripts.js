@@ -3,6 +3,10 @@
 var uri = "/api/GameApi";
 var domain = document.domain;
 var _increase;
+var timer;
+
+//Start the timer when document is loaded
+$(document).ready(startTimer() );
 
 function changeScore(event) {
     //event.target is the sender of the event, in this case the element that's clicked
@@ -33,4 +37,22 @@ function changeScore(event) {
                 alert("fout in backend");
             }
         });
-    }
+}
+
+function startTimer() {
+    timer = setTimeout(nextRound, 30000);
+}
+
+function nextRound(event) {
+    $.ajax({
+        type: 'POST',
+        url: uri,
+        success: function (uri) {
+            console.log(uri);
+            window.location.href = uri;
+        },
+        error: function () {
+            alert("fout in backend");
+        }
+    })
+}

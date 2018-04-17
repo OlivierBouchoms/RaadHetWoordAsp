@@ -50,7 +50,7 @@ namespace RaadHetWoordGit.Controllers
 
             InitializeLogic();
 
-            List<Team> teams = new List<Team>(2)
+            var teams = new List<Team>(2)
             {
                 new Team(viewModel.TeamOne),
                 new Team(viewModel.TeamTwo)
@@ -89,16 +89,24 @@ namespace RaadHetWoordGit.Controllers
         {
             InitializeLogic();
 
-            var viewModel = GetViewModelFromSession(false);
+            var viewModel = GetViewModelFromSession(true);
 
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
-            viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
+            try
+            {
+                viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
+            }
+            catch
+            {
+                viewModel.Game.TeamList[Round.playerindex - 0] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 0]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 0]);
+            }
 
-            _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
 
             try
             {
-                //Throw an exception if Wordlist is empty
+                //Throws an exception if Wordlist is empty
                 if (viewModel.Game.Wordlist.Words != null);
             }
             catch
@@ -116,6 +124,7 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Place gameviewmodel in session 
         /// </summary>
+        /// <param name="_round">Is there a round to store in the session?</param>
         private void PlaceViewModelInSession(GameViewModel inputViewModel, bool _round)
         {
             var teamList = inputViewModel.Game.TeamList;
@@ -145,8 +154,8 @@ namespace RaadHetWoordGit.Controllers
 
         /// <summary>
         /// Retrieve gameviewmodel from session
-        /// </summary>
-        /// <returns></returns>
+        /// </summary>        
+        /// <param name="_round">Is there a round to store in the session?</param>
         private GameViewModel GetViewModelFromSession(bool _round)
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));
@@ -156,11 +165,12 @@ namespace RaadHetWoordGit.Controllers
             viewModel.Game.TeamList = teamList;
             viewModel.Game.Wordlist = wordList;
 
-            if (_round)
+            try
             {
                 var round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
                 viewModel.Game.CurrentRound = round;
             }
+            catch { }
 
             return viewModel;
         }

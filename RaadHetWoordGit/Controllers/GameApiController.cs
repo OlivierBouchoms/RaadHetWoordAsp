@@ -22,6 +22,17 @@ namespace RaadHetWoordGit.Controllers
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
         }
 
+        [HttpPost]
+        public IActionResult NextRound()
+        {
+            var viewModel = GetViewModelFromSession(true);
+            viewModel.Game.CurrentRound = new Round(viewModel.Game);
+
+            PlaceViewModelInSession(viewModel, true);
+
+            return Json(Url.Action("PlayGame", "Game"));
+        }
+
         [HttpPatch]
         public IActionResult ChangeScore(bool increase)
         {
@@ -46,6 +57,7 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Place gameviewmodel in session 
         /// </summary>
+        /// <param name="_round">Is there a round to store in the session?</param>
         private void PlaceViewModelInSession(GameViewModel inputViewModel, bool _round)
         {
             var teamList = inputViewModel.Game.TeamList;
@@ -75,8 +87,8 @@ namespace RaadHetWoordGit.Controllers
 
         /// <summary>
         /// Retrieve gameviewmodel from session
-        /// </summary>
-        /// <returns></returns>
+        /// </summary>        
+        /// <param name="_round">Is there a round to store in the session?</param>
         private GameViewModel GetViewModelFromSession(bool _round)
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));

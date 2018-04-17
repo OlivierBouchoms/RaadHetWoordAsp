@@ -5,13 +5,23 @@
 
 <!-- Overzicht van teams -->
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-12 text-center">
+        <h3>Huidige team: @Model.Game.CurrentRound.Team.Name</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 text-center">
         <h3>@Model.Game.TeamList[0].Name</h3>
         <p id="scoreTeam0">@Model.Game.TeamList[0].Score.ToString()</p>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 text-center">
         <h3>@Model.Game.TeamList[1].Name</h3>
         <p id="scoreTeam1">@Model.Game.TeamList[1].Score.ToString()</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <div class="btn btn-success" onclick="nextRound(event)">Volgende</div>
     </div>
 </div>
 
