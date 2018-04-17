@@ -16,27 +16,11 @@ namespace RaadHetWoordGit.Controllers
     {
         private readonly TeamInGameLogic _teamInGameLogic;
         private readonly TeamLogic _teamLogic;
-        private readonly GameLogic _gameLogic;
-        private readonly WordListLogic _wordListLogic;
 
         public GameApiController()
         {
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
-            _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
-        }
-
-        [HttpGet]
-        public IEnumerable<string> GetAll()
-        {
-            var products = new List<string>();
-            for (int i = 0; i < 5; i++)
-            {
-                products.Add($"hoi {i}");
-            }
-
-            return products;
         }
 
         [HttpPatch]
