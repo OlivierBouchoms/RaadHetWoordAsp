@@ -64,6 +64,9 @@ namespace Data
             return false;
         }
 
+        /// <summary>
+        /// Not used
+        /// </summary>
         public Team FillWithData(Team team)
         {
             var sqlConnection = DataBase.MsSql;

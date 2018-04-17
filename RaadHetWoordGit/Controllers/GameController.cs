@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
@@ -94,13 +92,13 @@ namespace RaadHetWoordGit.Controllers
             var viewModel = GetViewModelFromSession(false);
 
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
-            Debug.WriteLine(Round.playerindex);
             viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
 
             _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
 
             try
             {
+                //Throw an exception if Wordlist is empty
                 if (viewModel.Game.Wordlist.Words != null);
             }
             catch
@@ -109,8 +107,6 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.WordlistClass = "visible";
             }
 
-
-            //Viewmodel in sessie plaatsen
             PlaceViewModelInSession(viewModel, true);
             HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(viewModel));
 
@@ -128,16 +124,16 @@ namespace RaadHetWoordGit.Controllers
             if (_round)
             {
                 round = inputViewModel.Game.CurrentRound;
-                HttpContext.Session.SetString(nameof(Round), value: JsonConvert.SerializeObject(round));
+                HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
                 inputViewModel.Game.CurrentRound = null;
             }
-            HttpContext.Session.SetString("TeamList", value: JsonConvert.SerializeObject(teamList));
-            HttpContext.Session.SetString(nameof(Wordlist), value: JsonConvert.SerializeObject(wordList));
+            HttpContext.Session.SetString("TeamList", JsonConvert.SerializeObject(teamList));
+            HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
 
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
 
-            HttpContext.Session.SetString(nameof(GameViewModel), value: JsonConvert.SerializeObject(inputViewModel));
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(inputViewModel));
 
             inputViewModel.Game.TeamList = teamList;
             inputViewModel.Game.Wordlist = wordList;
@@ -155,8 +151,8 @@ namespace RaadHetWoordGit.Controllers
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));
             var wordList = JsonConvert.DeserializeObject<Wordlist>(HttpContext.Session.GetString(nameof(Wordlist)));
-
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
+
             viewModel.Game.TeamList = teamList;
             viewModel.Game.Wordlist = wordList;
 

@@ -1,6 +1,5 @@
 ﻿//All Javascript logic for the game
 
-//https://localhost:44334/api/GameApi
 var uri = "/api/GameApi";
 var domain = document.domain;
 var _increase;

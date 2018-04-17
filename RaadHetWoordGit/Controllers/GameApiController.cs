@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Http;
@@ -82,8 +81,8 @@ namespace RaadHetWoordGit.Controllers
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));
             var wordList = JsonConvert.DeserializeObject<Wordlist>(HttpContext.Session.GetString(nameof(Wordlist)));
-
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
+
             viewModel.Game.TeamList = teamList;
             viewModel.Game.Wordlist = wordList;
 

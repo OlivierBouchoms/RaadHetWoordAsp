@@ -57,7 +57,7 @@ namespace RaadHetWoordGit
             {
                 routes.MapRoute(
                     "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
