@@ -42,7 +42,6 @@ namespace RaadHetWoordGit.Controllers
         [HttpPatch]
         public IActionResult ChangeScore(bool increase)
         {
-            //Probleem: probeert een round object te maken. Dit gaat niet omdat er nog geen game object is om een ronde mee te maken
             var viewModel = GetViewModelFromSession(true);
 
             if (increase)
