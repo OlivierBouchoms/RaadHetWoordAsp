@@ -9,15 +9,12 @@ var timer;
 $(document).ready(startTimer() );
 
 function changeScore(event) {
-    //event.target is the sender of the event, in this case the element that's clicked
     var sender = event.target;
     var id = sender.id;
     var element = document.getElementById(id);
 
     var _increase = !element.classList.contains("correct");
 
-    //If else statement kan in callback, is netter
-    
         $.ajax({
             type: 'PATCH',
             url: uri,
