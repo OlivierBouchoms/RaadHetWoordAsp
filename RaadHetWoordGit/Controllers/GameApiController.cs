@@ -48,17 +48,14 @@ namespace RaadHetWoordGit.Controllers
             if (increase)
             {
                 _teamInGameLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
-
                 _teamLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
-                //Viewmodel in sessie plaatsen
+
                 PlaceViewModelInSession(viewModel, true);
                 return new NoContentResult();
             }
             _teamInGameLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
-
             _teamLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
 
-            //Viewmodel in sessie plaatsen
             PlaceViewModelInSession(viewModel, false);
 
             return new NoContentResult();
@@ -75,16 +72,16 @@ namespace RaadHetWoordGit.Controllers
             if (_round)
             {
                 round = inputViewModel.Game.CurrentRound;
-                HttpContext.Session.SetString(key: nameof(Round), value: JsonConvert.SerializeObject(round));
+                HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
                 inputViewModel.Game.CurrentRound = null;
             }
-            HttpContext.Session.SetString(key: "TeamList", value: JsonConvert.SerializeObject(teamList));
-            HttpContext.Session.SetString(key: nameof(Wordlist), value: JsonConvert.SerializeObject(wordList));
+            HttpContext.Session.SetString("TeamList", JsonConvert.SerializeObject(teamList));
+            HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
 
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
 
-            HttpContext.Session.SetString(key: nameof(GameViewModel), value: JsonConvert.SerializeObject(inputViewModel));
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(inputViewModel));
 
             inputViewModel.Game.TeamList = teamList;
             inputViewModel.Game.Wordlist = wordList;

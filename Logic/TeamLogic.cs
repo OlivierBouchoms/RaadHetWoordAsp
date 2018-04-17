@@ -3,6 +3,9 @@ using Models;
 
 namespace Logic
 {
+    /// <summary>
+    /// Contains all database logic for Teams
+    /// </summary>
     public class TeamLogic
     {
         private readonly TeamRepository repo;

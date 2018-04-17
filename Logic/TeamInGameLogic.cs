@@ -3,13 +3,16 @@ using Models;
 
 namespace Logic
 {
+    /// <summary>
+    /// Contains all memory logic for Teams while ingame
+    /// </summary>
     public class TeamInGameLogic
     {
         private readonly TeamInGameRepository repo;
 
-        public TeamInGameLogic(TeamInGameRepository repo)
+        public TeamInGameLogic(TeamInGameRepository teamrepo)
         {
-            this.repo = repo;
+            repo = teamrepo;
         }
         
         public Team IncreaseScore(Team team)
