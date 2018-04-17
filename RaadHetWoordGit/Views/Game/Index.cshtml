@@ -5,7 +5,12 @@
     <!-- Teams invoeren -->
     <div class="@Model.TeamFormClass">
         <h2>Voeg teams toe!</h2>
-
+        @if (@Model.WarningClass == "visible")
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <strong>@ViewData["Warning"]</strong> @ViewData["ErrorText"]
+            </div>
+        }
         <form asp-action="Index" asp-controller="Game">
             <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 5, maximaal 100." class="form-control"><br />
             <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in." /><br />

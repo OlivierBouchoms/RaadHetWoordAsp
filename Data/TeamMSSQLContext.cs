@@ -92,6 +92,9 @@ namespace Data
             return team;
         }
 
+        /// <summary>
+        /// Increase score of given team
+        /// </summary>
         public bool IncreaseScore(Team team)
         {
             var sqlConnection = DataBase.MsSql;
@@ -114,6 +117,9 @@ namespace Data
             return false;
         }
 
+        /// <summary>
+        /// Decrease score of given team
+        /// </summary>
         public bool DecreaseScore(Team team)
         {
             var sqlConnection = DataBase.MsSql;
@@ -127,6 +133,31 @@ namespace Data
             }
 
             var commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Increase turns of given team
+        /// </summary>
+        public bool IncreaseTurns(Team team)
+        {
+            var sqlConnection = DataBase.MsSql;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [Team] SET [Turns] = [Turns] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)

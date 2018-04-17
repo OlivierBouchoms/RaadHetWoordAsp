@@ -44,5 +44,10 @@ namespace Logic
         {
             return repo.DecreaseScore(team);
         }
+
+        public bool IncreaseTurns(Team team)
+        {
+            return repo.InceaseTurns(team);
+        }
     }
 }

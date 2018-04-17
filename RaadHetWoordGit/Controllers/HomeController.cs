@@ -12,11 +12,5 @@ namespace RaadHetWoordGit.Controllers
 
             return View(viewModel);
         }
-
-        [HttpPost]
-        public async Task<ActionResult> Index(HomeIndexViewModel viewModel)
-        {
-            return View(viewModel);
-        }
     }
 }

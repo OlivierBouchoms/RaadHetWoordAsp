@@ -24,6 +24,7 @@ function changeScore(event) {
                 if (_increase) {
                     element.classList.add("correct");
                     _increase = false;
+
                 } else {
                     element.classList.remove("correct");
                     _increase = true;

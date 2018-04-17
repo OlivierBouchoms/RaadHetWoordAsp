@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +15,7 @@ namespace RaadHetWoordGit.Controllers
     public class GameController : Controller
     {
         private TeamLogic _teamLogic;
+        private TeamInGameLogic _teamInGameLogic;
         private GameLogic _gameLogic;
         private WordListLogic _wordListLogic;
 
@@ -41,6 +44,9 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.TeamTwoSuccess = false;
                 viewModel.TeamColumnClass = "hidden";
                 viewModel.TeamFormClass = "visible";
+                viewModel.WarningClass = "visible";
+                ViewData["Warning"] = "Let op!";
+                ViewData["ErrorText"] = "Namen zijn niet correct ingevoerd.";
                 return View(viewModel);
             }
 
@@ -57,9 +63,9 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
             viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
-
             viewModel.TeamFormClass = "hidden";
             viewModel.TeamColumnClass = "visible";
+            viewModel.WarningClass = "hidden";
 
             PlaceViewModelInSession(viewModel, false);
 
@@ -73,6 +79,7 @@ namespace RaadHetWoordGit.Controllers
         {
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
             _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
         }
 
@@ -87,9 +94,21 @@ namespace RaadHetWoordGit.Controllers
             var viewModel = GetViewModelFromSession(false);
 
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
-            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
+            Debug.WriteLine(Round.playerindex);
+            viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
 
-            viewModel.WordlistClass = "visible";
+            _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
+
+            try
+            {
+                if (viewModel.Game.Wordlist.Words != null);
+            }
+            catch
+            {
+                viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
+                viewModel.WordlistClass = "visible";
+            }
+
 
             //Viewmodel in sessie plaatsen
             PlaceViewModelInSession(viewModel, true);
@@ -155,11 +174,12 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         private bool ValuesAreValid(GameViewModel viewModel)
         {
-            viewModel = TrimStrings(viewModel);
             if (ValuesAreNull(viewModel))
             {
                 return false;
             }
+
+            viewModel = TrimStrings(viewModel);
 
             if (String.Equals(viewModel.TeamOne.ToLower(), viewModel.TeamTwo.ToLower()))
             {
@@ -189,6 +209,7 @@ namespace RaadHetWoordGit.Controllers
         {
             viewModel.TeamOne = viewModel.TeamOne.Trim();
             viewModel.TeamTwo = viewModel.TeamTwo.Trim();
+            
             return viewModel;
         }
 

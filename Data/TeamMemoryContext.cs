@@ -62,5 +62,10 @@ namespace Data
         {
             throw new System.NotImplementedException();
         }
+
+        public bool IncreaseTurns(Team team)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -24,5 +24,7 @@ namespace Data
         bool IncreaseScore(Team team);
 
         bool DecreaseScore(Team team);
+
+        bool IncreaseTurns(Team team);
     }
 }

@@ -35,5 +35,10 @@ namespace Data
         {
             return context.DecreaseScore(team);
         }
+
+        public bool InceaseTurns(Team team)
+        {
+            return context.IncreaseTurns(team);
+        }
     }
 }

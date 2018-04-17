@@ -7,5 +7,6 @@ namespace Data
         Team IncreaseScore(Team team);
 
         Team DecreaseScore(Team team);
+        Team IncreaseTurns(Team team);
     }
 }

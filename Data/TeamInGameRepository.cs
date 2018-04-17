@@ -20,5 +20,10 @@ namespace Data
         {
             return context.DecreaseScore(team);
         }
+
+        public Team IncreaseTurns(Team team)
+        {
+            return context.IncreaseTurns(team);
+        }
     }
 }

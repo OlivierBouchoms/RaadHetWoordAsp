@@ -15,5 +15,11 @@ namespace Data
             team.DecreaseScore();
             return team;
         }
+
+        public Team IncreaseTurns(Team team)
+        {
+            team.IncreaseTurns();
+            return team;
+        }
     }
 }
