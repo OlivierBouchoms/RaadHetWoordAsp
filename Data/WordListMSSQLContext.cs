@@ -9,14 +9,14 @@ namespace Data
         public List<string> GetWordsFromWordlist()
         {
             var words = new List<string>();
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();
             }
             catch
             {
-                return null;
+                return new List<string>();
             }
 
             string query = "SELECT [idWord], [text] FROM Word where [idWord] IN " +

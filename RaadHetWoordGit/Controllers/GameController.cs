@@ -109,16 +109,16 @@ namespace RaadHetWoordGit.Controllers
             if (_round)
             {
                 round = inputViewModel.Game.CurrentRound;
-                HttpContext.Session.SetString(key: nameof(Round), value: JsonConvert.SerializeObject(round));
+                HttpContext.Session.SetString(nameof(Round), value: JsonConvert.SerializeObject(round));
                 inputViewModel.Game.CurrentRound = null;
             }
-            HttpContext.Session.SetString(key: "TeamList", value: JsonConvert.SerializeObject(teamList));
-            HttpContext.Session.SetString(key: nameof(Wordlist), value: JsonConvert.SerializeObject(wordList));
+            HttpContext.Session.SetString("TeamList", value: JsonConvert.SerializeObject(teamList));
+            HttpContext.Session.SetString(nameof(Wordlist), value: JsonConvert.SerializeObject(wordList));
 
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
 
-            HttpContext.Session.SetString(key: nameof(GameViewModel), value: JsonConvert.SerializeObject(inputViewModel));
+            HttpContext.Session.SetString(nameof(GameViewModel), value: JsonConvert.SerializeObject(inputViewModel));
 
             inputViewModel.Game.TeamList = teamList;
             inputViewModel.Game.Wordlist = wordList;

@@ -22,8 +22,8 @@ namespace RaadHetWoordGit
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlServer(Configuration.GetConnectionString("MSSQLConnection")));
+            
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -56,7 +56,7 @@ namespace RaadHetWoordGit
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
+                    "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }

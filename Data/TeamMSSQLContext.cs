@@ -13,7 +13,7 @@ namespace Data
         /// </summary>
         public bool CheckIfExists(Team team)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();
@@ -41,7 +41,7 @@ namespace Data
         /// </summary>
         public bool AddTeam(Team team)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();
@@ -66,7 +66,7 @@ namespace Data
 
         public Team FillWithData(Team team)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();
@@ -94,7 +94,7 @@ namespace Data
 
         public bool IncreaseScore(Team team)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();
@@ -116,7 +116,7 @@ namespace Data
 
         public bool DecreaseScore(Team team)
         {
-            var sqlConnection = DataBase._SqlConn;
+            var sqlConnection = DataBase.MsSql;
             try
             {
                 sqlConnection.Open();

@@ -26,7 +26,6 @@ namespace Data
             return context.FillWithData(team);
         }
 
-
         public bool IncreaseScore(Team team)
         {
             return context.IncreaseScore(team);
