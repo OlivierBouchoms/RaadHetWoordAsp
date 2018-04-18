@@ -60,7 +60,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"Team {Name} - Turns {Turns} - Score {Score}";
+            return $"Team {Name} - Score {Score}";
         }
     }
 }
