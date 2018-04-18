@@ -38,8 +38,7 @@ function changeScore(event) {
 }
 
 function startTimer() {
-//Disable timer until next round is fully working
-//    timer = setTimeout(nextRound, 30000);
+    timer = setTimeout(nextRound, 30000);
 }
 
 function nextRound() {
