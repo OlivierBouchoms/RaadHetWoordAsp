@@ -100,13 +100,13 @@ namespace RaadHetWoordGit.Controllers
             }
             catch
             {
-                viewModel.Game.TeamList[Round.playerindex - 0] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 0]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 0]);
+                viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex + 1]);
             }
 
             try
             {
-                if (viewModel.Game.Wordlist.Words.Count == 0)
+                if (viewModel.Game.Wordlist.Words.Count < 10)
                 {
                     throw new ArgumentException("Wordlist is empty.");
                 }
@@ -116,6 +116,8 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
                 viewModel.WordlistClass = "visible";
             }
+
+            _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
 
             PlaceViewModelInSession(viewModel, true);
 
