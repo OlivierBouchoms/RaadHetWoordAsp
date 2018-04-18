@@ -145,7 +145,7 @@ namespace RaadHetWoordGit.Controllers
                 HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
                 inputViewModel.Game.CurrentRound = null;
             }
-            HttpContext.Session.SetString("TeamList", JsonConvert.SerializeObject(teamList));
+            HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teamList));
             HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
@@ -166,7 +166,7 @@ namespace RaadHetWoordGit.Controllers
         /// <param name="_round">Is there a round to store in the session?</param>
         private GameViewModel GetViewModelFromSession(bool _round)
         {
-            var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));
+            var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
             var wordList = JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist)));
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
 

@@ -6,12 +6,12 @@ namespace Models
     public class Team
     {
         public string Name { get; set; }
-        public int Score { get; private set; }
-        public int Turns { get; private set; }
-        public int Wins { get; }
-        public int Losses { get; }
-        public decimal ScorePerTurn { get; }
-        public decimal WinLoss { get; }
+        public int Score { get; set; }
+        public int Turns { get; set; }
+        public int Wins { get; set; }
+        public int Losses { get; set;  }
+        public decimal ScorePerTurn { get; set; }
+        public decimal WinLoss { get; set; }
 
         public Team()
         {

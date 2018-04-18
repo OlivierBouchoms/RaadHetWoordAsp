@@ -8,6 +8,7 @@ var timer;
 //Start the timer when document is loaded
 $(document).ready(startTimer() );
 
+//Send a request to increase or decrease a team its score
 function changeScore(event) {
     var sender = event.target;
     var id = sender.id;
@@ -37,21 +38,10 @@ function changeScore(event) {
 }
 
 function startTimer() {
-    timer = setTimeout(nextRound, 30000);
+//Disable timer until next round is fully working
+//    timer = setTimeout(nextRound, 30000);
 }
 
 function nextRound() {
     $("#btnnextround").trigger("click");
 }
-
-//function nextRound(event) {
-//    $.ajax({
-//        type: 'POST',
-//        url: uri,
-//        success: function() {
-//        },
-//        error: function() {
-//            alert("fout in backend");
-//        }
-//    });
-//}

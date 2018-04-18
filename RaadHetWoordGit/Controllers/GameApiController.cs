@@ -87,7 +87,7 @@ namespace RaadHetWoordGit.Controllers
                 HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
                 inputViewModel.Game.CurrentRound = null;
             }
-            HttpContext.Session.SetString("TeamList", JsonConvert.SerializeObject(teamList));
+            HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teamList));
             HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
@@ -98,17 +98,25 @@ namespace RaadHetWoordGit.Controllers
             inputViewModel.Game.Wordlist = new Wordlist(wordList);
             if (_round)
             {
-                inputViewModel.Game.CurrentRound = round;
+                try
+                {
+                    inputViewModel.Game.CurrentRound = new Round();
+                    inputViewModel.Game.CurrentRound.Team = round.Team;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e);
+                }
             }
         }
 
         /// <summary>
         /// Retrieve gameviewmodel from session
         /// </summary>        
-        /// <param name="_round">Is there a round to store in the session?</param>
+        /// Heel veel test code
         private GameViewModel GetViewModelFromSession(bool _round)
         {
-            var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("TeamList"));
+            var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
             var wordList = JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist)));
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
 
@@ -122,12 +130,20 @@ namespace RaadHetWoordGit.Controllers
                 Debug.WriteLine(e);
             }
 
+            var round = new Round();
             try
             {
-                var round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
-                viewModel.Game.CurrentRound = round;
+                round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
+                Debug.WriteLine(HttpContext.Session.GetString(nameof(Round)));
+                Debug.WriteLine(round.ToString());
+                //Gaat fout
+                viewModel.Game.CurrentRound = new Round();
+                viewModel.Game.CurrentRound.Team = round.Team;
             }
-            catch { }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
 
             return viewModel;
         }
