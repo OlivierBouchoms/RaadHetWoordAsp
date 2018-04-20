@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms.VisualStyles;
 using Models;
 
 namespace Data
@@ -30,9 +31,11 @@ namespace Data
             if (sqlDataReader.HasRows)
             {
                 sqlConnection.Close();
+                sqlConnection.Dispose();
                 return true;
             }
             sqlConnection.Close();
+            sqlConnection.Dispose();
             return false;
         }
 
@@ -58,9 +61,11 @@ namespace Data
             if (sqlCommand.ExecuteNonQuery() == 1)
             {
                 sqlConnection.Close();
+                sqlConnection.Dispose();
                 return true;
             }
             sqlConnection.Close();
+            sqlConnection.Dispose();
             return false;
         }
 
@@ -88,10 +93,19 @@ namespace Data
                 if (sqlDataReader.HasRows)
                 {
                     var _team = new Team(team.Name, sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(6), sqlDataReader.GetDecimal(7));
+                    sqlCommand.Dispose();
+                    sqlConnection.Close();
+                    sqlConnection.Dispose();
                     sqlDataReader.Close();
+                    sqlDataReader.Dispose();
                     return _team;
                 }
             }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+            sqlDataReader.Close();
+            sqlDataReader.Dispose();
+
             return team;
         }
 
@@ -115,8 +129,13 @@ namespace Data
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
             {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
                 return true;
             }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+
             return false;
         }
 
@@ -140,8 +159,12 @@ namespace Data
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
             {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
                 return true;
             }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
             return false;
         }
 
@@ -165,8 +188,12 @@ namespace Data
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
             {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
                 return true;
             }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
             return false;
         }
 
