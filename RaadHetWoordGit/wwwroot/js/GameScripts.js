@@ -4,6 +4,10 @@ var uri = "/api/GameApi";
 var domain = document.domain;
 var _increase;
 var timer;
+var countdowntimer;
+var uiTimer;
+var start;
+var end;
 
 //Start the timer when document is loaded
 $(document).ready(startTimer() );

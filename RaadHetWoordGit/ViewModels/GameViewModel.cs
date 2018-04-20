@@ -16,6 +16,7 @@ namespace RaadHetWoordGit.ViewModels
         public string TeamFormClass { get; set; }
         public string WordlistClass { get; set; }
         public string WarningClass { get; set; }
+        public string Winner { get; set; }
 
         //Naar Controller
         public string TeamOne { get; set; }

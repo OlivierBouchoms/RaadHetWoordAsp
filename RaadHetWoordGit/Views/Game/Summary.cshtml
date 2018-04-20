@@ -1,16 +1,23 @@
 ﻿<!-- Scoreboard op einde -->
 @model RaadHetWoordGit.ViewModels.GameViewModel
+    
+<h2>Afgelopen!</h2>
 
 <div class="container" id="scoreboard">
     <div class="row">
-        <div class="col-lg-12" id="winner">
-            <p></p>
+
+        <div class="col-lg-4">
+            <p>@Model.Game.TeamList[0].ToString()</p>
         </div>
-        <div class="col-lg-6">
-            <p></p>
+        <div class="col-lg-4" id="winner">
+            <p class="text-success">@Model.Winner heeft gewonnen!</p>
         </div>
-        <div class="col-lg-6">
-            <p></p>
+        <div class="col-lg-4">
+            <p>@Model.Game.TeamList[1].ToString()</p>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="btn btn-success custom"></div>
 </div>

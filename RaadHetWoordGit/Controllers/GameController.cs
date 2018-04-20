@@ -18,7 +18,6 @@ namespace RaadHetWoordGit.Controllers
         private GameLogic _gameLogic;
         private WordListLogic _wordListLogic;
 
-
         /// <summary>
         /// Initialize logic classes
         /// </summary>
@@ -35,6 +34,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         public ActionResult Index()
         {
+            HttpContext.Session.Clear();
             var viewModel = new GameViewModel();
             viewModel.TeamColumnClass = "hidden";
             viewModel.TeamFormClass = "visible";
@@ -92,6 +92,17 @@ namespace RaadHetWoordGit.Controllers
             InitializeLogic();
 
             var viewModel = GetViewModelFromSession();
+
+            if (_gameLogic.GameIsOver(viewModel.Game))
+            {
+                var winner = _gameLogic.GetWinner(viewModel.Game);
+                viewModel.Winner = winner.Name;
+                _teamLogic.IncreaseWins(_gameLogic.GetWinner(viewModel.Game));
+                _teamLogic.IncreaseLosses(_gameLogic.GetLoser(viewModel.Game));
+
+                return RedirectToAction("Summary", "Game");
+            }
+
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
             try
@@ -118,10 +129,24 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
+        /// <summary>
+        /// View the scoreboard
+        /// </summary>
         [HttpPost]
         public ActionResult ScoreBoard()
         {
             return View(GetViewModelFromSession());
+        }
+
+        /// <summary>
+        /// View the summary when the game is over
+        /// </summary>
+        [HttpPost]
+        public ActionResult Summary()
+        {
+            var viewModel = GetViewModelFromSession();
+            HttpContext.Session.Clear();
+            return View(viewModel);
         }
 
         /// <summary>

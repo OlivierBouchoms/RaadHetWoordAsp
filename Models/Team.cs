@@ -18,6 +18,11 @@ namespace Models
             //Empty
         }
 
+        public Team(bool score)
+        {
+            Score = Int32.MaxValue;
+        }
+
         public Team(string name)
         {
             Name = name;

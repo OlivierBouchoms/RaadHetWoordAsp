@@ -1,15 +1,25 @@
 ﻿<!-- Scoreboard voor tussendoor -->
 @model RaadHetWoordGit.ViewModels.GameViewModel
 
-<h2>ScoreBoard</h2>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/ScoreBoardScripts.js"></script>
+
+<h2>Tussenstand:</h2>
 
 <div class="container" id="scoreboard">
     <div class="row">
         <div class="col-lg-6">
-            <p></p>
+            <p>@Model.Game.TeamList[0].ToString()</p>
         </div>
         <div class="col-lg-6">
-            <p></p>
+            <p>@Model.Game.TeamList[1].ToString()</p>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <form asp-action="PlayGame" asp-controller="Game">
+        <input class="hidden" id="btnnextround" type="submit" value="" />
+        <input class="btn btn-success custom" id="btncountdown" onclick="redirectToGame()" value="Volgende ronde!" />
+    </form>
 </div>

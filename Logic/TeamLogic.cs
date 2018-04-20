@@ -15,7 +15,7 @@ namespace Logic
             repo = teamRepository;
         }
 
-        public bool CheckIfExists(Team team)
+        private bool CheckIfExists(Team team)
         {
             return repo.CheckIfExists(team);
         }
@@ -48,6 +48,16 @@ namespace Logic
         public bool IncreaseTurns(Team team)
         {
             return repo.InceaseTurns(team);
+        }
+
+        public void IncreaseWins(Team team)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void IncreaseLosses(Team team)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

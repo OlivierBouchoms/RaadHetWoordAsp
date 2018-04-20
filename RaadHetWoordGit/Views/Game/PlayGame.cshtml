@@ -12,15 +12,15 @@
 <div class="row">
     <div class="col-lg-6 text-center">
         <h3>@Model.Game.TeamList[0].Name</h3>
-        <p id="scoreTeam0">Score: @Model.Game.TeamList[0].Score.ToString()</p>
+        <p id="scoreTeam0">Score: @Model.Game.TeamList[0].Score.ToString() / @Model.Game.Maxscore</p>
     </div>
     <div class="col-lg-6 text-center">
         <h3>@Model.Game.TeamList[1].Name</h3>
-        <p id="scoreTeam1">Score: @Model.Game.TeamList[1].Score.ToString()</p>
+        <p id="scoreTeam1">Score: @Model.Game.TeamList[1].Score.ToString() / @Model.Game.Maxscore</p>
     </div>
 </div>
 <div class="row">
-    <form asp-action="PlayGame" asp-controller="Game">
+    <form asp-action="ScoreBoard" asp-controller="Game">
         <input class="hidden" id="btnnextround" type="submit" value=""/>
     </form>
 </div>
