@@ -4,10 +4,10 @@ var uri = "/api/GameApi";
 var domain = document.domain;
 var _increase;
 var timer;
-var countdowntimer;
 var uiTimer;
 var start;
 var end;
+var totaltime = 30;
 
 //Start the timer when document is loaded
 $(document).ready(startTimer() );
@@ -42,9 +42,23 @@ function changeScore(event) {
 }
 
 function startTimer() {
+    $("#btncountdown").text("30");
     timer = setTimeout(nextRound, 30000);
+    start = new Date();
+    uiTimer = setInterval(showCountdown, 1000);
 }
 
 function nextRound() {
     $("#btnnextround").trigger("click");
+}
+
+function showCountdown() {
+    end = new Date();
+    var seconds = end - start;
+    seconds /= 1000;
+
+    // get seconds 
+    seconds = Math.round(seconds);
+    var time = totaltime - seconds;
+    $("#remainingTime").text(time);
 }

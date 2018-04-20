@@ -5,14 +5,13 @@
 
 <div class="container" id="scoreboard">
     <div class="row">
-
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <p>@Model.Game.TeamList[0].ToString()</p>
         </div>
-        <div class="col-lg-4" id="winner">
-            <p class="text-success">@Model.Winner heeft gewonnen!</p>
+        <div class="col-lg-4 text-center" id="winner">
+            <b class="text-success">Team @Model.Winner heeft gewonnen!</b>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <p>@Model.Game.TeamList[1].ToString()</p>
         </div>
     </div>

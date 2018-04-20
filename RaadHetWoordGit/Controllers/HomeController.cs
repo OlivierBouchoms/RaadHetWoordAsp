@@ -8,9 +8,9 @@ namespace RaadHetWoordGit.Controllers
     {
         public IActionResult Index()
         {
-            var viewModel = new HomeIndexViewModel();
+            HttpContext.Session.Clear();
 
-            return View(viewModel);
+            return View();
         }
     }
 }

@@ -99,7 +99,7 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.Winner = winner.Name;
                 _teamLogic.IncreaseWins(_gameLogic.GetWinner(viewModel.Game));
                 _teamLogic.IncreaseLosses(_gameLogic.GetLoser(viewModel.Game));
-
+                PlaceViewModelInSession(viewModel, false);
                 return RedirectToAction("Summary", "Game");
             }
 
@@ -141,8 +141,7 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// View the summary when the game is over
         /// </summary>
-        [HttpPost]
-        public ActionResult Summary()
+        public IActionResult Summary()
         {
             var viewModel = GetViewModelFromSession();
             HttpContext.Session.Clear();
