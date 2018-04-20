@@ -16,7 +16,19 @@ var $increase;
  * In the callback, we update the DOM (Document Object Model) with the product information.
  */
 
-$(document).ready(getProducts() );
+$(document).ready(function getProducts() {
+    //Data ophalen
+    $.getJSON(uri)
+        .done(function (data) {
+            $.each(data, function (key, item) {
+                $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+            });
+        });
+});
+
+function formatItem(item) {
+    return item.name + ': \u20AC ' + item.sales + ' (id = ' + item.id + ')';
+}
 
 //Send a request to insert a product
 function insertProduct() {
@@ -25,11 +37,19 @@ function insertProduct() {
       
     $.ajax({
         type: 'POST',
-        url: uri,
+        url: 'api/product',
         data: { name: $name, sales: $sales },  
         dataType: "json",
         success: function () {
-            getProducts();
+            //Unsorted list leegmaken
+            $('#products').empty();
+            //Data ophalen
+            $.getJSON(uri)
+                .done(function (data) {
+                    $.each(data, function (key, item) {
+                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                    });
+                });
         },
         error: function () { alert('Is foutgegaan'); }
         });
@@ -40,11 +60,19 @@ function deleteProduct() {
     $id = $("#productID").val();
     $.ajax({
         type: 'DELETE',
-        url: uri,
+        url: 'api/product',
         data: { id: $id },
         dataType: "json",
-        success: function() {
-            getProducts();
+        success: function () {
+            //Unsorted list leegmaken
+            $('#products').empty();
+            //Data ophalen
+            $.getJSON(uri)
+                .done(function (data) {
+                    $.each(data, function (key, item) {
+                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                    });
+                });
         },
         error: function () { alert('Is foutgegaan'); }
     });
@@ -59,39 +87,29 @@ function changeProductPrice() {
     }
     $.ajax({
         type: 'PATCH',
-        url: uri,
+        url: 'api/product',
         data: { id: $id, increase: $increase },
         dataType: "json",
         success: function () {
-            getProducts();
-            changeButtonClass();
+            //Unsorted list leegmaken
+            $('#products').empty();
+            //Data ophalen
+            $.getJSON(uri)
+                .done(function (data) {
+                    $.each(data, function (key, item) {
+                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                    });
+                });
+            if ($("#button1").hasClass("incorrect")) {
+                $increase = true;
+                $('#button1').removeClass();
+                $('#button1').addClass("iscorrect--");
+            }
+            else {
+                $('#button1').removeClass();
+                $('#button1').addClass("incorrect");
+            }
         },
         error: function () { alert('Is foutgegaan'); }
     });
-}
-
-function changeButtonClass() {
-    if ($("#button1").hasClass("incorrect")) {
-        $increase = true;
-        $('#button1').removeClass();
-        $('#button1').addClass("iscorrect--");
-    }
-    else {
-        $('#button1').removeClass();
-        $('#button1').addClass("incorrect");
-    }
-}
-
-function getProducts() {
-    $('#products').empty();
-    $.getJSON(uri)
-        .done(function (data) {
-            $.each(data, function (key, item) {
-                $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-            });
-        });
-}
-
-function formatItem(item) {
-    return item.name + ': \u20AC ' + item.sales + ' (id = ' + item.id + ')';
 }
