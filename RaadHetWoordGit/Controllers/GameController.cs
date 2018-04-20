@@ -18,6 +18,18 @@ namespace RaadHetWoordGit.Controllers
         private GameLogic _gameLogic;
         private WordListLogic _wordListLogic;
 
+
+        /// <summary>
+        /// Initialize logic classes
+        /// </summary>
+        private void InitializeLogic()
+        {
+            _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
+            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+        }
+
         /// <summary>
         /// Opening the Index page for the first time.
         /// </summary>
@@ -72,17 +84,6 @@ namespace RaadHetWoordGit.Controllers
         }
 
         /// <summary>
-        /// Initialize logic classes
-        /// </summary>
-        private void InitializeLogic()
-        {
-            _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
-            _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
-        }
-
-        /// <summary>
         /// The page to play a game
         /// </summary>
         [HttpPost]
@@ -98,7 +99,7 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
             }
-            catch
+            catch 
             {
                 viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex + 1]);
@@ -115,6 +116,12 @@ namespace RaadHetWoordGit.Controllers
             PlaceViewModelInSession(viewModel, true);
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult ScoreBoard()
+        {
+            return View(GetViewModelFromSession());
         }
 
         /// <summary>
@@ -158,7 +165,6 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Retrieve gameviewmodel from session
         /// </summary>        
-        /// <param name="_round">Is there a round to store in the session?</param>
         private GameViewModel GetViewModelFromSession()
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
