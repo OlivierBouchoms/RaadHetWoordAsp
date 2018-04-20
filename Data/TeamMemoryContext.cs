@@ -67,5 +67,15 @@ namespace Data
         {
             throw new System.NotImplementedException();
         }
+
+        public bool IncreaseWins(Team team)
+        {throw new System.NotImplementedException();
+            
+        }
+
+        public bool IncreaseLosses(Team team)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -50,14 +50,14 @@ namespace Logic
             return repo.InceaseTurns(team);
         }
 
-        public void IncreaseWins(Team team)
+        public bool IncreaseWins(Team team)
         {
-            throw new System.NotImplementedException();
+            return repo.IncreaseWins(team);
         }
 
-        public void IncreaseLosses(Team team)
+        public bool IncreaseLosses(Team team)
         {
-            throw new System.NotImplementedException();
+            return repo.IncreaseLosses(team);
         }
     }
 }

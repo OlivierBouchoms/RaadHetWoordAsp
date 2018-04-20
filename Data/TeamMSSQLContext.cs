@@ -197,6 +197,58 @@ namespace Data
             return false;
         }
 
+        public bool IncreaseWins(Team team)
+        {
+            var sqlConnection = DataBase.MsSql;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch 
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [Team] SET [Wins] = [Wins] + 1 where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 1)
+            {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
+                return true;
+            }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+            return false;
+        }
+
+        public bool IncreaseLosses(Team team)
+        {
+            var sqlConnection = DataBase.MsSql;
+            try
+            {
+                sqlConnection.Open();
+            }
+            catch
+            {
+                return false;
+            }
+
+            var commandText = "UPDATE [Team] SET [Losses] = [Losses] + 1 where [Name] = @name";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 1)
+            {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
+                return true;
+            }
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+            return false;
+        }
+
         /// <summary>
         /// Get all teams sorted by alpabet
         /// </summary>

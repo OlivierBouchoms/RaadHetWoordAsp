@@ -40,5 +40,15 @@ namespace Data
         {
             return context.IncreaseTurns(team);
         }
+
+        public bool IncreaseWins(Team team)
+        {
+            return context.IncreaseWins(team);
+        }
+
+        public bool IncreaseLosses(Team team)
+        {
+            return context.IncreaseLosses(team);
+        }
     }
 }
