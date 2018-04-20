@@ -1,7 +1,8 @@
-﻿var countdowntimer;
+﻿//All Javascript logic for the Scoreboard
+
+var countdowntimer;
 var uiTimer;
 var start;
-var end;
 
 function nextRound() {
     $('#btnnextround').trigger("click");
@@ -16,7 +17,7 @@ function redirectToGame() {
 }
 
 function showCountdown() {
-    end = new Date();
+    var end = new Date();
     var seconds = end - start;
     seconds /= 1000;
 

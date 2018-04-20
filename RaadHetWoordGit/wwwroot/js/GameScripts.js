@@ -1,12 +1,10 @@
 ﻿//All Javascript logic for the game
 
 var uri = "/api/GameApi";
-var domain = document.domain;
 var _increase;
 var timer;
 var uiTimer;
 var start;
-var end;
 var totaltime = 30;
 
 //Start the timer when document is loaded
@@ -53,7 +51,7 @@ function nextRound() {
 }
 
 function showCountdown() {
-    end = new Date();
+    var end = new Date();
     var seconds = end - start;
     seconds /= 1000;
 
