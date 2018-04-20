@@ -90,7 +90,7 @@ namespace RaadHetWoordGit.Controllers
         {
             InitializeLogic();
 
-            var viewModel = GetViewModelFromSession(true);
+            var viewModel = GetViewModelFromSession();
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
             try
@@ -104,14 +104,7 @@ namespace RaadHetWoordGit.Controllers
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex + 1]);
             }
 
-            try
-            {
-                if (viewModel.Game.Wordlist.Words.Count < 10)
-                {
-                    throw new ArgumentException("Wordlist is empty.");
-                }
-            }
-            catch
+            if (viewModel.Game.Wordlist.Words.Count < 10)
             {
                 viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
                 viewModel.WordlistClass = "visible";
@@ -166,7 +159,7 @@ namespace RaadHetWoordGit.Controllers
         /// Retrieve gameviewmodel from session
         /// </summary>        
         /// <param name="_round">Is there a round to store in the session?</param>
-        private GameViewModel GetViewModelFromSession(bool _round)
+        private GameViewModel GetViewModelFromSession()
         {
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
             var wordList = JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist)));
