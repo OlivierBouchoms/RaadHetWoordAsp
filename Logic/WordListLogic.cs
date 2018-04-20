@@ -43,7 +43,7 @@ namespace Logic
         }
 
         /// <summary>
-        /// Remove first five words from database
+        /// Remove first five words from list
         /// </summary>
         /// <param name="words"></param>
         /// <returns></returns>

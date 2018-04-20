@@ -10,11 +10,14 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-6 text-center">
+    <div class="col-lg-5 text-center">
         <h3>@Model.Game.TeamList[0].Name</h3>
         <p id="scoreTeam0">Score: @Model.Game.TeamList[0].Score.ToString() / @Model.Game.Maxscore</p>
     </div>
-    <div class="col-lg-6 text-center">
+    <div class="col-lg-2 text-center">
+        <h3>Tijd: <span id="remainingTime" class="text-danger"></span></h3>
+    </div>
+    <div class="col-lg-5 text-center">
         <h3>@Model.Game.TeamList[1].Name</h3>
         <p id="scoreTeam1">Score: @Model.Game.TeamList[1].Score.ToString() / @Model.Game.Maxscore</p>
     </div>
@@ -26,11 +29,7 @@
 </div>
 
 <!-- Overzicht van woorden -->
-<div>
-    <div class="row" id="wordlistContainer">
-        @for (int i = 1; i <= 5; i++)
-        {
-            <div class="col-lg-2 gameword" id="word @i" onclick="changeScore(event)">@Model.Game.Wordlist.Words[i]</div>
-        }
-    </div>
-</div>
+@for (int i = 1; i <= 5; i++)
+    {
+        <div class="gameword" id="word @i" onclick="changeScore(event)"><span class="gamewordtext">@Model.Game.Wordlist.Words[i]</span></div>
+    }

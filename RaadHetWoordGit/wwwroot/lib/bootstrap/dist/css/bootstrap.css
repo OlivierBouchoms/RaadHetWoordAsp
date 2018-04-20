@@ -3033,33 +3033,21 @@ select[multiple].input-lg {
     border: 1px solid #a8a4a1;
     border-radius: 5px;
     font-size: 16px;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    height: 100px;
+    line-height: 100px;
+    margin-right: 4%;
     width: 15%;
     background-color: #E0DBD7;
     color: red;
     text-align: center;
-    text-align: center;
-}
-
-.gamewordtrue {
-    border: 1px solid green;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    width: 15%;
-    background-color: #E0DBD7;
-    color: green;
-    text-align: center;
-    text-align: center;
+    display: inline-block;
 }
 
 .gamewordtext {
-    margin: 0%;
-    line-height: 350%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    width: 100%;
 }
 
 .correct {
