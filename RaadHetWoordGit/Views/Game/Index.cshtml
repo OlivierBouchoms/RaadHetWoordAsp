@@ -15,6 +15,10 @@
             <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 5, maximaal 100." class="form-control"><br />
             <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in." /><br />
             <input asp-for="TeamTwo" type="text" class="form-control" placeholder="Voer naam van Team 2 in." /><br />
+            @foreach (var wordlist in Model.Wordlists)
+            {
+               <input asp-for="Wordlist" type="checkbox" class="form-control" value="@wordlist."/>
+            }
             <input class="btn btn-success custom" type="submit" value="Voeg toe" />
         </form>
     </div>

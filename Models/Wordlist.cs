@@ -6,13 +6,24 @@ namespace Models
     [Serializable]
     public class Wordlist
     {
-        internal string Title { get; private set; }
-        internal string Description { get; private set; }
+        public string Title { get; }
+        public string Description { get; private set; }
         public List<string> Words { get; }
 
         public Wordlist()
         {
             //Empty
+        }
+
+        public Wordlist(string title)
+        {
+            Title = title;
+        }
+
+        public Wordlist(List<string> words, string title)
+        {
+            Words = words;
+            Title = title;
         }
 
         public Wordlist(List<string> words)

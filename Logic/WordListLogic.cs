@@ -16,10 +16,23 @@ namespace Logic
         /// <summary>
         /// Get all words from the database
         /// </summary>
-        /// <returns></returns>
-        public List<string> GetWords()
+        public List<string> GetWords(string title)
         {
-            return ShuffleWords(repo.GetWords());
+            if (String.IsNullOrWhiteSpace(title))
+            {
+                return ShuffleWords(repo.GetAllWords());
+            }
+
+            return GetWordsFromWordlist(title);
+        }
+
+        /// <summary>
+        /// Get words from a specific wordlist
+        /// </summary>
+        /// <param name="title"></param>
+        private List<string> GetWordsFromWordlist(string title)
+        {
+            return ShuffleWords(repo.GetWordsFromWordlist(title));
         }
 
         /// <summary>
@@ -45,8 +58,7 @@ namespace Logic
         /// <summary>
         /// Remove first five words from list
         /// </summary>
-        /// <param name="words"></param>
-        /// <returns></returns>
+        /// <param name="words">Input list with words</param>
         public List<string> RemoveWords(List<string> words)
         {
             words.RemoveRange(0, 5);

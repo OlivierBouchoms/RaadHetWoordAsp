@@ -113,12 +113,12 @@ namespace RaadHetWoordGit.Controllers
             catch 
             {
                 viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex + 1]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
             }
 
             if (viewModel.Game.Wordlist.Words.Count < 10)
             {
-                viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords()));
+                viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
                 viewModel.WordlistClass = "visible";
             }
 

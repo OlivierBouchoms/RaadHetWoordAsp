@@ -11,9 +11,19 @@ namespace Data
             this.context = context;
         }
 
-        public List<string> GetWords()
+        public List<string> GetAllWords()
         {
-            return context.GetWords();
+            return context.GetAllWords();
+        }
+
+        public List<string> GetWordslists()
+        {
+            return context.GetWordlists();
+        }
+
+        public List<string> GetWordsFromWordlist(string title)
+        {
+            return context.GetWordsFromWordlist(title);
         }
     }
 }

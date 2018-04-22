@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Models;
 
 namespace RaadHetWoordGit.ViewModels
@@ -17,10 +18,12 @@ namespace RaadHetWoordGit.ViewModels
         public string WordlistClass { get; set; }
         public string WarningClass { get; set; }
         public string Winner { get; set; }
+        public List<Wordlist> Wordlists { get; set; }
 
         //Naar Controller
         public string TeamOne { get; set; }
         public string TeamTwo { get; set; }
+        public string Wordlist { get; set; }
 
         public bool Increase { get; set; }
 
