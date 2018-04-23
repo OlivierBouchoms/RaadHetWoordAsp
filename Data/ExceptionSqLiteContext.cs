@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 
 namespace Data
 {
@@ -13,7 +14,14 @@ namespace Data
         public static bool LogException(Exception exception)
         {
             var sqLiteConnection = DataBase.SqLite;
-            sqLiteConnection.Open();
+            try
+            {
+                sqLiteConnection.Open();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
 
             var commandText =
                 "INSERT INTO Exception (Data, HelpLink, HResult, InnerException, Message, Source, StackTrace, TargetSite) VALUES (@data, @helplink, @hresult, @innerexception, @message, @source, @stacktrace, @targetsite)";
