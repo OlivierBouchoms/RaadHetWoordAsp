@@ -11,6 +11,12 @@ namespace RaadHetWoordGit.Controllers
         public IActionResult Index()
         {
             HttpContext.Session.Clear();
+            ThrowException();
+            return View();
+        }
+
+        private void ThrowException()
+        {
             try
             {
                 throw new ArgumentNullException();
@@ -19,7 +25,6 @@ namespace RaadHetWoordGit.Controllers
             {
                 ExceptionSqLiteContext.LogException(e);
             }
-            return View();
         }
     }
 }
