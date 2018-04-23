@@ -19,8 +19,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -49,8 +50,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -79,8 +81,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return team;
             }
 
@@ -119,8 +122,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -149,8 +153,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -178,8 +183,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -204,8 +210,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch 
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 
@@ -230,8 +237,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return false;
             }
 

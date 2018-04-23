@@ -22,7 +22,7 @@ namespace Data {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class DataBaseResources {
+    public class DataBaseResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Data {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Data.DataBaseResources", typeof(DataBaseResources).Assembly);
@@ -51,7 +51,7 @@ namespace Data {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,9 +63,27 @@ namespace Data {
         /// <summary>
         ///   Looks up a localized string similar to Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RaadHetWoordDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
         /// </summary>
-        internal static string MsSqlConnection {
+        public static string MsSqlConnection {
             get {
                 return ResourceManager.GetString("MsSqlConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=;Version=3.
+        /// </summary>
+        public static string SqLiteConnection {
+            get {
+                return ResourceManager.GetString("SqLiteConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Source=C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionDb.sqlite3;Version=3.
+        /// </summary>
+        public static string SqLiteConnectionAbsolute {
+            get {
+                return ResourceManager.GetString("SqLiteConnectionAbsolute", resourceCulture);
             }
         }
     }

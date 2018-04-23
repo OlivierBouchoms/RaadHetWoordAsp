@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -14,8 +15,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return new List<string>();
             }
 
@@ -42,8 +44,9 @@ namespace Data
             {
                 sqlConnection.Open();
             }
-            catch
+            catch (Exception e)
             {
+                ExceptionSqLiteContext.LogException(e);
                 return new List<string>();
             }
 

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-RaadHetWoordGit-6F4D0555-D6FE-4886-B19A-AA96815087CF</UserSecretsId>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
 
@@ -10,6 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.108" />
   </ItemGroup>
 
   <ItemGroup>

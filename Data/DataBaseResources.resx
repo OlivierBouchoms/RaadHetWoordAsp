@@ -121,4 +121,11 @@
     <value>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RaadHetWoordDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</value>
     <comment>The connectionstring for the database.</comment>
   </data>
+  <data name="SqLiteConnection" xml:space="preserve">
+    <value>Data Source=;Version=3</value>
+  </data>
+  <data name="SqLiteConnectionAbsolute" xml:space="preserve">
+    <value>Data Source=C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionDb.sqlite3;Version=3</value>
+    <comment>The connectionstring for the SqLite database.</comment>
+  </data>
 </root>
