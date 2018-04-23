@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using Models;
 
 namespace Logic
 {
@@ -63,6 +64,11 @@ namespace Logic
         {
             words.RemoveRange(0, 5);
             return words;
+        }
+
+        public List<string> GetWordlists()
+        {
+            return repo.GetWordlists();
         }
     }
 }

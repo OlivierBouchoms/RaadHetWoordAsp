@@ -20,7 +20,7 @@ namespace Data
                 return new List<string>();
             }
 
-            var query = "Select [Name] FROM [WordCategory]";
+            var query = "Select [Name] FROM [WordCategory] ORDER BY [Name] ASC";
             var sqlCommand = new SqlCommand(query, sqlConnection);
             var sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -83,7 +83,7 @@ namespace Data
                            "INNER JOIN[wordcategory] " +
                            "ON[word_and_wordcategorie].[wordcategoryid] = " +
                            "[wordcategory].[idwordcategory] " +
-                           "WHERE[wordcategory].[name] = 'Kinderen'";
+                           "WHERE[wordcategory].[name] = @title";
             var dataTable = new DataTable();
             var sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.Add("title", SqlDbType.Int).Value = title;

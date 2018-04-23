@@ -18,7 +18,8 @@ namespace RaadHetWoordGit.ViewModels
         public string WordlistClass { get; set; }
         public string WarningClass { get; set; }
         public string Winner { get; set; }
-        public List<Wordlist> Wordlists { get; set; }
+
+        public List<string> Wordlists { get; set; }
 
         //Naar Controller
         public string TeamOne { get; set; }

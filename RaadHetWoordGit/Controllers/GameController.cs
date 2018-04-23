@@ -34,11 +34,14 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         public ActionResult Index()
         {
+            InitializeLogic();
             HttpContext.Session.Clear();
             var viewModel = new GameViewModel();
+
             viewModel.TeamColumnClass = "hidden";
             viewModel.TeamFormClass = "visible";
             viewModel.WordlistClass = "hidden";
+            viewModel.Wordlists = _wordListLogic.GetWordlists();
 
             return View(viewModel);
         }

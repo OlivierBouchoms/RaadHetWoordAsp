@@ -16,7 +16,7 @@ namespace Data
             return context.GetAllWords();
         }
 
-        public List<string> GetWordslists()
+        public List<string> GetWordlists()
         {
             return context.GetWordlists();
         }
