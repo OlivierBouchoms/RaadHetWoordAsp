@@ -19,7 +19,16 @@ namespace Logic
         /// <returns></returns>
         public List<string> GetWords()
         {
-            return ShuffleWords(repo.GetWords());
+            try
+            {
+                return ShuffleWords(repo.GetWords());
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+
+            return new List<string>();
         }
 
         /// <summary>
@@ -31,7 +40,6 @@ namespace Logic
             var random = new Random();
             var shuffledWords = new List<string>();
 
-            //Algoritme
             while (words.Count != 0)
             {
                 var index = random.Next(words.Count);

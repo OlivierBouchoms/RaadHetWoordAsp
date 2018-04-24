@@ -11,15 +11,7 @@ namespace Data
         {
             var words = new List<string>();
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return new List<string>();
-            }
+            sqlConnection.Open();
 
             string query = "SELECT [text] FROM Word";
             var sqlCommand = new SqlCommand(query, sqlConnection);
@@ -40,15 +32,7 @@ namespace Data
         {
             var words = new List<string>();
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return new List<string>();
-            }
+            sqlConnection.Open();
 
             string query = "SELECT [idWord], [text] FROM Word where [idWord] IN " +
                            "(SELECT [WordID] FROM [Word_and_WordCategorie] where [WordCategoryID]=@id)";

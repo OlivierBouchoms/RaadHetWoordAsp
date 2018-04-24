@@ -1,3 +1,0 @@
-Idee:
-
-Woorden uit wordlist tijdens ophalen uit db, dan al random door elkaar wisselen en index van laatste bijhouden zodat er steeds linear verhoogd kan worden zonder ingewikkelde code

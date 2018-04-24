@@ -136,7 +136,6 @@ namespace RaadHetWoordGit.Controllers
                 round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
                 Debug.WriteLine(HttpContext.Session.GetString(nameof(Round)));
                 Debug.WriteLine(round.ToString());
-                //Gaat fout
                 viewModel.Game.CurrentRound = new Round();
                 viewModel.Game.CurrentRound.Team = round.Team;
             }

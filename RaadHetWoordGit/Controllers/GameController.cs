@@ -214,7 +214,7 @@ namespace RaadHetWoordGit.Controllers
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-;            }
+;           }
 
             return viewModel;
         }

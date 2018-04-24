@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using System;
+using Data;
 using Models;
 
 namespace Logic
@@ -17,7 +18,16 @@ namespace Logic
 
         private bool CheckIfExists(Team team)
         {
-            return repo.CheckIfExists(team);
+            try
+            {
+                return repo.CheckIfExists(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+
+            return false;
         }
 
         public bool AddTeam(Team team)
@@ -27,37 +37,96 @@ namespace Logic
                 return false;
             }
 
-            return repo.AddTeam(team);
+            try
+            {
+                return repo.AddTeam(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+
+            return false;
         }
 
         public Team FillWithData(Team team)
         {
-            return repo.FillWithData(team);
+            try
+            {
+                return repo.FillWithData(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+
+            return team;
         }
 
         public bool IncreaseScore(Team team)
         {
-            return repo.IncreaseScore(team);
+            try
+            {
+                return repo.IncreaseScore(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+
+            return false;
         }
 
         public bool DecreaseScore(Team team)
         {
-            return repo.DecreaseScore(team);
+            try
+            {
+                return repo.DecreaseScore(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+            return false;
         }
 
         public bool IncreaseTurns(Team team)
         {
-            return repo.InceaseTurns(team);
+            try
+            {
+                return repo.InceaseTurns(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+            return false;
         }
 
         public bool IncreaseWins(Team team)
         {
-            return repo.IncreaseWins(team);
+            try
+            {
+                return repo.IncreaseWins(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+            return false;
         }
 
         public bool IncreaseLosses(Team team)
         {
-            return repo.IncreaseLosses(team);
+            try
+            {
+                return repo.IncreaseLosses(team);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+            return false;
         }
     }
 }

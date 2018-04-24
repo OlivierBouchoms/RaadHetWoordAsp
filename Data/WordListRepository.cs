@@ -4,7 +4,7 @@ namespace Data
 {
     public class WordListRepository
     {
-        private IWordListContext context;
+        private readonly IWordListContext context;
 
         public WordListRepository(IWordListContext context)
         {

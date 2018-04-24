@@ -15,15 +15,7 @@ namespace Data
         public bool CheckIfExists(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "Select [Name] From [Team] where [Name] =@name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -46,15 +38,7 @@ namespace Data
         public bool AddTeam(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
                               "Values (@name, 0, 0, 0, 0)";
@@ -77,15 +61,7 @@ namespace Data
         public Team FillWithData(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return team;
-            }
+            sqlConnection.Open();
 
             var commandText = "SELECT * From [Team] where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -118,15 +94,7 @@ namespace Data
         public bool IncreaseScore(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "UPDATE [Team] SET [Score] = [Score] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -149,15 +117,7 @@ namespace Data
         public bool DecreaseScore(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -179,15 +139,7 @@ namespace Data
         public bool IncreaseTurns(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "UPDATE [Team] SET [Turns] = [Turns] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -206,15 +158,7 @@ namespace Data
         public bool IncreaseWins(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "UPDATE [Team] SET [Wins] = [Wins] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
@@ -233,15 +177,7 @@ namespace Data
         public bool IncreaseLosses(Team team)
         {
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch (Exception e)
-            {
-                new ExceptionSqLiteContext().LogException(e);
-                return false;
-            }
+            sqlConnection.Open();
 
             var commandText = "UPDATE [Team] SET [Losses] = [Losses] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
