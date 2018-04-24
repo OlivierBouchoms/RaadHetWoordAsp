@@ -113,8 +113,9 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
             }
-            catch 
+            catch (Exception e)
             {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
                 viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
             }
@@ -165,7 +166,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
             var round = new Round();
             if (_round)
@@ -205,7 +206,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             try
@@ -213,7 +214,10 @@ namespace RaadHetWoordGit.Controllers
                 var round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
                 viewModel.Game.CurrentRound = round;
             }
-            catch { }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+;           }
 
             return viewModel;
         }

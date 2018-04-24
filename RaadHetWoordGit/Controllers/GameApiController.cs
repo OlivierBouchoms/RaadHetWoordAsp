@@ -105,7 +105,7 @@ namespace RaadHetWoordGit.Controllers
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine(e);
+                    new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             var round = new Round();
@@ -136,13 +136,12 @@ namespace RaadHetWoordGit.Controllers
                 round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
                 Debug.WriteLine(HttpContext.Session.GetString(nameof(Round)));
                 Debug.WriteLine(round.ToString());
-                //Gaat fout
                 viewModel.Game.CurrentRound = new Round();
                 viewModel.Game.CurrentRound.Team = round.Team;
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             return viewModel;

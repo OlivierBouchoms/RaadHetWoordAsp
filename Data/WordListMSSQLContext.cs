@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Models;
@@ -39,14 +40,7 @@ namespace Data
         {
             var words = new List<string>();
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch
-            {
-                return new List<string>();
-            }
+            sqlConnection.Open();
 
             string query = "SELECT [text] FROM Word";
             var sqlCommand = new SqlCommand(query, sqlConnection);
@@ -67,14 +61,7 @@ namespace Data
         {
             var words = new List<string>();
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch
-            {
-                return new List<string>();
-            }
+            sqlConnection.Open();
 
             string query = "SELECT [text] " +
                            "FROM[word] " +

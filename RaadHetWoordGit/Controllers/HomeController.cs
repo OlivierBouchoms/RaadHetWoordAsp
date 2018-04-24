@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Data;
+using Logic;
 using Microsoft.AspNetCore.Mvc;
-using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
 {
@@ -9,8 +11,8 @@ namespace RaadHetWoordGit.Controllers
         public IActionResult Index()
         {
             HttpContext.Session.Clear();
-
             return View();
         }
     }
 }
+

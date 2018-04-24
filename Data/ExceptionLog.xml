@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Automatically generated, do not modify-->
+<Exceptions>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:50 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>9:50 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>8:30 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+  </Exception>
+</Exceptions>
