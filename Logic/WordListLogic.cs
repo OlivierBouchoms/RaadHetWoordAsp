@@ -35,7 +35,7 @@ namespace Logic
         {
             try
             {
-                return ShuffleWords(repo.GetWords());
+                return ShuffleWords(repo.GetWordsFromWordlist(title));
             }
             catch (Exception e)
             {

@@ -11,6 +11,14 @@ namespace RaadHetWoordGit.Controllers
         public IActionResult Index()
         {
             HttpContext.Session.Clear();
+            try
+            {
+                throw new ArgumentNullException();
+            }
+            catch (Exception e)
+            {
+                new ExceptionSqLiteContext().LogException(e);
+            }
             return View();
         }
     }
