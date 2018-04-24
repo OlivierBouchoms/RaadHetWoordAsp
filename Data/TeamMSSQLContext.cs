@@ -21,7 +21,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -52,7 +52,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -83,7 +83,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return team;
             }
 
@@ -124,7 +124,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -155,7 +155,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -185,7 +185,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -212,7 +212,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 
@@ -239,7 +239,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return false;
             }
 

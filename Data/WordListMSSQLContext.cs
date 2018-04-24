@@ -17,7 +17,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return new List<string>();
             }
 
@@ -46,7 +46,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionSqLiteContext().LogException(e);
                 return new List<string>();
             }
 

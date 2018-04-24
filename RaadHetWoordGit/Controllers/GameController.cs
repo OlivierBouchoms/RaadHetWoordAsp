@@ -112,7 +112,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
                 viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
                 _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex + 1]);
             }
@@ -163,7 +163,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
             var round = new Round();
             if (_round)
@@ -203,7 +203,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             try
@@ -213,7 +213,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
 ;            }
 
             return viewModel;

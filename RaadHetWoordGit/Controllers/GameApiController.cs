@@ -105,7 +105,7 @@ namespace RaadHetWoordGit.Controllers
                 }
                 catch (Exception e)
                 {
-                    ExceptionSqLiteContext.LogException(e);
+                    new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             var round = new Round();
@@ -142,7 +142,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                ExceptionSqLiteContext.LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
 
             return viewModel;

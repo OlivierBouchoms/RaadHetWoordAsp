@@ -5,13 +5,13 @@ using System.Diagnostics;
 
 namespace Data
 {
-    public class ExceptionSqLiteContext
+    public class ExceptionSqLiteContext : IExceptionContext
     {
         /// <summary>
         /// Insert data from exception that is thrown
         /// </summary>
         /// <param name="exception">Exception that was thrown</param>
-        public static bool LogException(Exception exception)
+        public bool LogException(Exception exception)
         {
             var sqLiteConnection = DataBase.SqLite;
             try
@@ -20,7 +20,7 @@ namespace Data
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                return false;
             }
 
             var commandText =
