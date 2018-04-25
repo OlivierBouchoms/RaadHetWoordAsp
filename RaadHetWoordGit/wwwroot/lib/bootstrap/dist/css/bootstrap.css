@@ -3055,6 +3055,10 @@ select[multiple].input-lg {
     color: black;
 }	
 
+.borderbottom {
+    border-bottom: 1px solid grey;
+}
+
 /* Einde eigen css*/
 
 

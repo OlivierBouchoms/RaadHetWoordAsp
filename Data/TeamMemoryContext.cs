@@ -28,17 +28,7 @@ namespace Data
             throw new System.NotImplementedException();
         }
 
-        public List<Team> GetTeamsByScore()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public List<Team> GetTeamByTurns()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public List<Team> GetTeamsByWins()
+        public List<Team> GetTeams()
         {
             throw new System.NotImplementedException();
         }

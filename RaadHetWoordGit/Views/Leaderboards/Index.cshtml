@@ -1,8 +1,47 @@
-﻿@model List<Models.Team>
+﻿@using Models
+@model RaadHetWoordGit.ViewModels.LeaderboardViewModel
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/LeaderBoardScripts.js"></script>
 
 <h2>Leaderboards</h2>
 
-@for (int i = 0; i < Model.Count; i++)
-{
-    <p>@Model[i].ToString()</p>
-}
+<div id="leaderboardcontainer" class="borderbottom">
+    <div class="row">
+        <div class="col-lg-1">Position</div>
+        <div class="col-lg-5">Team</div>
+        <div class="col-lg-1">Score</div>
+        <div class="col-lg-1">Wins</div>
+        <div class="col-lg-1">Losses</div>
+        <div class="col-lg-1">WinLoss</div>
+    </div>
+    @for (int i = 0; i < Model.Teams.Count; i++)
+    {
+        var rank = i + 1;
+        <div class="row">
+            <div class="col-lg-1">@rank</div>
+            <div class="col-lg-5">@Model.Teams[i].Name</div>
+            <div class="col-lg-1">@Model.Teams[i].Score</div>
+            <div class="col-lg-1">@Model.Teams[i].Wins</div>
+            <div class="col-lg-1">@Model.Teams[i].Losses</div>
+            <div class="col-lg-1">@Model.Teams[i].WinLoss</div>
+        </div>
+    }
+</div>
+
+<div class="dropdown">
+    <h4>Sorteer:</h4>
+    <ul id="sortmenu">
+        @foreach (var _enum in Enum.GetValues(typeof(OrderBy)))
+        {
+            <li><a asp-action="Teams" asp-route-id="@_enum.ToString()">@_enum.ToString()</a></li>
+        }
+    </ul>
+@*    <form asp-for="OrderBy" asp-action="Index" asp-controller="Leaderboards">*@
+@*        @foreach (var _enum in Enum.GetValues(typeof(OrderBy)))*@
+@*        {*@
+@*            <input class="btn btn-link" asp-for="OrderBy" type="submit" value="@_enum" /> <br/>*@
+@*        }*@
+@*    </form>*@
+
+</div>

@@ -1,6 +1,11 @@
-﻿using Data;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
+using Models;
+using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
 {
@@ -10,10 +15,19 @@ namespace RaadHetWoordGit.Controllers
         private TeamInGameLogic _teamInGameLogic;
         private GameLogic _gameLogic;
         private WordListLogic _wordListLogic;
-
+       
         public IActionResult Index()
         {
-            return View();
+            InitializeLogic();
+            
+            return View(new LeaderboardViewModel(_teamLogic.GetTeams(null)));
+        }
+
+        public IActionResult Teams(string orderby)
+        {
+            InitializeLogic();
+
+            return PartialView("TeamsPartial", new LeaderboardViewModel(_teamLogic.GetTeams(orderby)));
         }
 
         /// <summary>

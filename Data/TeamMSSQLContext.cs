@@ -194,43 +194,28 @@ namespace Data
         }
 
         /// <summary>
-        /// Get all teams sorted by alpabet
-        /// </summary>
-        public List<Team> GetTeamsByAlphabet()
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Get all teams sorted by score
         /// </summary>
-        public List<Team> GetTeamsByScore()
+        public List<Team> GetTeams()
         {
-            throw new NotImplementedException();
-        }
+            var teams = new List<Team>();
+            var sqlConnection = DataBase.MsSql;
+            sqlConnection.Open();
 
-        /// <summary>
-        /// Get all teams sorted by turns
-        /// </summary>
-        public List<Team> GetTeamByTurns()
-        {
-            throw new NotImplementedException();
-        }
+            var commandText = "SELECT * FROM [Team]";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            var sqlDataReader = sqlCommand.ExecuteReader();
 
-        /// <summary>
-        /// Get all teams sorted by wins
-        /// </summary>
-        public List<Team> GetTeamsByWins()
-        {
-            throw new NotImplementedException();
-        }
+            while (sqlDataReader.Read())
+            {
+                teams.Add(new Team(sqlDataReader.GetString(1), sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(7), sqlDataReader.GetDecimal(6)));
+            }
 
-        /// <summary>
-        /// Get all teams sorted by winloss
-        /// </summary>
-        public List<Team> GetTeamsByWinLoss()
-        {
-            throw new NotImplementedException();
+            sqlDataReader.Close();
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+
+            return teams;
         }
     }
 }

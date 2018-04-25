@@ -9,15 +9,7 @@ namespace Data
 
         bool AddTeam(Team team);
 
-        List<Team> GetTeamsByAlphabet();
-
-        List<Team> GetTeamsByScore();
-
-        List<Team> GetTeamByTurns();
-
-        List<Team> GetTeamsByWins();
-
-        List<Team> GetTeamsByWinLoss();
+        List<Team> GetTeams();
 
         Team FillWithData(Team team);
 

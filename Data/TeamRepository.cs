@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System.Collections.Generic;
+using Models;
 
 namespace Data
 {
@@ -49,6 +50,11 @@ namespace Data
         public bool IncreaseLosses(Team team)
         {
             return context.IncreaseLosses(team);
+        }
+
+        public List<Team> GetTeams()
+        {
+            return context.GetTeams();
         }
     }
 }
