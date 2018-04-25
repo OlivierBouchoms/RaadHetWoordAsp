@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
-using Models;
 
 namespace Logic
 {

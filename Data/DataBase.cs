@@ -1,8 +1,6 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.IO;
-using System.Reflection;
 
 namespace Data
 {

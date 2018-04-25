@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using Data;
+﻿using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
-using Models;
 using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
