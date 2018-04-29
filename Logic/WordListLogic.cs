@@ -6,11 +6,11 @@ namespace Logic
 {
     public class WordListLogic
     {
-        private readonly WordListRepository repo;
+        private readonly WordListRepository _repo;
 
-        public WordListLogic(WordListRepository wordListRepository)
+        public WordListLogic(WordListRepository repo)
         {
-            repo = wordListRepository;
+            _repo = repo;
         }
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Logic
         {
             if (String.IsNullOrWhiteSpace(title))
             {
-                return ShuffleWords(repo.GetAllWords());
+                return ShuffleWords(_repo.GetAllWords());
             }
 
             return GetWordsFromWordlist(title);
@@ -34,7 +34,7 @@ namespace Logic
         {
             try
             {
-                return ShuffleWords(repo.GetWordsFromWordlist(title));
+                return ShuffleWords(_repo.GetWordsFromWordlist(title));
             }
             catch (Exception e)
             {
@@ -75,7 +75,7 @@ namespace Logic
 
         public List<string> GetWordlists()
         {
-            return repo.GetWordlists();
+            return _repo.GetWordlists();
         }
     }
 }

@@ -9,16 +9,15 @@ namespace Data
         /// <summary>
         /// Insert data from exception that is thrown
         /// </summary>
-        /// <param name="exception">Exception that was thrown</param>
+        /// <param name="e">Exception that was thrown</param>
         public bool LogException(Exception e)
         {
             var sqLiteConnection = DataBase.SqLite;
             sqLiteConnection.Open();
 
-            var commandText =
+            const string commandText =
                 "INSERT INTO Exception (Data, HelpLink, HResult, InnerException, Message, Source, StackTrace, TargetSite) VALUES (@data, @helplink, @hresult, @innerexception, @message, @source, @stacktrace, @targetsite)";
-            var sqLiteCommand = new SQLiteCommand(commandText, sqLiteConnection);
-            sqLiteCommand.CommandType = CommandType.Text;
+            var sqLiteCommand = new SQLiteCommand(commandText, sqLiteConnection) {CommandType = CommandType.Text};
             sqLiteCommand.Parameters.AddWithValue("data", e.Data);
             sqLiteCommand.Parameters.AddWithValue("helplink", e.HelpLink);
             sqLiteCommand.Parameters.AddWithValue("hresult", e.HResult);
@@ -31,10 +30,12 @@ namespace Data
             if (sqLiteCommand.ExecuteNonQuery() > 0)
             {
                 sqLiteConnection.Close();
+                sqLiteConnection.Dispose();
                 return true;
             }
 
             sqLiteConnection.Close();
+            sqLiteConnection.Dispose();
             return false;
         }
     }

@@ -38,11 +38,6 @@ namespace Data
             throw new System.NotImplementedException();
         }
 
-        public Team FillWithData(Team team)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public bool IncreaseScore(Team team)
         {
             throw new System.NotImplementedException();

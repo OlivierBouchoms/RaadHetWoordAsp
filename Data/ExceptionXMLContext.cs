@@ -10,9 +10,9 @@ namespace Data
     {
         public bool LogException(Exception e)
         {
-            string id = DateTime.Now.ToShortTimeString();
-            string innerException = String.Empty;
-            string message = String.Empty;
+            var id = DateTime.Now.ToShortTimeString();
+            var innerException = string.Empty;
+            var message = string.Empty;
 
             if (e.InnerException != null) { innerException = e.InnerException.ToString(); }
             if (e.Message != null) { message = e.Message; }
@@ -38,8 +38,7 @@ namespace Data
                 return true;
             }
 
-            var settings = new XmlWriterSettings();
-            settings.Indent = true;
+            var settings = new XmlWriterSettings() {Indent = true};
 
             var xmlWriter = XmlWriter.Create(XML.GetPath(), settings);
             

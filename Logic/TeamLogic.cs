@@ -11,18 +11,18 @@ namespace Logic
     /// </summary>
     public class TeamLogic
     {
-        private readonly TeamRepository repo;
+        private readonly TeamRepository _repo;
 
-        public TeamLogic(TeamRepository teamRepository)
+        public TeamLogic(TeamRepository repo)
         {
-            repo = teamRepository;
+            _repo = repo;
         }
 
         private bool CheckIfExists(Team team)
         {
             try
             {
-                return repo.CheckIfExists(team);
+                return _repo.CheckIfExists(team);
             }
             catch (Exception e)
             {
@@ -41,7 +41,7 @@ namespace Logic
 
             try
             {
-                return repo.AddTeam(team);
+                return _repo.AddTeam(team);
             }
             catch (Exception e)
             {
@@ -51,25 +51,11 @@ namespace Logic
             return false;
         }
 
-        public Team FillWithData(Team team)
-        {
-            try
-            {
-                return repo.FillWithData(team);
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-            }
-
-            return team;
-        }
-
         public bool IncreaseScore(Team team)
         {
             try
             {
-                return repo.IncreaseScore(team);
+                return _repo.IncreaseScore(team);
             }
             catch (Exception e)
             {
@@ -83,7 +69,7 @@ namespace Logic
         {
             try
             {
-                return repo.DecreaseScore(team);
+                return _repo.DecreaseScore(team);
             }
             catch (Exception e)
             {
@@ -96,7 +82,7 @@ namespace Logic
         {
             try
             {
-                return repo.InceaseTurns(team);
+                return _repo.InceaseTurns(team);
             }
             catch (Exception e)
             {
@@ -109,7 +95,7 @@ namespace Logic
         {
             try
             {
-                return repo.IncreaseWins(team);
+                return _repo.IncreaseWins(team);
             }
             catch (Exception e)
             {
@@ -122,7 +108,7 @@ namespace Logic
         {
             try
             {
-                return repo.IncreaseLosses(team);
+                return _repo.IncreaseLosses(team);
             }
             catch (Exception e)
             {
@@ -137,15 +123,15 @@ namespace Logic
             {
                 if (orderby == OrderBy.Wins.ToString())
                 {
-                    return repo.GetTeams().OrderByDescending(x => x.Wins).ToList();
+                    return _repo.GetTeams().OrderByDescending(x => x.Wins).ToList();
                 }
             
                 if (orderby == OrderBy.WinLoss.ToString())
                 {
-                    return repo.GetTeams().OrderByDescending(x => x.WinLoss).ToList();
+                    return _repo.GetTeams().OrderByDescending(x => x.WinLoss).ToList();
                 }
 
-                return repo.GetTeams().OrderByDescending(x => x.Score).ToList();
+                return _repo.GetTeams().OrderByDescending(x => x.Score).ToList();
             }
             catch (Exception e)
             {

@@ -5,21 +5,21 @@ namespace Data
 {
     public class GameRepository
     {
-        private readonly IGameContext context;
+        private readonly IGameContext _context;
 
         public GameRepository(IGameContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public Game AddTeams(List<Team> teams, Game game)
         {
-            return context.AddTeams(game, teams);
+            return _context.AddTeams(game, teams);
         }
 
         public Game AddWordlist(Game game, Wordlist wordlist)
         {
-            return context.AddWordlist(game, wordlist);
+            return _context.AddWordlist(game, wordlist);
         }
     }
 }

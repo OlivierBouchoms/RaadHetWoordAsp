@@ -4,26 +4,26 @@ namespace Data
 {
     public class WordListRepository
     {
-        private readonly IWordListContext context;
+        private readonly IWordListContext _context;
 
         public WordListRepository(IWordListContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public List<string> GetAllWords()
         {
-            return context.GetAllWords();
+            return _context.GetAllWords();
         }
 
         public List<string> GetWordlists()
         {
-            return context.GetWordlists();
+            return _context.GetWordlists();
         }
 
         public List<string> GetWordsFromWordlist(string title)
         {
-            return context.GetWordsFromWordlist(title);
+            return _context.GetWordsFromWordlist(title);
         }
     }
 }

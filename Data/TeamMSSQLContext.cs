@@ -15,7 +15,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "Select [Name] From [Team] where [Name] =@name";
+            const string commandText = "Select [Name] From [Team] where [Name] =@name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             var sqlDataReader = sqlCommand.ExecuteReader();
@@ -38,7 +38,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
+            const string commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
                               "Values (@name, 0, 0, 0, 0)";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
@@ -54,39 +54,6 @@ namespace Data
         }
 
         /// <summary>
-        /// Not used
-        /// </summary>
-        public Team FillWithData(Team team)
-        {
-            var sqlConnection = DataBase.MsSql;
-            sqlConnection.Open();
-
-            var commandText = "SELECT * From [Team] where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            var sqlDataReader = sqlCommand.ExecuteReader();
-            while (sqlDataReader.Read())
-            {
-                if (sqlDataReader.HasRows)
-                {
-                    var _team = new Team(team.Name, sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(6), sqlDataReader.GetDecimal(7));
-                    sqlCommand.Dispose();
-                    sqlConnection.Close();
-                    sqlConnection.Dispose();
-                    sqlDataReader.Close();
-                    sqlDataReader.Dispose();
-                    return _team;
-                }
-            }
-            sqlConnection.Close();
-            sqlConnection.Dispose();
-            sqlDataReader.Close();
-            sqlDataReader.Dispose();
-
-            return team;
-        }
-
-        /// <summary>
         /// Increase score of given team
         /// </summary>
         public bool IncreaseScore(Team team)
@@ -94,7 +61,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "UPDATE [Team] SET [Score] = [Score] + 1 where [Name] = @name";
+            const string commandText = "UPDATE [Team] SET [Score] = [Score] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
@@ -117,7 +84,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
+            const string commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
@@ -139,7 +106,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "UPDATE [Team] SET [Turns] = [Turns] + 1 where [Name] = @name";
+            const string commandText = "UPDATE [Team] SET [Turns] = [Turns] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
@@ -158,7 +125,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "UPDATE [Team] SET [Wins] = [Wins] + 1 where [Name] = @name";
+            const string commandText = "UPDATE [Team] SET [Wins] = [Wins] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
@@ -177,7 +144,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "UPDATE [Team] SET [Losses] = [Losses] + 1 where [Name] = @name";
+            const string commandText = "UPDATE [Team] SET [Losses] = [Losses] + 1 where [Name] = @name";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
             if (sqlCommand.ExecuteNonQuery() > 1)
@@ -200,7 +167,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            var commandText = "SELECT * FROM [Team]";
+            const string commandText = "SELECT * FROM [Team]";
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
             var sqlDataReader = sqlCommand.ExecuteReader();
 

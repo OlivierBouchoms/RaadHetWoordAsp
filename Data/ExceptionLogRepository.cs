@@ -4,16 +4,16 @@ namespace Data
 {
     public class ExceptionLogRepository
     {
-        private readonly IExceptionContext context;
+        private readonly IExceptionContext _context;
 
         public ExceptionLogRepository(IExceptionContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public bool LogException(Exception e)
         {
-            return context.LogException(e);
+            return _context.LogException(e);
         }
     }
 }
