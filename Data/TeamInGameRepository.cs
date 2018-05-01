@@ -4,26 +4,26 @@ namespace Data
 {
     public class TeamInGameRepository
     {
-        private readonly ITeamInGameContext context;
+        private readonly ITeamInGameContext _context;
 
         public TeamInGameRepository(ITeamInGameContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public Team IncreaseScore(Team team)
         {
-            return context.IncreaseScore(team);
+            return _context.IncreaseScore(team);
         }
 
         public Team DecreaseScore(Team team)
         {
-            return context.DecreaseScore(team);
+            return _context.DecreaseScore(team);
         }
 
         public Team IncreaseTurns(Team team)
         {
-            return context.IncreaseTurns(team);
+            return _context.IncreaseTurns(team);
         }
     }
 }

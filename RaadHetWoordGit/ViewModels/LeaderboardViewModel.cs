@@ -10,6 +10,12 @@ namespace RaadHetWoordGit.ViewModels
             Teams = teams;
         }
 
+        public LeaderboardViewModel(List<Team> teams, string orderBy)
+        {
+            Teams = teams;
+            OrderBy = orderBy;
+        }
+
         public List<Team> Teams { get; set; }
         public OrderBy Order { get; set; }
         public string OrderBy { get; set; }

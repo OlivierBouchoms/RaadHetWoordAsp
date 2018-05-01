@@ -10,9 +10,9 @@ namespace Data
     {
         public bool LogException(Exception e)
         {
-            string id = DateTime.Now.ToShortTimeString();
-            string innerException = String.Empty;
-            string message = String.Empty;
+            var id = DateTime.Now.ToShortTimeString();
+            var innerException = string.Empty;
+            var message = string.Empty;
 
             if (e.InnerException != null) { innerException = e.InnerException.ToString(); }
             if (e.Message != null) { message = e.Message; }
@@ -26,7 +26,7 @@ namespace Data
                 firstrow.AddBeforeSelf(
                     new XElement("Exception",
                     new XElement("date", id,
-                    new XElement(nameof(e.Data), e.Data.ToString(),
+                    new XElement(nameof(e.Data), e.ToString(),
                     new XElement(nameof(e.HResult), e.HResult.ToString()),
                     new XElement(nameof(e.HelpLink), e.HelpLink),
                     new XElement(nameof(e.InnerException), innerException),
@@ -38,8 +38,7 @@ namespace Data
                 return true;
             }
 
-            var settings = new XmlWriterSettings();
-            settings.Indent = true;
+            var settings = new XmlWriterSettings() {Indent = true};
 
             var xmlWriter = XmlWriter.Create(XML.GetPath(), settings);
             
@@ -49,7 +48,7 @@ namespace Data
             xmlWriter.WriteStartElement("Exceptions");
             xmlWriter.WriteStartElement("Exception");
             xmlWriter.WriteAttributeString("date", id);
-            xmlWriter.WriteAttributeString(nameof(e.Data), e.Data.ToString());
+            xmlWriter.WriteAttributeString(nameof(e.Data), e.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HResult), e.HResult.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HelpLink), e.HelpLink);
             xmlWriter.WriteAttributeString(nameof(e.InnerException), innerException);

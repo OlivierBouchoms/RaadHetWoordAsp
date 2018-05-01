@@ -1,5 +1,6 @@
 ﻿using System;
 using Data;
+using Logic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RaadHetWoordGit.Controllers
@@ -15,7 +16,7 @@ namespace RaadHetWoordGit.Controllers
             }
             catch (Exception e)
             {
-                new ExceptionSqLiteContext().LogException(e);
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
             }
             return View();
         }

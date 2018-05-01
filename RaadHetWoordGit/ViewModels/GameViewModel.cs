@@ -10,11 +10,6 @@ namespace RaadHetWoordGit.ViewModels
         //Naar UI
         public Game Game { get; set; }
 
-        public bool TeamOneSuccess { get; set; }
-        public bool TeamTwoSuccess { get; set; }
-
-        public string TeamColumnClass { get; set; }
-        public string TeamFormClass { get; set; }
         public string WordlistClass { get; set; }
         public string WarningClass { get; set; }
         public string Winner { get; set; }

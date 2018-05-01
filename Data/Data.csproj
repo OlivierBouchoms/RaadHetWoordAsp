@@ -43,7 +43,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="DataBaseResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>DataBaseResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="XmlResources.resx">

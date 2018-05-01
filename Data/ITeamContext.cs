@@ -11,8 +11,6 @@ namespace Data
 
         List<Team> GetTeams();
 
-        Team FillWithData(Team team);
-
         bool IncreaseScore(Team team);
 
         bool DecreaseScore(Team team);

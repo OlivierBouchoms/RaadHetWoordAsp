@@ -6,9 +6,8 @@ namespace Models
     [Serializable]
     public class Wordlist
     {
-        public string Title { get; }
-        public string Description { get; private set; }
-        public List<string> Words { get; }
+        public readonly string Title;
+        public readonly List<string> Words;
 
         public Wordlist()
         {

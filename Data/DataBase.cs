@@ -4,24 +4,24 @@ using System.IO;
 
 namespace Data
 {
-    public class DataBase
+    internal class DataBase
     {
         /// <summary>
         /// SqlConnection object that is used in all the MSSQL contexts.
         /// </summary>
         /// <returns>A SqlConnection object</returns>
-        public static SqlConnection MsSql => new SqlConnection(DataBaseResources.MsSqlConnection);
-
-        public static string FileName => DataBaseResources.SqLiteFile;
+        internal static SqlConnection MsSql => new SqlConnection(DataBaseResources.MsSqlConnection);
 
         /// <summary>
         /// SqlConnection object for logging all exceptions
         /// </summary>
-        public static SQLiteConnection SqLite => new SQLiteConnection(GenerateSqLiteConnectionString());
+        internal static SQLiteConnection SqLite => new SQLiteConnection(GenerateSqLiteConnectionString());
+
+        private static string FileName => DataBaseResources.SqLiteFile;
 
         private static string GenerateSqLiteConnectionString()
         {
-            string directory = Directory.GetCurrentDirectory().Replace("RaadHetWoordGit", "Data");
+            var directory = Directory.GetCurrentDirectory().Replace("RaadHetWoordGit", "Data");
             return $"Data Source={directory}\\{FileName};Version=3";
         }
     }

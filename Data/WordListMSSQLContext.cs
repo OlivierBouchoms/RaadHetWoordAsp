@@ -19,7 +19,7 @@ namespace Data
                 return new List<string>();
             }
 
-            var query = "Select [Name] FROM [WordCategory] ORDER BY [Name] ASC";
+            const string query = "Select [Name] FROM [WordCategory] ORDER BY [Name] ASC";
             var sqlCommand = new SqlCommand(query, sqlConnection);
             var sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -40,7 +40,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            string query = "SELECT [text] FROM Word";
+            const string query = "SELECT [text] FROM Word";
             var sqlCommand = new SqlCommand(query, sqlConnection);
             var sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
@@ -61,7 +61,7 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            string query = "SELECT [text] " +
+            const string commandText = "SELECT [text] " +
                            "FROM[word] " +
                            "INNER JOIN[word_and_wordcategorie] " +
                            "ON [word].[idword] = [word_and_wordcategorie].[wordid] " +
@@ -70,7 +70,7 @@ namespace Data
                            "[wordcategory].[idwordcategory] " +
                            "WHERE[wordcategory].[name] = @title";
             var dataTable = new DataTable();
-            var sqlCommand = new SqlCommand(query, sqlConnection);
+            var sqlCommand = new SqlCommand(commandText, sqlConnection);
             sqlCommand.Parameters.Add("title", SqlDbType.Int).Value = title;
             var sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);

@@ -7,26 +7,35 @@
 <h2>Leaderboards</h2>
 
 <div id="leaderboardcontainer" class="borderbottom">
-    <div class="row">
-        <div class="col-lg-1">Position</div>
-        <div class="col-lg-5">Team</div>
-        <div class="col-lg-1">Score</div>
-        <div class="col-lg-1">Wins</div>
-        <div class="col-lg-1">Losses</div>
-        <div class="col-lg-1">WinLoss</div>
+    <div class="table-responsive">
+        <table class="table">
+            <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Wins</th>
+                    <th scope="col">Losses</th>
+                    <th scope="col">WinLoss</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Teams.Count; i++)
+                {
+                    var rank = i + 1;
+                    <tr>
+                        <th scope="row">@rank</th>
+                        <td>@Model.Teams[i].Name</td>
+                        <td>@Model.Teams[i].Score</td>
+                        <td>@Model.Teams[i].Wins</td>
+                        <td>@Model.Teams[i].Losses</td>
+                        <td>@Model.Teams[i].WinLoss</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-    @for (int i = 0; i < Model.Teams.Count; i++)
-    {
-        var rank = i + 1;
-        <div class="row">
-            <div class="col-lg-1">@rank</div>
-            <div class="col-lg-5">@Model.Teams[i].Name</div>
-            <div class="col-lg-1">@Model.Teams[i].Score</div>
-            <div class="col-lg-1">@Model.Teams[i].Wins</div>
-            <div class="col-lg-1">@Model.Teams[i].Losses</div>
-            <div class="col-lg-1">@Model.Teams[i].WinLoss</div>
-        </div>
-    }
 </div>
 
 <div class="dropdown">
@@ -34,14 +43,7 @@
     <ul id="sortmenu">
         @foreach (var _enum in Enum.GetValues(typeof(OrderBy)))
         {
-            <li><a asp-action="Teams" asp-route-id="@_enum.ToString()">@_enum.ToString()</a></li>
+            <li><a asp-controller="Leaderboards" asp-action="Teams" asp-route-orderby="@_enum.ToString()">@_enum.ToString()</a></li>
         }
     </ul>
-@*    <form asp-for="OrderBy" asp-action="Index" asp-controller="Leaderboards">*@
-@*        @foreach (var _enum in Enum.GetValues(typeof(OrderBy)))*@
-@*        {*@
-@*            <input class="btn btn-link" asp-for="OrderBy" type="submit" value="@_enum" /> <br/>*@
-@*        }*@
-@*    </form>*@
-
 </div>

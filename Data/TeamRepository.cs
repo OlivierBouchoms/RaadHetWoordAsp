@@ -5,56 +5,51 @@ namespace Data
 {
     public class TeamRepository
     {
-        private readonly ITeamContext context;
+        private readonly ITeamContext _context;
 
         public TeamRepository(ITeamContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public bool CheckIfExists(Team team)
         {
-            return context.CheckIfExists(team);
+            return _context.CheckIfExists(team);
         }
 
         public bool AddTeam(Team team)
         {
-            return context.AddTeam(team);
-        }
-
-        public Team FillWithData(Team team)
-        {
-            return context.FillWithData(team);
+            return _context.AddTeam(team);
         }
 
         public bool IncreaseScore(Team team)
         {
-            return context.IncreaseScore(team);
+            return _context.IncreaseScore(team);
         }
 
         public bool DecreaseScore(Team team)
         {
-            return context.DecreaseScore(team);
+            return _context.DecreaseScore(team);
         }
 
         public bool InceaseTurns(Team team)
         {
-            return context.IncreaseTurns(team);
+            return _context.IncreaseTurns(team);
         }
 
         public bool IncreaseWins(Team team)
         {
-            return context.IncreaseWins(team);
+            return _context.IncreaseWins(team);
         }
 
         public bool IncreaseLosses(Team team)
         {
-            return context.IncreaseLosses(team);
+            return _context.IncreaseLosses(team);
         }
 
         public List<Team> GetTeams()
         {
-            return context.GetTeams();
+            return _context.GetTeams();
         }
     }
 }

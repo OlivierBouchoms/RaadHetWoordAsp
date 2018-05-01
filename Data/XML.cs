@@ -2,19 +2,14 @@
 
 namespace Data
 {
-    public class XML
+    internal class XML
     {
-        public static string FileName => XmlResources.XmlFile;
+        private static string FileName => XmlResources.XmlFile;
 
-        public static string GetPath()
+        internal static string GetPath()
         {
-            string directory = Directory.GetCurrentDirectory().Replace("RaadHetWoordGit", "Data");
+            var directory = Directory.GetCurrentDirectory().Replace("RaadHetWoordGit", "Data");
             return $"{directory}\\{FileName}";
-        }
-
-        public static string GetParent()
-        {
-            return Directory.GetCurrentDirectory().Replace("RaadHetWoordGit", "Data");
         }
     }
 }

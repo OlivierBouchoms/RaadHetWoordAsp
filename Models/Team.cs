@@ -18,9 +18,9 @@ namespace Models
             //Empty
         }
 
-        public Team(bool score)
+        public Team(bool loser)
         {
-            Score = Int32.MaxValue;
+            Score = int.MaxValue;
         }
 
         public Team(string name)
