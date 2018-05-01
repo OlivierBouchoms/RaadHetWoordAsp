@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Data.SQLite;
 
@@ -18,7 +19,7 @@ namespace Data
             const string commandText =
                 "INSERT INTO Exception (Data, HelpLink, HResult, InnerException, Message, Source, StackTrace, TargetSite) VALUES (@data, @helplink, @hresult, @innerexception, @message, @source, @stacktrace, @targetsite)";
             var sqLiteCommand = new SQLiteCommand(commandText, sqLiteConnection) {CommandType = CommandType.Text};
-            sqLiteCommand.Parameters.AddWithValue("data", e.Data);
+            sqLiteCommand.Parameters.AddWithValue("data", e.ToString());
             sqLiteCommand.Parameters.AddWithValue("helplink", e.HelpLink);
             sqLiteCommand.Parameters.AddWithValue("hresult", e.HResult);
             sqLiteCommand.Parameters.AddWithValue("innerexception", e.InnerException);
@@ -38,5 +39,6 @@ namespace Data
             sqLiteConnection.Dispose();
             return false;
         }
+
     }
 }

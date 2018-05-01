@@ -71,12 +71,12 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.Game = new Game(_checksLogic.MaxScore(viewModel.MaxScore), teams);
             viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
-            
+            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
+
             _teamLogic.AddTeam(teams[0]);
             _teamLogic.AddTeam(teams[1]);
-            viewModel.WarningClass = "hidden";
 
-            PlaceViewModelInSession(viewModel, false);
+            PlaceViewModelInSession(viewModel);
 
             return RedirectToAction("ScoreBoard", "Game");
         }
@@ -97,7 +97,7 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.Winner = winner.Name;
                 _teamLogic.IncreaseWins(_gameLogic.GetWinner(viewModel.Game));
                 _teamLogic.IncreaseLosses(_gameLogic.GetLoser(viewModel.Game));
-                PlaceViewModelInSession(viewModel, false);
+                PlaceViewModelInSession(viewModel);
                 return RedirectToAction("Summary", "Game");
             }
 
@@ -123,7 +123,7 @@ namespace RaadHetWoordGit.Controllers
 
             _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
 
-            PlaceViewModelInSession(viewModel, true);
+            PlaceViewModelInSession(viewModel);
 
             return View(viewModel);
         }
@@ -149,28 +149,18 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Place gameviewmodel in session 
         /// </summary>
-        /// <param name="_round">Is there a round to store in the session?</param>
-        private void PlaceViewModelInSession(GameViewModel inputViewModel, bool _round)
+        /// <param name="inputViewModel">Viewmodel to place in session</param>
+        private void PlaceViewModelInSession(GameViewModel inputViewModel)
         {
             var teamList = inputViewModel.Game.TeamList;
-            var wordList = new List<string>();
-            try
-            {
-                wordList = inputViewModel.Game.Wordlist.Words;
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-            }
-            var round = new Round();
-            if (_round)
-            {
-                round = inputViewModel.Game.CurrentRound;
-                HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
-                inputViewModel.Game.CurrentRound = null;
-            }
+            var wordList = inputViewModel.Game.Wordlist.Words;
+            var round = inputViewModel.Game.CurrentRound;
+            
+            HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
             HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teamList));
             HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
+
+            inputViewModel.Game.CurrentRound = null;
             inputViewModel.Game.TeamList = null;
             inputViewModel.Game.Wordlist = null;
 
@@ -178,10 +168,7 @@ namespace RaadHetWoordGit.Controllers
 
             inputViewModel.Game.TeamList = teamList;
             inputViewModel.Game.Wordlist = new Wordlist(wordList);
-            if (_round)
-            {
-                inputViewModel.Game.CurrentRound = round;
-            }
+            inputViewModel.Game.CurrentRound = round;
         }
 
         /// <summary>
@@ -189,30 +176,11 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>        
         private GameViewModel GetViewModelFromSession()
         {
-            var jsonTeams = HttpContext.Session.GetString("teamlist");
-            var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
-            var wordList = JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist)));
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
-
-            viewModel.Game.TeamList = teamList;
-            try
-            {
-                viewModel.Game.Wordlist = new Wordlist(wordList);
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-            }
-
-            try
-            {
-                var round = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
-                viewModel.Game.CurrentRound = round;
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-;           }
+        
+            viewModel.Game.TeamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
+            viewModel.Game.Wordlist = new Wordlist(JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist))));
+            viewModel.Game.CurrentRound = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
 
             return viewModel;
         }
@@ -222,11 +190,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>      
         private GameViewModel GetTeamsFromSession()
         {
-            var teams = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
-            HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teams));
-            var viewModel = new GameViewModel();
-            viewModel.Game = new Game(-1, teams);
-            return viewModel;
+            return new GameViewModel{Game = new Game(-1, JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist")))};
         }
     }
 }

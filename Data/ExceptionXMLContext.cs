@@ -26,7 +26,7 @@ namespace Data
                 firstrow.AddBeforeSelf(
                     new XElement("Exception",
                     new XElement("date", id,
-                    new XElement(nameof(e.Data), e.Data.ToString(),
+                    new XElement(nameof(e.Data), e.ToString(),
                     new XElement(nameof(e.HResult), e.HResult.ToString()),
                     new XElement(nameof(e.HelpLink), e.HelpLink),
                     new XElement(nameof(e.InnerException), innerException),
@@ -48,7 +48,7 @@ namespace Data
             xmlWriter.WriteStartElement("Exceptions");
             xmlWriter.WriteStartElement("Exception");
             xmlWriter.WriteAttributeString("date", id);
-            xmlWriter.WriteAttributeString(nameof(e.Data), e.Data.ToString());
+            xmlWriter.WriteAttributeString(nameof(e.Data), e.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HResult), e.HResult.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HelpLink), e.HelpLink);
             xmlWriter.WriteAttributeString(nameof(e.InnerException), innerException);

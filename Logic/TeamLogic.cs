@@ -121,12 +121,13 @@ namespace Logic
         {
             try
             {
-                if (orderby == OrderBy.Wins.ToString())
+                var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
+                if (OrderBy.Wins == orderBy)
                 {
                     return _repo.GetTeams().OrderByDescending(x => x.Wins).ToList();
                 }
             
-                if (orderby == OrderBy.WinLoss.ToString())
+                if (OrderBy.WinLoss == orderBy)
                 {
                     return _repo.GetTeams().OrderByDescending(x => x.WinLoss).ToList();
                 }
