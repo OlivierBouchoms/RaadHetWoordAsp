@@ -15,6 +15,9 @@ namespace Tests
             _wordlist = new Wordlist(new List<string> { "woord1", "woord2", "woord3" }, "wordlist");
         }
 
+        /// <summary>
+        /// Testcase: nvt
+        /// </summary>
         [TestMethod]
         public void TestSerializing()
         {
