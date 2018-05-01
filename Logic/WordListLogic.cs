@@ -18,7 +18,7 @@ namespace Logic
         /// </summary>
         public List<string> GetWords(string title)
         {
-            if (String.IsNullOrWhiteSpace(title))
+            if (string.IsNullOrWhiteSpace(title))
             {
                 return ShuffleWords(_repo.GetAllWords());
             }

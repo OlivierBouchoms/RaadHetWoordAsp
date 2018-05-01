@@ -122,6 +122,7 @@ namespace Logic
             try
             {
                 var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
+
                 if (OrderBy.Wins == orderBy)
                 {
                     return _repo.GetTeams().OrderByDescending(x => x.Wins).ToList();

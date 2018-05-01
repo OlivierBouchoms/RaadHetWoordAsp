@@ -15,12 +15,7 @@ namespace Logic
                 return false;
             }
 
-            if (String.Equals(teamOne.ToLower().Trim(), teamTwo.ToLower().Trim()))
-            {
-                return false;
-            }
-
-            return true;
+            return !string.Equals(teamOne.ToLower().Trim(), teamTwo.ToLower().Trim());
         }
         
         /// <summary>
@@ -28,12 +23,7 @@ namespace Logic
         /// </summary>
         private bool ValuesAreNull(string input)
         {
-            if (String.IsNullOrWhiteSpace(input))
-            {
-                return true;
-            }
-
-            return false;
+            return string.IsNullOrWhiteSpace(input);
         }
 
         /// <summary>

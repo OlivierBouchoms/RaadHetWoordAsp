@@ -38,10 +38,11 @@ namespace RaadHetWoordGit.Controllers
             InitializeLogic();
             HttpContext.Session.Clear();
 
-            var viewModel = new GameViewModel();
-
-            viewModel.WordlistClass = "hidden";
-            viewModel.Wordlists = _wordListLogic.GetWordlists();
+            var viewModel = new GameViewModel
+            {
+                WordlistClass = "hidden",
+                Wordlists = _wordListLogic.GetWordlists()
+            };
 
             return View(viewModel);
         }
