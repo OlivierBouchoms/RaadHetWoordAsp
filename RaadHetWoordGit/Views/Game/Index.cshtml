@@ -1,9 +1,7 @@
 ﻿@model RaadHetWoordGit.ViewModels.GameViewModel
     
-@if (@Model.TeamFormClass == "visible")
-{
     <!-- Teams invoeren -->
-    <div class="@Model.TeamFormClass">
+    <div>
         <h2>We hebben wat informatie nodig.</h2>
         @if (@Model.WarningClass == "visible")
         {
@@ -15,9 +13,8 @@
             <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 5, maximaal 100." class="form-control" value=""><br/>
             <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in."/><br/>
             <input asp-for="TeamTwo" type="text" class="form-control" placeholder="Voer naam van Team 2 in."/><br/>
-            @if (@Model.TeamFormClass == "visible")
-            {
-                <p data-toggle="tooltip" data-placement="right" title="Wil je geen specifieke woordenlijst? Dan hoef je er geen aan te geven!">Kies een woordenlijst:</p>
+            
+            <p data-toggle="tooltip" data-placement="right" title="Wil je geen specifieke woordenlijst? Dan hoef je er geen aan te geven!">Kies een woordenlijst:</p>
                 <div class="btn-group-justified" data-toggle="buttons">
 
                     @foreach (var wordlist in Model.Wordlists)
@@ -27,30 +24,7 @@
                         </label>
                     }
                 </div>
-            }
             <br/>
             <input class="btn btn-success custom" type="submit" value="Verstuur!"/>
         </form>
     </div>
-}
-
-@if (@Model.TeamColumnClass == "visible")
-{
-    <!-- Overzicht van teams -->
-    <div>
-        <h2>Teams zijn aangemaakt!</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <p>@Model.Game.TeamList[0].ToString()</p>
-            </div>
-            <div class="col-lg-6">
-                <p>@Model.Game.TeamList[1].ToString()</p>
-            </div>
-            <div class="col-lg-12">
-                <form asp-action="PlayGame" asp-controller="Game">
-                    <input class="btn btn-success custom" type="submit" value="Start" />
-                </form>
-            </div>
-        </div>
-    </div>
-}

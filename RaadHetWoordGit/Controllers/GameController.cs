@@ -12,6 +12,7 @@ namespace RaadHetWoordGit.Controllers
 {
     public class GameController : Controller
     {
+        private ChecksLogic _checksLogic;
         private TeamLogic _teamLogic;
         private TeamInGameLogic _teamInGameLogic;
         private GameLogic _gameLogic;
@@ -22,6 +23,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         private void InitializeLogic()
         {
+            _checksLogic = new ChecksLogic();
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
@@ -35,10 +37,9 @@ namespace RaadHetWoordGit.Controllers
         {
             InitializeLogic();
             HttpContext.Session.Clear();
+
             var viewModel = new GameViewModel();
 
-            viewModel.TeamColumnClass = "hidden";
-            viewModel.TeamFormClass = "visible";
             viewModel.WordlistClass = "hidden";
             viewModel.Wordlists = _wordListLogic.GetWordlists();
 
@@ -49,40 +50,35 @@ namespace RaadHetWoordGit.Controllers
         /// The Index page after teams and maxscore have been entered.
         /// </summary>
         [HttpPost]
-        public ActionResult Index(GameViewModel viewModel)
+        public IActionResult Index(GameViewModel viewModel)
         {
-            if (!ValuesAreValid(viewModel))
+            InitializeLogic();
+
+            if (!_checksLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
             {
-                viewModel.TeamOneSuccess = false;
-                viewModel.TeamTwoSuccess = false;
-                viewModel.TeamColumnClass = "hidden";
-                viewModel.TeamFormClass = "visible";
                 viewModel.WarningClass = "visible";
+                viewModel.Wordlists = _wordListLogic.GetWordlists();
                 ViewData["Warning"] = "Let op!";
                 ViewData["ErrorText"] = "Namen zijn niet correct ingevoerd.";
                 return View(viewModel);
             }
 
-            InitializeLogic();
-
-            var teams = new List<Team>(2)
+            var teams = new List<Team>
             {
                 new Team(viewModel.TeamOne),
                 new Team(viewModel.TeamTwo)
             };
 
-            viewModel.Game = new Game(MaxScore(viewModel.MaxScore), teams);
+            viewModel.Game = new Game(_checksLogic.MaxScore(viewModel.MaxScore), teams);
             viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
-
-            viewModel.TeamOneSuccess = _teamLogic.AddTeam(teams[0]);
-            viewModel.TeamTwoSuccess = _teamLogic.AddTeam(teams[1]);
-            viewModel.TeamFormClass = "hidden";
-            viewModel.TeamColumnClass = "visible";
+            
+            _teamLogic.AddTeam(teams[0]);
+            _teamLogic.AddTeam(teams[1]);
             viewModel.WarningClass = "hidden";
 
             PlaceViewModelInSession(viewModel, false);
 
-            return View(viewModel);
+            return RedirectToAction("ScoreBoard", "Game");
         }
 
         /// <summary>
@@ -135,16 +131,15 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// View the scoreboard
         /// </summary>
-        [HttpPost]
         public ActionResult ScoreBoard()
         {
-            return View(GetViewModelFromSession());
+            return View(GetTeamsFromSession());
         }
 
         /// <summary>
         /// View the summary when the game is over
         /// </summary>
-        public IActionResult Summary()
+        public ActionResult Summary()
         {
             var viewModel = GetViewModelFromSession();
             HttpContext.Session.Clear();
@@ -194,6 +189,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>        
         private GameViewModel GetViewModelFromSession()
         {
+            var jsonTeams = HttpContext.Session.GetString("teamlist");
             var teamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
             var wordList = JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist)));
             var viewModel = JsonConvert.DeserializeObject<GameViewModel>(HttpContext.Session.GetString(nameof(GameViewModel)));
@@ -222,65 +218,15 @@ namespace RaadHetWoordGit.Controllers
         }
 
         /// <summary>
-        /// Trim the strings and check for duplicates/empty values
-        /// </summary>
-        private bool ValuesAreValid(GameViewModel viewModel)
+        /// Retrieve gameviewmodel from session for scoreboard
+        /// </summary>      
+        private GameViewModel GetTeamsFromSession()
         {
-            if (ValuesAreNull(viewModel))
-            {
-                return false;
-            }
-
-            viewModel = TrimStrings(viewModel);
-
-            if (String.Equals(viewModel.TeamOne.ToLower(), viewModel.TeamTwo.ToLower()))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Check for empty/null values
-        /// </summary>
-        private bool ValuesAreNull(GameViewModel viewModel)
-        {
-            if (String.IsNullOrWhiteSpace(viewModel.TeamOne) || String.IsNullOrWhiteSpace(viewModel.TeamTwo))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Remove whitespace from strings
-        /// </summary>
-        private GameViewModel TrimStrings(GameViewModel viewModel)
-        {
-            viewModel.TeamOne = viewModel.TeamOne.Trim();
-            viewModel.TeamTwo = viewModel.TeamTwo.Trim();
-            
+            var teams = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
+            HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teams));
+            var viewModel = new GameViewModel();
+            viewModel.Game = new Game(-1, teams);
             return viewModel;
         }
-
-        /// <summary>
-        /// Validates the MaxScore int to prevent a too high, too low or null value.
-        /// </summary>
-        private int MaxScore(int input)
-        {
-            if (input < 5)
-            {
-                return 5;
-            }
-            
-            if (input > 100)
-            {
-                return 100;
-            }
-            return input;
-        }
-
     }
 }
