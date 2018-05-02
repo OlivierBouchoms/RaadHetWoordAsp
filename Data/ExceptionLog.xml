@@ -2,6 +2,138 @@
 <!--Automatically generated, do not modify-->
 <Exceptions>
   <Exception>
+    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:43 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:43 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:42 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:42 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:38 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:38 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:32 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:32 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:30 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:30 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:27 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:27 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:13 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:13 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:02 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:02 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>10:53 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>10:53 AM<Data>System.ArgumentNullException: Exception thrown by unit test
+Parameter name: n/a
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
+Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
     <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
   </Exception>
   <Exception>

@@ -119,6 +119,7 @@ namespace Logic
 
         public List<Team> GetTeams(string orderby)
         {
+            if (orderby == null) orderby = "Score"; 
             try
             {
                 var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
