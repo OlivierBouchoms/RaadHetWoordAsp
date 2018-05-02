@@ -26,7 +26,6 @@ namespace Logic
 
         public bool GameIsOver(Game game)
         {
-            Debug.WriteLine($"Maximum score: {game.Maxscore}");
             for (int i = 0; i < 2; i++)
             {
                 if (game.TeamList[i].Score >= game.Maxscore)

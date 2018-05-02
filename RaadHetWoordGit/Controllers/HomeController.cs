@@ -7,12 +7,12 @@ namespace RaadHetWoordGit.Controllers
 {
     public class HomeController : Controller
     {
-        private TeamLogic _teamLogic;
+        private readonly TeamLogic _teamLogic;
 
         /// <summary>
         /// Initialize logic classes
         /// </summary>
-        private void InitializeLogic()
+        public HomeController()
         {
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
         }
@@ -20,9 +20,8 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Index page
         /// </summary>
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            InitializeLogic();
             HttpContext.Session.Clear();
             return View(new LeaderboardViewModel(_teamLogic.GetTeams("Score"), "Score"));
         }

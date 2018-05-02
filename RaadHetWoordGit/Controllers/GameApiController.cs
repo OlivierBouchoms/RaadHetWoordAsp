@@ -23,7 +23,7 @@ namespace RaadHetWoordGit.Controllers
         }
 
         [HttpPost]
-        public IActionResult NextRound()
+        public JsonResult NextRound()
         {
             var viewModel = GetViewModelFromSession();
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
@@ -34,7 +34,7 @@ namespace RaadHetWoordGit.Controllers
         }
 
         [HttpPatch]
-        public IActionResult ChangeScore(bool increase)
+        public NoContentResult ChangeScore(bool increase)
         {
             var viewModel = GetViewModelFromSession();
 

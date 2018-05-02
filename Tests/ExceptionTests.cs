@@ -14,10 +14,10 @@ namespace Tests
         [TestMethod]
         public void TestSqLiteLogging()
         {
-            bool logged = false;
+            var logged = false;
             try
             {
-                throw new ArgumentNullException(message: "Exception thrown by unit test", paramName: @"n/a");
+                throw new ArgumentNullException();
             }
             catch (Exception e)
             {
@@ -32,10 +32,10 @@ namespace Tests
         [TestMethod]
         public void TestXmlLogging()
         {
-            bool logged = false;
+            var logged = false;
             try
             {
-                throw new ArgumentNullException(message: "Exception thrown by unit test", paramName: @"n/a");
+                throw new ArgumentNullException();
             }
             catch (Exception e)
             {

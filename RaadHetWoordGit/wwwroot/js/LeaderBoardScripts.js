@@ -2,7 +2,7 @@
     $('#sortmenu a').click(GetTeams);
 });
 
-var GetTeams = function (event) {
+var GetTeams = function(event) {
     event.preventDefault(); // Blocks following of hyperlink
 
     var targetElement = $('#leaderboardcontainer');
@@ -11,8 +11,7 @@ var GetTeams = function (event) {
     var element = $(event.currentTarget);
     var url = element.attr('href');
 
-    $.get(url).done(function (view) {
+    $.get(url).done(function(view) {
         targetElement.html(view);
     });
 }
-

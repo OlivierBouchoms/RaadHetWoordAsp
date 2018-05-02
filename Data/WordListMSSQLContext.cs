@@ -64,7 +64,7 @@ namespace Data
                            "WHERE[wordcategory].[name] = @title";
             var dataTable = new DataTable();
             var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("title", SqlDbType.Int).Value = title;
+            sqlCommand.Parameters.Add("title", SqlDbType.VarChar).Value = title;
             var sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);
             foreach (DataRow row in dataTable.Rows)

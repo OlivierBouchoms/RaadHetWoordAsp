@@ -12,16 +12,16 @@ namespace RaadHetWoordGit.Controllers
 {
     public class GameController : Controller
     {
-        private ChecksLogic _checksLogic;
-        private TeamLogic _teamLogic;
-        private TeamInGameLogic _teamInGameLogic;
-        private GameLogic _gameLogic;
-        private WordListLogic _wordListLogic;
+        private readonly ChecksLogic _checksLogic;
+        private readonly TeamLogic _teamLogic;
+        private readonly TeamInGameLogic _teamInGameLogic;
+        private readonly GameLogic _gameLogic;
+        private readonly WordListLogic _wordListLogic;
 
         /// <summary>
         /// Initialize logic classes
         /// </summary>
-        private void InitializeLogic()
+        public GameController()
         {
             _checksLogic = new ChecksLogic();
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
@@ -33,9 +33,8 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Opening the Index page for the first time.
         /// </summary>
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            InitializeLogic();
             HttpContext.Session.Clear();
 
             var viewModel = new GameViewModel
@@ -51,10 +50,8 @@ namespace RaadHetWoordGit.Controllers
         /// The Index page after teams and maxscore have been entered.
         /// </summary>
         [HttpPost]
-        public IActionResult Index(GameViewModel viewModel)
+        public ActionResult Index(GameViewModel viewModel)
         {
-            InitializeLogic();
-
             if (!_checksLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
             {
                 viewModel.WarningClass = "visible";
@@ -88,8 +85,6 @@ namespace RaadHetWoordGit.Controllers
         [HttpPost]
         public ActionResult PlayGame()
         {
-            InitializeLogic();
-
             var viewModel = GetViewModelFromSession();
 
             if (_gameLogic.GameIsOver(viewModel.Game))
@@ -132,7 +127,7 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// View the scoreboard
         /// </summary>
-        public ActionResult ScoreBoard()
+        public ViewResult ScoreBoard()
         {
             return View(GetTeamsFromSession());
         }
@@ -140,7 +135,7 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// View the summary when the game is over
         /// </summary>
-        public ActionResult Summary()
+        public ViewResult Summary()
         {
             var viewModel = GetViewModelFromSession();
             HttpContext.Session.Clear();

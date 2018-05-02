@@ -4,7 +4,6 @@ using Data;
 using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Models;
-using RaadHetWoordGit.Controllers;
 using RaadHetWoordGit.ViewModels;
 
 namespace Tests
@@ -178,11 +177,13 @@ namespace Tests
 
         private GameViewModel CreateViewModel()
         {
-            var viewModel = new GameViewModel();
-            viewModel.TeamOne = "teamOne";
-            viewModel.TeamTwo = "teamTwo";
-            viewModel.MaxScore = 5;
-            viewModel.Wordlist = null;
+            var viewModel = new GameViewModel
+            {
+                TeamOne = "teamOne",
+                TeamTwo = "teamTwo",
+                MaxScore = 5,
+                Wordlist = null
+            };
 
             return viewModel;
         }

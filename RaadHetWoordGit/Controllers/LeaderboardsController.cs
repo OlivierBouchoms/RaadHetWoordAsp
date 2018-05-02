@@ -7,12 +7,12 @@ namespace RaadHetWoordGit.Controllers
 {
     public class LeaderboardsController : Controller
     {
-        private TeamLogic _teamLogic;
-
+        private readonly TeamLogic _teamLogic;
+        
         /// <summary>
         /// Initialize logic classes
         /// </summary>
-        private void InitializeLogic()
+        public LeaderboardsController()
         {
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
         }
@@ -20,10 +20,8 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Index page
         /// </summary>
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            InitializeLogic();
-            
             return View(new LeaderboardViewModel(_teamLogic.GetTeams("Score"), "Score"));
         }
 
@@ -31,13 +29,9 @@ namespace RaadHetWoordGit.Controllers
         /// Partial view for leaderboard
         /// </summary>
         /// <param name="orderby">Order by score, wins or winloss</param>
-        public IActionResult Teams(string orderby)
+        public PartialViewResult Teams(string orderby)
         {
-            InitializeLogic();
-
             return PartialView("TeamsPartial", new LeaderboardViewModel(_teamLogic.GetTeams(orderby), orderby));
         }
-
-        
     }
 }
