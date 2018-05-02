@@ -10,14 +10,7 @@ namespace Data
         {
             var wordlists = new List<string>();
             var sqlConnection = DataBase.MsSql;
-            try
-            {
-                sqlConnection.Open();
-            }
-            catch
-            {
-                return new List<string>();
-            }
+            sqlConnection.Open();
 
             const string query = "Select [Name] FROM [WordCategory] ORDER BY [Name] ASC";
             var sqlCommand = new SqlCommand(query, sqlConnection);

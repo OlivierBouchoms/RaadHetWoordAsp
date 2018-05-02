@@ -1,5 +1,4 @@
-﻿using Data;
-using Logic;
+﻿using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RaadHetWoordGit.Controllers;
 using RaadHetWoordGit.ViewModels;
@@ -12,14 +11,12 @@ namespace Tests
         private ChecksLogic _checksLogic;
         private GameApiController _gameApiController;
         private GameController _gameController;
-        private GameLogic _gameLogic;
 
         private void Initialize()
         {
             _checksLogic = new ChecksLogic();
             _gameApiController = new GameApiController();
             _gameController = new GameController();
-            _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
         }
 
         /// <summary>

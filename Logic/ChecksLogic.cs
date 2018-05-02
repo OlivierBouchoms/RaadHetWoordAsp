@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace Logic
+﻿namespace Logic
 {
     public class ChecksLogic
     {
