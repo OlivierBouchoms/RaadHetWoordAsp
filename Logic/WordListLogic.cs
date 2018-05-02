@@ -29,7 +29,6 @@ namespace Logic
         /// <summary>
         /// Get words from a specific wordlist
         /// </summary>
-        /// <param name="title"></param>
         private List<string> GetWordsFromWordlist(string title)
         {
             try
@@ -48,7 +47,7 @@ namespace Logic
         /// Shuffle the words
         /// </summary>
         /// <param name="words">Input list with words</param>
-        public List<string> ShuffleWords(List<string> words)
+        private List<string> ShuffleWords(List<string> words)
         {
             var random = new Random();
             var shuffledWords = new List<string>();
@@ -66,13 +65,16 @@ namespace Logic
         /// <summary>
         /// Remove first five words from list
         /// </summary>
-        /// <param name="words">Input list with words</param>
         public List<string> RemoveWords(List<string> words)
         {
             words.RemoveRange(0, 5);
             return words;
         }
 
+        /// <summary>
+        /// Get all wordlists
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetWordlists()
         {
             return _repo.GetWordlists();

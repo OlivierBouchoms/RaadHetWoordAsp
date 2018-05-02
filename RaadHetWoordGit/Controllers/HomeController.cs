@@ -26,7 +26,6 @@ namespace RaadHetWoordGit.Controllers
             return View(new LeaderboardViewModel(_teamLogic.GetTeams("Score"), "Score"));
         }
 
-        
     }
 }
 

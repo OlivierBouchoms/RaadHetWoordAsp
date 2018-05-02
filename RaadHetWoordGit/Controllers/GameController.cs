@@ -114,7 +114,6 @@ namespace RaadHetWoordGit.Controllers
             if (viewModel.Game.Wordlist.Words.Count < 10)
             {
                 viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
-                viewModel.WordlistClass = "visible";
             }
 
             _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
@@ -145,26 +144,26 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// Place gameviewmodel in session 
         /// </summary>
-        /// <param name="inputViewModel">Viewmodel to place in session</param>
-        private void PlaceViewModelInSession(GameViewModel inputViewModel)
+        /// <param name="viewModel">Viewmodel to place in session</param>
+        private void PlaceViewModelInSession(GameViewModel viewModel)
         {
-            var teamList = inputViewModel.Game.TeamList;
-            var wordList = inputViewModel.Game.Wordlist.Words;
-            var round = inputViewModel.Game.CurrentRound;
+            var teamList = viewModel.Game.TeamList;
+            var wordList = viewModel.Game.Wordlist.Words;
+            var round = viewModel.Game.CurrentRound;
             
             HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
             HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teamList));
             HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
 
-            inputViewModel.Game.CurrentRound = null;
-            inputViewModel.Game.TeamList = null;
-            inputViewModel.Game.Wordlist = null;
+            viewModel.Game.CurrentRound = null;
+            viewModel.Game.TeamList = null;
+            viewModel.Game.Wordlist = null;
 
-            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(inputViewModel));
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(viewModel));
 
-            inputViewModel.Game.TeamList = teamList;
-            inputViewModel.Game.Wordlist = new Wordlist(wordList);
-            inputViewModel.Game.CurrentRound = round;
+            viewModel.Game.TeamList = teamList;
+            viewModel.Game.Wordlist = new Wordlist(wordList);
+            viewModel.Game.CurrentRound = round;
         }
 
         /// <summary>

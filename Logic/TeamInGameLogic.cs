@@ -4,30 +4,30 @@ using Models;
 namespace Logic
 {
     /// <summary>
-    /// Contains all memory logic for Teams while ingame
+    /// Contains all logic for Teams while ingame
     /// </summary>
     public class TeamInGameLogic
     {
-        private readonly TeamInGameRepository repo;
+        private readonly TeamInGameRepository _repo;
 
-        public TeamInGameLogic(TeamInGameRepository teamrepo)
+        public TeamInGameLogic(TeamInGameRepository repo)
         {
-            repo = teamrepo;
+            _repo = repo;
         }
         
         public Team IncreaseScore(Team team)
         {
-            return repo.IncreaseScore(team);
+            return _repo.IncreaseScore(team);
         }
 
         public Team DecreaseScore(Team team)
         {
-            return repo.DecreaseScore(team);
+            return _repo.DecreaseScore(team);
         }
 
         public Team IncreaseTurns(Team team)
         {
-            return repo.IncreaseTurns(team);
+            return _repo.IncreaseTurns(team);
         }
     }
 }

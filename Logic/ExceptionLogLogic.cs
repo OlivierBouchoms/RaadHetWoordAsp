@@ -5,25 +5,25 @@ namespace Logic
 {
     public class ExceptionLogLogic
     {
-        private ExceptionLogRepository repo;
+        private ExceptionLogRepository _repo;
 
-        public ExceptionLogLogic(ExceptionLogRepository exceptionLogRepository)
+        public ExceptionLogLogic(ExceptionLogRepository repo)
         {
-            repo = exceptionLogRepository;
+            _repo = repo;
         }
 
         public bool LogException(Exception e)
         {
             try
             {
-                repo.LogException(e);
+                _repo.LogException(e);
             }
             catch (Exception exception)
             {
-                repo = new ExceptionLogRepository(new ExceptionXMLContext());
-                repo.LogException(exception);
+                _repo = new ExceptionLogRepository(new ExceptionXMLContext());
+                _repo.LogException(exception);
             }
-            return repo.LogException(e);
+            return _repo.LogException(e);
         }
     }
 }

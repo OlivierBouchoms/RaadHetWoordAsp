@@ -18,9 +18,9 @@
         /// <summary>
         /// Check for empty/null values
         /// </summary>
-        private bool ValuesAreNull(string input)
+        private bool ValuesAreNull(string team)
         {
-            return string.IsNullOrWhiteSpace(input);
+            return string.IsNullOrWhiteSpace(team);
         }
 
         /// <summary>
