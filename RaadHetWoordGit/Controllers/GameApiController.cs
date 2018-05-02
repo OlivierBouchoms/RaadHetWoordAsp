@@ -71,40 +71,6 @@ namespace RaadHetWoordGit.Controllers
         }
 
         /// <summary>
-        /// Testmethod for ChangeScore, replace session with parameters and return values
-        /// </summary>
-        public GameViewModel ChangeScore(bool increase, GameViewModel viewModel)
-        {
-            if (increase)
-            {
-                _teamInGameLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
-                _teamLogic.IncreaseScore(viewModel.Game.CurrentRound.Team);
-
-                for (int i = 0; i < 2; i++)
-                {
-                    if (viewModel.Game.CurrentRound.Team.Name == viewModel.Game.TeamList[i].Name)
-                    {
-                        viewModel.Game.TeamList[i] = viewModel.Game.CurrentRound.Team;
-                    }
-                }
-
-                return viewModel;
-            }
-            _teamInGameLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
-            _teamLogic.DecreaseScore(viewModel.Game.CurrentRound.Team);
-
-            for (int i = 0; i < 2; i++)
-            {
-                if (viewModel.Game.CurrentRound.Team.Name == viewModel.Game.TeamList[i].Name)
-                {
-                    viewModel.Game.TeamList[i] = viewModel.Game.CurrentRound.Team;
-                }
-            }
-
-            return viewModel;
-        }
-
-        /// <summary>
         /// Place gameviewmodel in session 
         /// </summary>
         /// <param name="inputViewModel">Viewmodel to place in session</param>

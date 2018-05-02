@@ -1,25 +1,33 @@
-﻿using System;
-using Data;
+﻿using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
+using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
 {
     public class HomeController : Controller
     {
+        private TeamLogic _teamLogic;
+
+        /// <summary>
+        /// Initialize logic classes
+        /// </summary>
+        private void InitializeLogic()
+        {
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+        }
+
+        /// <summary>
+        /// Index page
+        /// </summary>
         public IActionResult Index()
         {
+            InitializeLogic();
             HttpContext.Session.Clear();
-            try
-            {
-                throw new ArgumentNullException();
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-            }
-            return View();
+            return View(new LeaderboardViewModel(_teamLogic.GetTeams("Score"), "Score"));
         }
+
+        
     }
 }
 
