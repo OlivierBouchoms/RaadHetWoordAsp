@@ -2,7 +2,6 @@
 
 namespace Models
 {
-    [Serializable]
     public class Team
     {
         public string Name { get; set; }

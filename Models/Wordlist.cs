@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    [Serializable]
     public class Wordlist
     {
         public readonly string Title;

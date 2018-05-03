@@ -88,7 +88,7 @@ namespace RaadHetWoordGit.Controllers
             viewModel.Game.TeamList = null;
             viewModel.Game.Wordlist = null;
 
-            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(inputViewModel));
+            HttpContext.Session.SetString(nameof(GameViewModel), JsonConvert.SerializeObject(viewModel));
 
             viewModel.Game.TeamList = teamList;
             viewModel.Game.Wordlist = new Wordlist(wordList);

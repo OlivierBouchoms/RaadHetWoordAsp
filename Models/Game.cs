@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Models
 {
-    [Serializable]
     public class Game 
     {
         public List<Team> TeamList { get; set; }

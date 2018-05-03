@@ -2,7 +2,6 @@
 
 namespace Models
 {
-    [Serializable]
     public class Round
     {
         public Team Team { get; set; }
