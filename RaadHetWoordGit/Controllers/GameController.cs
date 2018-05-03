@@ -101,14 +101,14 @@ namespace RaadHetWoordGit.Controllers
 
             try
             {
-                viewModel.Game.TeamList[Round.playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex - 1]);
+                viewModel.Game.TeamList[Round.Playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
             }
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-                viewModel.Game.TeamList[Round.playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.playerindex]);
+                viewModel.Game.TeamList[Round.Playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
+                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
             }
 
             if (viewModel.Game.Wordlist.Words.Count < 10)

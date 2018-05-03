@@ -70,15 +70,6 @@ namespace Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionDb.sqlite3;Version=3.
-        /// </summary>
-        internal static string SqLiteConnectionAbsolute {
-            get {
-                return ResourceManager.GetString("SqLiteConnectionAbsolute", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ExceptionDb.sqlite3.
         /// </summary>
         internal static string SqLiteFile {

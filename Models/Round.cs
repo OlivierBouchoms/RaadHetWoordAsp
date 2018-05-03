@@ -5,8 +5,7 @@ namespace Models
     public class Round
     {
         public Team Team { get; set; }
-        public int Time { get; set; }
-        public static int playerindex { get; set; }
+        public static int Playerindex { get; set; }
 
         public Round()
         {
@@ -15,14 +14,14 @@ namespace Models
 
         public Round(Game game)
         {
-            Team = game.TeamList[playerindex];
-            if (playerindex == game.TeamList.Count - 1)
+            Team = game.TeamList[Playerindex];
+            if (Playerindex == game.TeamList.Count - 1)
             {
-                playerindex = 0;
+                Playerindex = 0;
             }
             else
             {
-                playerindex++;
+                Playerindex++;
             }
         }
     }

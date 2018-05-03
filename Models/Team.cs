@@ -19,7 +19,7 @@ namespace Models
 
         public Team(bool loser)
         {
-            Score = int.MaxValue;
+            //Empty
         }
 
         public Team(string name)

@@ -8,11 +8,6 @@ namespace Models
         public readonly string Title;
         public readonly List<string> Words;
 
-        public Wordlist()
-        {
-            //Empty
-        }
-
         public Wordlist(string title)
         {
             Title = title;
