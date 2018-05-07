@@ -53,7 +53,7 @@ namespace Logic
 
         public Team GetLoser(Game game)
         {
-            var loser = new Team() { Score = Int32.MaxValue};
+            var loser = new Team { Score = Int32.MaxValue};
             for (int i = 0; i < 2; i++)
             {
                 if (game.TeamList[i].Score < loser.Score)
