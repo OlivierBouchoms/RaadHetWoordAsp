@@ -1,205 +1,293 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--Automatically generated, do not modify-->
+<!--Automatically generated, do not modify.-->
 <Exceptions>
   <Exception>
-    <date>3:47 PM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:51:26 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>3:47 PM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:51:26 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>3:44 PM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRange_IndexException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Tests.GameTests.PlayGame(GameViewModel viewModel, Boolean test) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\GameTests.cs:line 273<HResult>-2146233086</HResult><HelpLink /><InnerException></InnerException><Message>Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index</Message><Source>System.Private.CoreLib</Source><StackTrace>   at System.ThrowHelper.ThrowArgumentOutOfRange_IndexException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Tests.GameTests.PlayGame(GameViewModel viewModel, Boolean test) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\GameTests.cs:line 273</StackTrace><TargetSite>Void ThrowArgumentOutOfRange_IndexException()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>3:44 PM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Exception
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19<HResult>-2147481665</HResult><HelpLink /><InnerException></InnerException><Message>SQL logic error
+no such table: Exception</Message><Source>System.Data.SQLite</Source><StackTrace>   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19</StackTrace><TargetSite>System.Data.SQLite.SQLiteStatement Prepare(System.Data.SQLite.SQLiteConnection, System.String, System.Data.SQLite.SQLiteStatement, UInt32, System.String ByRef)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.Data.SqlClient.SqlException (0x80131904): The parameterized query '(@name nvarchar(4000))UPDATE [Team] SET [Losses] = [Losses] + 1 ' expects the parameter '@name', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Data.TeamMSSQLContext.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\TeamMSSQLContext.cs:line 150
+   at Data.TeamRepository.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\TeamRepository.cs:line 47
+   at Logic.TeamLogic.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\TeamLogic.cs:line 111
+ClientConnectionId:9bd17c3d-adf6-41cd-9b99-c741332962d7
+Error Number:8178,State:1,Class:16<HResult>-2146232060</HResult><HelpLink /><InnerException></InnerException><Message>The parameterized query '(@name nvarchar(4000))UPDATE [Team] SET [Losses] = [Losses] + 1 ' expects the parameter '@name', which was not supplied.</Message><Source>Core .Net SqlClient Data Provider</Source><StackTrace>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Data.TeamMSSQLContext.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\TeamMSSQLContext.cs:line 150
+   at Data.TeamRepository.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\TeamRepository.cs:line 47
+   at Logic.TeamLogic.IncreaseLosses(Team team) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\TeamLogic.cs:line 111</StackTrace><TargetSite>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Exception
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19<HResult>-2147481665</HResult><HelpLink /><InnerException></InnerException><Message>SQL logic error
+no such table: Exception</Message><Source>System.Data.SQLite</Source><StackTrace>   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19</StackTrace><TargetSite>System.Data.SQLite.SQLiteStatement Prepare(System.Data.SQLite.SQLiteConnection, System.String, System.Data.SQLite.SQLiteStatement, UInt32, System.String ByRef)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRange_IndexException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Tests.GameTests.PlayGame(GameViewModel viewModel, Boolean test) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\GameTests.cs:line 273<HResult>-2146233086</HResult><HelpLink /><InnerException></InnerException><Message>Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index</Message><Source>System.Private.CoreLib</Source><StackTrace>   at System.ThrowHelper.ThrowArgumentOutOfRange_IndexException()
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Tests.GameTests.PlayGame(GameViewModel viewModel, Boolean test) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\GameTests.cs:line 273</StackTrace><TargetSite>Void ThrowArgumentOutOfRange_IndexException()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:49 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Exception
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19<HResult>-2147481665</HResult><HelpLink /><InnerException></InnerException><Message>SQL logic error
+no such table: Exception</Message><Source>System.Data.SQLite</Source><StackTrace>   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19</StackTrace><TargetSite>System.Data.SQLite.SQLiteStatement Prepare(System.Data.SQLite.SQLiteConnection, System.String, System.Data.SQLite.SQLiteStatement, UInt32, System.String ByRef)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:43 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:43 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:42 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestSqLiteLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 20<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestSqLiteLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 20</StackTrace><TargetSite>Void TestSqLiteLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:42 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:47:52 PM<Data>code = Error (1), message = System.Data.SQLite.SQLiteException (0x800007BF): SQL logic error
+no such table: Exception
+   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19<HResult>-2147481665</HResult><HelpLink /><InnerException></InnerException><Message>SQL logic error
+no such table: Exception</Message><Source>System.Data.SQLite</Source><StackTrace>   at System.Data.SQLite.SQLite3.Prepare(SQLiteConnection cnn, String strSql, SQLiteStatement previous, UInt32 timeoutMS, String&amp; strRemain)
+   at System.Data.SQLite.SQLiteCommand.BuildNextCommand()
+   at System.Data.SQLite.SQLiteDataReader.NextResult()
+   at System.Data.SQLite.SQLiteDataReader..ctor(SQLiteCommand cmd, CommandBehavior behave)
+   at System.Data.SQLite.SQLiteCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery(CommandBehavior behavior)
+   at Data.ExceptionSqLiteContext.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionSqLiteContext.cs:line 30
+   at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLogRepository.cs:line 16
+   at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Logic\ExceptionLogLogic.cs:line 19</StackTrace><TargetSite>System.Data.SQLite.SQLiteStatement Prepare(System.Data.SQLite.SQLiteConnection, System.String, System.Data.SQLite.SQLiteStatement, UInt32, System.String ByRef)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:38 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:43:20 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:38 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>1:43:20 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:32 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      9:18:20 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>
+          Exception thrown by unit test
+          Parameter name: n/a
+        </Message><Source>UnitTestIntegration</Source><StackTrace>   at UnitTestIntegration.ExceptionIntegration.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\UnitTestIntegration\ExceptionIntegration.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:32 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      9:01:14 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146232060</HResult><HelpLink /><InnerException></InnerException><Message>Invalid column name 'ID'.</Message><Source>.Net SqlClient Data Provider</Source><StackTrace>
+          at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+          at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+          at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+          at Data.TeamMssqlContext.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamMSSQLContext.cs:line 50
+          at Data.TeamRepository.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamRepository.cs:line 22
+          at Logic.TeamLogic.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\TeamLogic.cs:line 37
+        </StackTrace><TargetSite>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:30 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      9:01:14 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146234304</HResult><HelpLink /><InnerException></InnerException><Message>Could not load file or assembly 'System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)</Message><Source>Data</Source><StackTrace>
+          at Data.ExceptionSqLiteContext.LogException(Exception e)
+          at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\ExceptionLogRepository.cs:line 16
+          at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\ExceptionLogLogic.cs:line 19
+        </StackTrace><TargetSite>Boolean LogException(System.Exception)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:30 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:57:43 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146232060</HResult><HelpLink /><InnerException></InnerException><Message>Invalid column name 'ID'.</Message><Source>.Net SqlClient Data Provider</Source><StackTrace>
+          at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+          at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+          at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+          at Data.TeamMssqlContext.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamMSSQLContext.cs:line 50
+          at Logic.TeamLogic.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\TeamLogic.cs:line 37
+        </StackTrace><TargetSite>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:27 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:57:43 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146234304</HResult><HelpLink /><InnerException></InnerException><Message>Could not load file or assembly 'System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)</Message><Source>Data</Source><StackTrace>
+          at Data.ExceptionSqLiteContext.LogException(Exception e)
+          at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\ExceptionLogLogic.cs:line 19
+        </StackTrace><TargetSite>Boolean LogException(System.Exception)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:27 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:55:38 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146232060</HResult><HelpLink /><InnerException></InnerException><Message>Invalid column name 'ID'.</Message><Source>.Net SqlClient Data Provider</Source><StackTrace>
+          at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+          at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+          at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+          at Data.TeamMssqlContext.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamMSSQLContext.cs:line 50
+          at Data.TeamRepository.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamRepository.cs:line 22
+          at Logic.TeamLogic.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\TeamLogic.cs:line 37
+        </StackTrace><TargetSite>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:13 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:55:38 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146234304</HResult><HelpLink /><InnerException></InnerException><Message>Could not load file or assembly 'System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)</Message><Source>Data</Source><StackTrace>
+          at Data.ExceptionSqLiteContext.LogException(Exception e)
+          at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\ExceptionLogRepository.cs:line 16
+          at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\ExceptionLogLogic.cs:line 20
+        </StackTrace><TargetSite>Boolean LogException(System.Exception)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:13 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:55:35 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146232060</HResult><HelpLink /><InnerException></InnerException><Message>Invalid column name 'ID'.</Message><Source>.Net SqlClient Data Provider</Source><StackTrace>
+          at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+          at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+          at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+          at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+          at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
+          at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+          at Data.TeamMssqlContext.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamMSSQLContext.cs:line 50
+          at Data.TeamRepository.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\TeamRepository.cs:line 22
+          at Logic.TeamLogic.DeleteTeam(Int32 id) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\TeamLogic.cs:line 37
+        </StackTrace><TargetSite>Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:02 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+    <date>
+      8:55:35 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2146234304</HResult><HelpLink /><InnerException></InnerException><Message>Could not load file or assembly 'System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)</Message><Source>Data</Source><StackTrace>
+          at Data.ExceptionSqLiteContext.LogException(Exception e)
+          at Data.ExceptionLogRepository.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\ExceptionLogRepository.cs:line 16
+          at Logic.ExceptionLogLogic.LogException(Exception e) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\ExceptionLogLogic.cs:line 20
+        </StackTrace><TargetSite>Boolean LogException(System.Exception)</TargetSite></Data></date>
   </Exception>
   <Exception>
-    <date>11:02 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>10:53 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>10:53 AM<Data>System.ArgumentNullException: Exception thrown by unit test
-Parameter name: n/a
-   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Exception thrown by unit test
-Parameter name: n/a</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 39</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:53 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:52 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:50 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>9:50 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
-  </Exception>
-  <Exception>
-    <date>8:30 AM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>RaadHetWoordGit</Source><StackTrace>   at RaadHetWoordGit.Controllers.HomeController.ThrowException() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\RaadHetWoordGit\Controllers\HomeController.cs:line 22</StackTrace><TargetSite>Void ThrowException()</TargetSite></Data></date>
+    <date>
+      5:40:20 PM<Data>
+        System.Collections.ListDictionaryInternal<HResult>-2147467262</HResult><HelpLink /><InnerException></InnerException><Message>Unable to cast object of type 'System.Int32' to type 'System.String'.</Message><Source>System.Data</Source><StackTrace>
+          at System.Data.SqlClient.SqlBuffer.get_String()
+          at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+          at Data.WordMssqlContext.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\WordMSSQLContext.cs:line 53
+          at Data.WordRepository.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\WordRepository.cs:line 22
+          at Logic.WordLogic.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\WordLogic.cs:line 34
+        </StackTrace><TargetSite>System.String get_String()</TargetSite></Data></date>
   </Exception>
 </Exceptions>

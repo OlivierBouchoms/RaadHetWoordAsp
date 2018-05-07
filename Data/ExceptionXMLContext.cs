@@ -10,22 +10,22 @@ namespace Data
     {
         public bool LogException(Exception e)
         {
-            var id = DateTime.Now.ToShortTimeString();
             var innerException = string.Empty;
             var message = string.Empty;
+            var path = XML.GetPath();
 
             if (e.InnerException != null) { innerException = e.InnerException.ToString(); }
             if (e.Message != null) { message = e.Message; }
 
-            if (File.Exists(XML.GetPath()))
+            if (File.Exists(path))
             {
-                var xDocument = XDocument.Load(XML.GetPath());
+                var xDocument = XDocument.Load(path);
                 var root = xDocument.Element("Exceptions");
                 var rows = root.Descendants("Exception");
                 var firstrow = rows.First();
                 firstrow.AddBeforeSelf(
                     new XElement("Exception",
-                    new XElement("date", id,
+                    new XElement("date", DateTime.Now.ToLongTimeString(),
                     new XElement(nameof(e.Data), e.ToString(),
                     new XElement(nameof(e.HResult), e.HResult.ToString()),
                     new XElement(nameof(e.HelpLink), e.HelpLink),
@@ -34,20 +34,20 @@ namespace Data
                     new XElement(nameof(e.Source), e.Source),
                     new XElement(nameof(e.StackTrace), e.StackTrace),
                     new XElement(nameof(e.TargetSite), e.TargetSite.ToString())))));
-                xDocument.Save(XML.GetPath());
+                xDocument.Save(path);
                 return true;
             }
 
-            var settings = new XmlWriterSettings() {Indent = true};
+            var settings = new XmlWriterSettings { Indent = true };
 
-            var xmlWriter = XmlWriter.Create(XML.GetPath(), settings);
-            
+            var xmlWriter = XmlWriter.Create(path, settings);
+
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteComment("Automatically generated, do not modify.");
 
             xmlWriter.WriteStartElement("Exceptions");
             xmlWriter.WriteStartElement("Exception");
-            xmlWriter.WriteAttributeString("date", id);
+            xmlWriter.WriteAttributeString("date", DateTime.Now.ToLongTimeString());
             xmlWriter.WriteAttributeString(nameof(e.Data), e.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HResult), e.HResult.ToString());
             xmlWriter.WriteAttributeString(nameof(e.HelpLink), e.HelpLink);

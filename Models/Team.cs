@@ -17,11 +17,6 @@ namespace Models
             //Empty
         }
 
-        public Team(bool loser)
-        {
-            //Empty
-        }
-
         public Team(string name)
         {
             Name = name;

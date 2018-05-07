@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Data;
 using Models;
@@ -38,7 +39,7 @@ namespace Logic
 
         public Team GetWinner(Game game)
         {
-            var winner = new Team();
+            var winner = new Team { Score = 0 };
             for (int i = 0; i < 2; i++)
             {
                 if (game.TeamList[i].Score > winner.Score)
@@ -52,7 +53,7 @@ namespace Logic
 
         public Team GetLoser(Game game)
         {
-            var loser = new Team(true);
+            var loser = new Team() { Score = Int32.MaxValue};
             for (int i = 0; i < 2; i++)
             {
                 if (game.TeamList[i].Score < loser.Score)

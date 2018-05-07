@@ -70,7 +70,7 @@ namespace Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExceptionDb.sqlite3.
+        ///   Looks up a localized string similar to C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionDb.sqlite3.
         /// </summary>
         internal static string SqLiteFile {
             get {

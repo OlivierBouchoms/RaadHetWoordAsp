@@ -61,7 +61,7 @@ namespace Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExceptionLog.xml.
+        ///   Looks up a localized string similar to C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Data\ExceptionLog.xml.
         /// </summary>
         internal static string XmlFile {
             get {
