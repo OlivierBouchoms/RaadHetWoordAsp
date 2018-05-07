@@ -61,7 +61,7 @@ namespace Logic
                     loser = game.TeamList[i];
                 }
             }
-
+            
             return loser;
         }
 

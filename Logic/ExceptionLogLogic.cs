@@ -16,23 +16,23 @@ namespace Logic
         {
             try
             {
-                _repo.LogException(e);
+                return _repo.LogException(e);
             }
             catch (Exception exception)
             {
                 _repo = new ExceptionLogRepository(new ExceptionXMLContext());
                 try
                 {
-                    _repo.LogException(exception);
+                    return _repo.LogException(exception);
                 }
                 catch (Exception e1)
                 {
                     Console.WriteLine(e);
                     Console.WriteLine(exception);
                     Console.WriteLine(e1);
+                    return true;
                 }
             }
-            return _repo.LogException(e);
         }
     }
 }

@@ -2,6 +2,14 @@
 <!--Automatically generated, do not modify.-->
 <Exceptions>
   <Exception>
+    <date>2:56:37 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>2:56:37 PM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
     <date>1:51:26 PM<Data>System.ArgumentNullException: Value cannot be null.
    at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
   </Exception>
