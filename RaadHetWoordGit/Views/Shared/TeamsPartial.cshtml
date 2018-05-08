@@ -1,10 +1,8 @@
 ﻿@model RaadHetWoordGit.ViewModels.LeaderboardViewModel
 
-<div class="table-responsive">
-    <table class="table">
+    <table class="w3-table w3-striped w3-bordered">
         <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
-        <thead>
-        <tr>
+        <tr class="w3-green">
             <th scope="col">#</th>
             <th scope="col">Team</th>
             <th scope="col">Score</th>
@@ -12,8 +10,6 @@
             <th scope="col">Losses</th>
             <th scope="col">WinLoss</th>
         </tr>
-        </thead>
-        <tbody>
         @for (int i = 0; i < Model.Teams.Count; i++)
         {
             var rank = i + 1;
@@ -26,6 +22,4 @@
                 <td>@Model.Teams[i].WinLoss</td>
             </tr>
         }
-        </tbody>
     </table>
-</div>

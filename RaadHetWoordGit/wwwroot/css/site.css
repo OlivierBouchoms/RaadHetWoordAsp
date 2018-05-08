@@ -1,13 +1,12 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 /* Carousel */
@@ -25,6 +24,19 @@
 #qrCode {
     margin: 15px;
 }
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+.border-radius-3 {
+    border-radius: 3px;
+}
+
+.correct {
+    background-color: #4CAF50 !important;
+    color: black;
+}	
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

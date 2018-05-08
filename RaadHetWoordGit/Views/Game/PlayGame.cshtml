@@ -5,21 +5,12 @@
 
 <!-- Overzicht van teams -->
 <div class="row">
-    <div class="col-lg-12 text-center">
+    <div class="w3-col s6 w3-center">
         <h3>Huidige team: @Model.Game.CurrentRound.Team.Name</h3>
+        <p id="scoreTeam">Score: @Model.Game.CurrentRound.Team.ToString() / @Model.Game.Maxscore</p>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-5 text-center">
-        <h3>@Model.Game.TeamList[0].Name</h3>
-        <p id="scoreTeam0">Score: @Model.Game.TeamList[0].Score.ToString() / @Model.Game.Maxscore</p>
-    </div>
-    <div class="col-lg-2 text-center">
-        <h3>Tijd: <span id="remainingTime" class="text-danger"></span></h3>
-    </div>
-    <div class="col-lg-5 text-center">
-        <h3>@Model.Game.TeamList[1].Name</h3>
-        <p id="scoreTeam1">Score: @Model.Game.TeamList[1].Score.ToString() / @Model.Game.Maxscore</p>
+    <div class="w3-col s6 w3-center">
+        <h3>Tijd: <span id="remainingTime" class="w3-text-red"></span></h3>
     </div>
 </div>
 <div class="row">
@@ -30,6 +21,6 @@
 
 <!-- Overzicht van woorden -->
 @for (int i = 1; i <= 5; i++)
-    {
-        <div class="gameword" id="word @i" onclick="changeScore(event)"><span class="gamewordtext" id="gamewordtext @i">@Model.Game.Wordlist.Words[i]</span></div>
-    }
+{
+    <div class="w3-button w3-red w3-block w3-hover-white w3-margin-bottom border-radius-3" id="word @i" onclick="changeScore(event)">@Model.Game.Wordlist.Words[i]</div>
+}

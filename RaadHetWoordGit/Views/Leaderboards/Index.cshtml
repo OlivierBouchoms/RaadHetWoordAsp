@@ -7,38 +7,32 @@
 <h2>Leaderboards</h2>
 
 <div id="leaderboardcontainer" class="borderbottom">
-    <div class="table-responsive">
-        <table class="table">
+        <table class="w3-table w3-striped w3-bordered">
             <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
-            <thead>
+            <tr class="w3-green">
+                <th scope="col">#</th>
+                <th scope="col">Team</th>
+                <th scope="col">Score</th>
+                <th scope="col">Wins</th>
+                <th scope="col">Losses</th>
+                <th scope="col">WinLoss</th>
+            </tr>
+            @for (int i = 0; i < Model.Teams.Count; i++)
+            {
+                var rank = i + 1;
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Team</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Wins</th>
-                    <th scope="col">Losses</th>
-                    <th scope="col">WinLoss</th>
+                    <th scope="row">@rank</th>
+                    <td>@Model.Teams[i].Name</td>
+                    <td>@Model.Teams[i].Score</td>
+                    <td>@Model.Teams[i].Wins</td>
+                    <td>@Model.Teams[i].Losses</td>
+                    <td>@Model.Teams[i].WinLoss</td>
                 </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < Model.Teams.Count; i++)
-                {
-                    var rank = i + 1;
-                    <tr>
-                        <th scope="row">@rank</th>
-                        <td>@Model.Teams[i].Name</td>
-                        <td>@Model.Teams[i].Score</td>
-                        <td>@Model.Teams[i].Wins</td>
-                        <td>@Model.Teams[i].Losses</td>
-                        <td>@Model.Teams[i].WinLoss</td>
-                    </tr>
-                }
-            </tbody>
+            }
         </table>
-    </div>
 </div>
 
-<div class="dropdown">
+<div>
     <h4>Sorteer:</h4>
     <ul id="sortmenu">
         @foreach (var _enum in Enum.GetValues(typeof(OrderBy)))

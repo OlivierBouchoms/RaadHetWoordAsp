@@ -2,58 +2,50 @@
 
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/LeaderBoardScripts.js"></script>
+<link rel="stylesheet" href="/css/w3.css">
 
-<div class="container">
-    <h3>Welkom op de site van RaadHetWoord!</h3>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>
-                RaadHetWoord is een spel gebasseerd op het bordspel 30 seconds en het mobiele spel "Guessy Words". Het is gratis, op alle platformen beschikbaar en bevat woordenlijsten afgestemd op jong en oud!
-            </p>
-            <h6>Spelregels:</h6>
-            <p>
-                Er zijn twee teams, met ieder minstens twee spelers. Ieder team moet om de beurt een ronde spelen. Één speler van het team mag tijdens de ronde de gegeven woorden zien, waarna hij/zij probeert de teamleden de woorden te laten raden, zonder hierbij het woord zelf, een vertaling of een synoniem te noemen.
-            </p>
-            <form asp-action="Index" asp-controller="Game">
-                <input type="submit" value="Speel het spel!" class="btn btn-success custom" />
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h3>Klassementen:</h3>
-            <div id="leaderboardcontainer">
-                <div class="table-responsive">
-                    <table class="table">
-                        <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Team</th>
-                                <th scope="col">Score</th>
-                                <th scope="col">Wins</th>
-                                <th scope="col">Losses</th>
-                                <th scope="col">WinLoss</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (int i = 0; i < Model.Teams.Count; i++)
-                            {
-                                var rank = i + 1;
-                                <tr>
-                                    <th scope="row">@rank</th>
-                                    <td>@Model.Teams[i].Name</td>
-                                    <td>@Model.Teams[i].Score</td>
-                                    <td>@Model.Teams[i].Wins</td>
-                                    <td>@Model.Teams[i].Losses</td>
-                                    <td>@Model.Teams[i].WinLoss</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
+<h3>Welkom op de site van RaadHetWoord!</h3>
+<div class="w3-row">
+    <div class="w3-col s12 ">
+        <p>
+            RaadHetWoord is een spel gebasseerd op het bordspel 30 seconds en het mobiele spel "Guessy Words". Het is gratis, op alle platformen beschikbaar en bevat woordenlijsten afgestemd op jong en oud!
+        </p>
+        <h6>Spelregels:</h6>
+        <p>
+            Er zijn twee teams, met ieder minstens twee spelers. Ieder team moet om de beurt een ronde spelen. Één speler van het team mag tijdens de ronde de gegeven woorden zien, waarna hij/zij probeert de teamleden de woorden te laten raden, zonder hierbij het woord zelf, een vertaling of een synoniem te noemen.
+        </p>
+        <form asp-action="Index" asp-controller="Game">
+            <input type="submit" value="Speel het spel!" class="w3-button w3-block w3-green w3-hover-white" />
+        </form>
     </div>
 </div>
+<div class="w3-row">
+    <div class="w3-col s12">
+        <h3>Klassementen:</h3>
+        <div id="leaderboardcontainer">
+                <table class="w3-table w3-striped w3-bordered">
+                    <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
+                        <tr class="w3-green">
+                            <th scope="col">#</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Wins</th>
+                            <th scope="col">Losses</th>
+                            <th scope="col">WinLoss</th>
+                        </tr>
+                        @for (int i = 0; i < Model.Teams.Count; i++)
+                        {
+                            var rank = i + 1;
+                            <tr>
+                                <th scope="row">@rank</th>
+                                <td>@Model.Teams[i].Name</td>
+                                <td>@Model.Teams[i].Score</td>
+                                <td>@Model.Teams[i].Wins</td>
+                                <td>@Model.Teams[i].Losses</td>
+                                <td>@Model.Teams[i].WinLoss</td>
+                            </tr>
+                        }
+                </table>
+            </div>
+        </div>
+    </div>

@@ -1,30 +1,28 @@
 ﻿@model RaadHetWoordGit.ViewModels.GameViewModel
-    
-    <!-- Teams invoeren -->
-    <div>
-        <h2>We hebben wat informatie nodig.</h2>
-        @if (@Model.WarningClass == "visible")
-        {
-            <div class="alert alert-danger alert-dismissible">
-                <strong>@ViewData["Warning"]</strong> @ViewData["ErrorText"]
-            </div>
-        }
-        <form asp-action="Index" asp-controller="Game">
-            <input type="number" asp-for="MaxScore" placeholder="Voer een maximumscore in. Minimaal 2." class="form-control" value=""><br/>
-            <input asp-for="TeamOne" type="text" class="form-control" placeholder="Voer naam van Team 1 in."/><br/>
-            <input asp-for="TeamTwo" type="text" class="form-control" placeholder="Voer naam van Team 2 in."/><br/>
-            
-            <p data-toggle="tooltip" data-placement="right" title="Wil je geen specifieke woordenlijst? Dan hoef je er geen aan te geven!">Kies een woordenlijst:</p>
-                <div class="btn-group-justified" data-toggle="buttons">
+<!-- Teams invoeren -->
+<div>
+    <h2>We hebben wat informatie nodig.</h2>
+    @if (@Model.WarningClass == "visible")
+    {
+        <div class="alert alert-danger alert-dismissible">
+            <strong>@ViewData["Warning"]</strong> @ViewData["ErrorText"]
+        </div>
+    }
+    <form asp-action="Index" asp-controller="Game">
+        <input asp-for="MaxScore" type="number" placeholder="Voer een maximumscore in. Minimaal 2." class="w3-input" value=""><br />
+        <input asp-for="TeamOne" type="text" class="w3-input" placeholder="Voer naam van Team 1 in." /><br />
+        <input asp-for="TeamTwo" type="text" class="w3-input" placeholder="Voer naam van Team 2 in." /><br />
 
-                    @foreach (var wordlist in Model.Wordlists)
-                    {
-                        <label class="btn btn-default">
-                            <input asp-for="Wordlist" type="radio" value="@wordlist"/>@wordlist 
-                        </label>
-                    }
-                </div>
-            <br/>
-            <input class="btn btn-success custom" type="submit" value="Verstuur!"/>
-        </form>
-    </div>
+        <p data-toggle="tooltip" data-placement="right" title="Wil je geen specifieke woordenlijst? Dan hoef je er geen aan te geven!">Kies een woordenlijst:</p>
+        <div class="btn-group-justified" data-toggle="buttons">
+            @foreach (var wordlist in Model.Wordlists)
+            {
+                <label class="btn w3-button w3-green w3-hover-white border-radius-0">
+                    <input class="w3-check" asp-for="Wordlist" type="radio" value="@wordlist" />@wordlist
+                </label>
+            }
+        </div>
+        <br />
+        <input class="w3-button w3-block w3-green w3-hover-white" type="submit" value="Verstuur!" />
+    </form>
+</div>
