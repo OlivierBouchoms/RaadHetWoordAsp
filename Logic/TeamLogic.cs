@@ -119,44 +119,46 @@ namespace Logic
 
         public List<Team> GetTeams(string orderby)
         {
-            if (orderby == null) orderby = "Score"; 
+            if (orderby == null) orderby = "Score";
+            var teams = new List<Team>(); 
             try
             {
                 var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
-
-                if (OrderBy.Wins == orderBy)
-                {
-                    return _repo.GetTeams().OrderByDescending(x => x.Wins).ToList();
-                }
-            
-                if (OrderBy.WinLoss == orderBy)
-                {
-                    return _repo.GetTeams().OrderByDescending(x => x.WinLoss).ToList();
-                }
-
-                return _repo.GetTeams().OrderByDescending(x => x.Score).ToList();
+                var teams = _repo.GetTeams();
             }
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+                return new List<Team>();
             }
-            return new List<Team>();
+            
+            if (OrderBy.Wins == orderBy)
+            {
+                return teams.OrderByDescending(x => x.Wins).ToList();
+            }
+            if (OrderBy.WinLoss == orderBy)
+            {
+                return teams.OrderByDescending(x => x.WinLoss).ToList();
+            }
+
+            return teams.OrderByDescending(x => x.Score).ToList();
         }
 
         public List<Team> GetTopTeams()
         {
+        	var teams = new List<Team>();
             try
             {
-                var teams = _repo.GetTeams().OrderByDescending(x => x.Score).ToList();
-                if (teams.Count <= 10) return teams;
-                teams.RemoveRange(10, teams.Count - 10);
-                return teams;
+                teams = _repo.GetTeams().OrderByDescending(x => x.Score).ToList();
             }
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+                return new List<Team>();
             }
-            return new List<Team>();
+            if (teams.Count <= 10) return teams;
+            teams.RemoveRange(10, teams.Count - 10);
+            return teams;
         }
     }
 }
