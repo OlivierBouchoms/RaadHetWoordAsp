@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
@@ -52,6 +51,7 @@ namespace RaadHetWoordGit.Controllers
         [HttpPost]
         public ActionResult Index(GameViewModel viewModel)
         {
+            HttpContext.Session.Clear();
             if (!_checksLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
             {
                 viewModel.WarningClass = "visible";
@@ -86,7 +86,6 @@ namespace RaadHetWoordGit.Controllers
         public ActionResult PlayGame()
         {
             var viewModel = GetViewModelFromSession();
-
             if (_gameLogic.GameIsOver(viewModel.Game))
             {
                 var winner = _gameLogic.GetWinner(viewModel.Game);
@@ -97,19 +96,8 @@ namespace RaadHetWoordGit.Controllers
                 return RedirectToAction("Summary", "Game");
             }
 
-            viewModel.Game.CurrentRound = new Round(viewModel.Game);
-
-            try
-            {
-                viewModel.Game.TeamList[Round.Playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-                viewModel.Game.TeamList[Round.Playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
-            }
+            viewModel.Game.TeamList[Round.Playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
+            _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
 
             if (viewModel.Game.Wordlist.Words.Count < 10)
             {
@@ -117,6 +105,8 @@ namespace RaadHetWoordGit.Controllers
             }
 
             _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
+
+            viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
             PlaceViewModelInSession(viewModel);
 

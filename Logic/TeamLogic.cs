@@ -142,5 +142,21 @@ namespace Logic
             }
             return new List<Team>();
         }
+
+        public List<Team> GetTopTeams()
+        {
+            try
+            {
+                var teams = _repo.GetTeams().OrderByDescending(x => x.Score).ToList();
+                if (teams.Count <= 10) return teams;
+                teams.RemoveRange(10, teams.Count - 10);
+                return teams;
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+            }
+            return new List<Team>();
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace Data
+﻿namespace Data
 {
     internal class XML
     {

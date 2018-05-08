@@ -35,5 +35,15 @@
 
             return input;
         }
+
+        public int ReverseValue(int input)
+        {
+            if (input == 0)
+            {
+                return 1;
+            }
+
+            return 0;
+        }
     }
 }
