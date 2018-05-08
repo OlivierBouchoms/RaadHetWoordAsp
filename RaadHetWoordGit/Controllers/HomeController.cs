@@ -23,9 +23,10 @@ namespace RaadHetWoordGit.Controllers
         public ViewResult Index()
         {
             HttpContext.Session.Clear();
-            return View(new LeaderboardViewModel(_teamLogic.GetTeams("Score"), "Score"));
+            var teams = _teamLogic.GetTeams("Score");
+            teams.RemoveRange(10, teams.Count - 10);
+            return View(new LeaderboardViewModel(teams, "Score"));
         }
-
     }
 }
 
