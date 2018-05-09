@@ -120,11 +120,11 @@ namespace Logic
         public List<Team> GetTeams(string orderby)
         {
             if (orderby == null) orderby = "Score";
+            var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
             var teams = new List<Team>(); 
             try
             {
-                var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
-                var teams = _repo.GetTeams();
+                teams = _repo.GetTeams();
             }
             catch (Exception e)
             {

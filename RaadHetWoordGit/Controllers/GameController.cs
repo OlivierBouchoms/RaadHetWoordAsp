@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
@@ -113,6 +114,20 @@ namespace RaadHetWoordGit.Controllers
             return View(viewModel);
         }
 
+        public ViewResult ThrowDice()
+        {
+//            var viewModel = GetViewModelFromSession();
+
+//            var viewModel = new GameViewModel();
+//            var tuple = _gameLogic.ThrowDice(viewModel.Game);
+//            viewModel.Game = tuple.Item1;
+//            viewModel.ScoreChange = tuple.Item2;
+
+//            PlaceViewModelInSession(viewModel);
+
+            return View();
+        }
+
         /// <summary>
         /// View the scoreboard
         /// </summary>
@@ -144,6 +159,7 @@ namespace RaadHetWoordGit.Controllers
             HttpContext.Session.SetString(nameof(Round), JsonConvert.SerializeObject(round));
             HttpContext.Session.SetString("teamlist", JsonConvert.SerializeObject(teamList));
             HttpContext.Session.SetString(nameof(Wordlist), JsonConvert.SerializeObject(wordList));
+            HttpContext.Session.SetInt32("scorechange", viewModel.ScoreChange);
 
             viewModel.Game.CurrentRound = null;
             viewModel.Game.TeamList = null;
@@ -166,6 +182,7 @@ namespace RaadHetWoordGit.Controllers
             viewModel.Game.TeamList = JsonConvert.DeserializeObject<List<Team>>(HttpContext.Session.GetString("teamlist"));
             viewModel.Game.Wordlist = new Wordlist(JsonConvert.DeserializeObject<List<string>>(HttpContext.Session.GetString(nameof(Wordlist))));
             viewModel.Game.CurrentRound = JsonConvert.DeserializeObject<Round>(HttpContext.Session.GetString(nameof(Round)));
+            viewModel.ScoreChange = Convert.ToInt32(HttpContext.Session.GetInt32("scorechange"));
 
             return viewModel;
         }

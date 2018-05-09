@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Models;
 
 namespace Data
@@ -14,6 +15,13 @@ namespace Data
         {
             game.AddWordlist(wordlist);
             return game;
+        }
+
+        public Tuple<Game, int> ThrowDice(Game game, int maxValue)
+        {
+            int change = new Random().Next(0, maxValue);
+            game.CurrentRound.Team.Score -= new Random().Next(0, maxValue);
+            return new Tuple<Game, int>(game, change);
         }
     }
 }

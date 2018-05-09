@@ -22,5 +22,7 @@ namespace RaadHetWoordGit.ViewModels
         public bool Increase { get; set; }
 
         public int MaxScore { get; set; }
+
+        public int ScoreChange { get; set; }
     }
 }
