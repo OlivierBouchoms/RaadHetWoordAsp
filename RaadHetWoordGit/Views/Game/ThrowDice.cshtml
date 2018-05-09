@@ -5,6 +5,10 @@
 
 <h2>Gooi de dobbelsteen!</h2>
 
-<div id="dice" class="w3-button w3-block w3-green w3-hover-blue" onclick="throwDice(3)">
+<button id="dice" class="w3-button w3-block w3-green w3-hover-blue" onclick="throwDice(3)">
     0
-</div>
+</button> <br />
+
+<form>
+    <input type="submit" asp-controller="Game" asp-action="PlayGame" class="w3-button w3-block w3-green w3-hover-white" value="Start"/>
+</form>

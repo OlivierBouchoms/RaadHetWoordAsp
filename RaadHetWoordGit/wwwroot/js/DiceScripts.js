@@ -16,6 +16,7 @@ function changeValue() {
     getal = Math.random() * 3;
     getal = Math.floor(getal);
     $('dice').css("pointer-events", "none");
+    document.getElementById("dice").disabled = true;
     document.getElementById("dice").innerHTML = getal;
     i++;
     if (i >= 20) {
