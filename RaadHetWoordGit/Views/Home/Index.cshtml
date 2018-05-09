@@ -21,7 +21,8 @@
 </div>
 <div class="w3-row">
     <div class="w3-col s12">
-        <h3>Top 10 spelers:</h3>
+        @if (Model.Teams.Count >= 10) { <h3>Top 10 spelers:</h3> }
+        else { <h3>Klassementen:</h3> }
         <div id="leaderboardcontainer">
             <table class="w3-table w3-striped w3-bordered">
                 <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>

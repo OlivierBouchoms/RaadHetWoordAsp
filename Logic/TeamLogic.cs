@@ -120,16 +120,16 @@ namespace Logic
         public List<Team> GetTeams(string orderby)
         {
             if (orderby == null) orderby = "Score";
+            var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
             var teams = new List<Team>(); 
             try
             {
-                var orderBy = (OrderBy)Enum.Parse(typeof(OrderBy), orderby);
-                var teams = _repo.GetTeams();
+                teams = _repo.GetTeams();
             }
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-                return new List<Team>();
+                return teams;
             }
             
             if (OrderBy.Wins == orderBy)
@@ -154,7 +154,7 @@ namespace Logic
             catch (Exception e)
             {
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-                return new List<Team>();
+                return teams;
             }
             if (teams.Count <= 10) return teams;
             teams.RemoveRange(10, teams.Count - 10);
