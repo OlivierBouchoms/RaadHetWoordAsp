@@ -64,6 +64,15 @@ namespace Logic
             return loser;
         }
 
+        public Tuple<Game, int> ThrowDice(Game game)
+        {
+        	if (game.CurrentRound.Team.Score == 0) { return new Tuple<Game, int>(game, 0); }
+        	var maxValue = 2;
+        	if (game.CurrentRound.Team.Score == 1) { maxValue = 1;}
+
+            return _repo.ThrowDice(game, maxValue);
+        }
+
        
     }
 }
