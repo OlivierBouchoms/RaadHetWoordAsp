@@ -62,18 +62,10 @@ namespace RaadHetWoordGit.Controllers
                 return View(viewModel);
             }
 
-            var teams = new List<Team>
-            {
-                new Team(viewModel.TeamOne),
-                new Team(viewModel.TeamTwo)
-            };
+            viewModel.Game = _gameLogic.InitializeGame(_checksLogic.MaxScore(viewModel.MaxScore), viewModel.TeamOne, viewModel.TeamTwo, _wordListLogic.GetWords(viewModel.Wordlist));
 
-            viewModel.Game = new Game(_checksLogic.MaxScore(viewModel.MaxScore), teams);
-            viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
-            viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
-
-            _teamLogic.AddTeam(teams[0]);
-            _teamLogic.AddTeam(teams[1]);
+            _teamLogic.AddTeam(viewModel.Game.TeamList[0]);
+            _teamLogic.AddTeam(viewModel.Game.TeamList[1]);
 
             PlaceViewModelInSession(viewModel);
 

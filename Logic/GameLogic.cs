@@ -73,6 +73,11 @@ namespace Logic
             return _repo.ThrowDice(game, maxValue);
         }
 
-       
+        public Game InitializeGame(int maxScore, string teamOne, string teamTwo, List<string> words)
+        {
+            var game = new Game(maxScore, new List<Team>());
+            game = AddTeams(new List<Team> {new Team(teamOne), new Team(teamTwo)}, game);
+            return AddWordlist(game, new Wordlist(words));
+        }
     }
 }
