@@ -83,10 +83,19 @@ namespace RaadHetWoordGit.Controllers
         /// <summary>
         /// The page to play a game
         /// </summary>
-        [HttpPost]
         public ActionResult PlayGame()
         {
+            return View(GetViewModelFromSession());
+        }
+
+        /// <summary>
+        /// The page to throw a dice
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ThrowDice()
+        {
             var viewModel = GetViewModelFromSession();
+
             if (_gameLogic.GameIsOver(viewModel.Game))
             {
                 var winner = _gameLogic.GetWinner(viewModel.Game);
@@ -109,23 +118,13 @@ namespace RaadHetWoordGit.Controllers
 
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
+            var tuple = _gameLogic.ThrowDice(viewModel.Game);
+            viewModel.Game = tuple.Item1;
+            viewModel.ScoreChange = tuple.Item2;
+
             PlaceViewModelInSession(viewModel);
 
             return View(viewModel);
-        }
-
-        public ViewResult ThrowDice()
-        {
-//            var viewModel = GetViewModelFromSession();
-
-//            var viewModel = new GameViewModel();
-//            var tuple = _gameLogic.ThrowDice(viewModel.Game);
-//            viewModel.Game = tuple.Item1;
-//            viewModel.ScoreChange = tuple.Item2;
-
-//            PlaceViewModelInSession(viewModel);
-
-            return View();
         }
 
         /// <summary>

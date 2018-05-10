@@ -19,3 +19,19 @@
     background-color: #4CAF50!important;
     color: black;
 }
+
+.dice {
+    border: none;
+    border-radius: 3px;
+    font-size: 2vw;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+
+    display: block;
+    height: 20vh;
+    width: 100%;
+}
