@@ -20,7 +20,6 @@
 <body>
 <div class="w3-bar w3-black">
     <div class="body-content">
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-black"><img src="favicon.ico" style="height: 19px; width: auto"/></a>
         <a asp-area="" asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Home</a>
         <a asp-area="" asp-controller="Game" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Game</a>
         <a asp-area="" asp-controller="Leaderboards" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Leaderboards</a>
@@ -28,8 +27,7 @@
 </div>
 <div class="body-content">
     @RenderBody()
-    <hr/>
-    <footer>
+    <footer class="footer">
         <p>RaadHetWoord - Olivier Bouchoms</p>
         <p>Styling with <a href="https://www.w3schools.com/w3css/">W3 CSS</a></p>
     </footer>
