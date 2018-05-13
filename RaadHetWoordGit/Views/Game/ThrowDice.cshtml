@@ -9,10 +9,6 @@
     0
 </button> <br />
 
-@*<form>*@
-@*    <input type="submit" asp-controller="Game" asp-action="PlayGame" class="w3-button w3-block w3-green w3-hover-white" id="btnnextround" value="Start" />*@
-@*</form>*@
-
 <form asp-action="PlayGame" asp-controller="Game">
     <input class="hidden" id="btnnextround" type="submit" value="" />
     <input class="w3-button w3-block w3-green w3-hover-white" id="btncountdown" onclick="redirectToGame()" value="Start!" />

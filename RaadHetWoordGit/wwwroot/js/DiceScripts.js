@@ -38,7 +38,7 @@ function changeValue() {
 function stopRolling() {
     clearInterval(uiTimer);
     document.getElementById("btncountdown").disabled = false;
-    document.getElementById.innerHTML = "Uitkomst: " + _value + " punten eraf!";
+    document.getElementById("dice").innerHTML = "Uitkomst: " + _value + " punten eraf!";
 }
 
 function nextRound() {
