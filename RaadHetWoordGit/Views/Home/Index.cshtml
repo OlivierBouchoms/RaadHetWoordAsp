@@ -24,6 +24,7 @@
         else { <h3>Klassementen:</h3> }
         <div id="leaderboardcontainer">
             <table class="w3-table w3-striped w3-bordered">
+                <caption class="w3-text-green">Het beste team in deze categorie is @Model.Teams[0].Name!</caption>
                 <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
                 <tr class="w3-green">
                     <th scope="col">#</th>
