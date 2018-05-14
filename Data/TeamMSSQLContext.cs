@@ -23,10 +23,16 @@ namespace Data
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
+                sqlDataReader.Close();
+                sqlDataReader.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
+            sqlDataReader.Close();
+            sqlDataReader.Dispose();
+
             return false;
         }
 
@@ -41,12 +47,14 @@ namespace Data
             const string procedure = "AddTeam";
             var sqlCommand = new SqlCommand(procedure, sqlConnection) { CommandType = CommandType.StoredProcedure };
             sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
             return false;
@@ -63,12 +71,14 @@ namespace Data
             const string prcoedure = "IncreaseScore";
             var sqlCommand = new SqlCommand(prcoedure, sqlConnection) { CommandType = CommandType.StoredProcedure };
             sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
 
@@ -86,12 +96,14 @@ namespace Data
             const string procedure = "DecreaseScore";
             var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
             return false;
@@ -114,6 +126,7 @@ namespace Data
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
             return false;
@@ -127,12 +140,14 @@ namespace Data
             const string procedure = "IncreaseWins";
             var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
             return false;
@@ -146,12 +161,14 @@ namespace Data
             const string procedure = "IncreaseLosses";
             var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+
             if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
                 return true;
             }
+
             sqlConnection.Close();
             sqlConnection.Dispose();
             return false;

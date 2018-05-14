@@ -12,8 +12,8 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string query = "Select [Name] FROM [WordCategory] ORDER BY [Name] ASC";
-            var sqlCommand = new SqlCommand(query, sqlConnection);
+            const string procedure = "GetWordlists";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             var sqlDataReader = sqlCommand.ExecuteReader();
 
             while (sqlDataReader.Read())
@@ -23,6 +23,7 @@ namespace Data
 
             sqlConnection.Close();
             sqlConnection.Dispose();
+            sqlDataReader.Close();
             sqlDataReader.Dispose();
             return wordlists;
         }
@@ -33,18 +34,19 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string query = "SELECT [text] FROM Word";
-            var sqlCommand = new SqlCommand(query, sqlConnection);
+            const string procedure = "GetWords";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             var sqlDataReader = sqlCommand.ExecuteReader();
+
             while (sqlDataReader.Read())
             {
                 words.Add(sqlDataReader.GetString(0));
             }
 
-            sqlDataReader.Close();
-            sqlDataReader.Dispose();
             sqlConnection.Close();
             sqlConnection.Dispose();
+            sqlDataReader.Close();
+            sqlDataReader.Dispose();
             return words;
         }
 
@@ -54,26 +56,21 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "SELECT [text] " +
-                           "FROM[word] " +
-                           "INNER JOIN[word_and_wordcategorie] " +
-                           "ON [word].[idword] = [word_and_wordcategorie].[wordid] " +
-                           "INNER JOIN[wordcategory] " +
-                           "ON[word_and_wordcategorie].[wordcategoryid] = " +
-                           "[wordcategory].[idwordcategory] " +
-                           "WHERE[wordcategory].[name] = @title";
+            const string commandText = "GetWordsFromWordlist";
             var dataTable = new DataTable();
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("title", SqlDbType.VarChar).Value = title;
-            var sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            sqlDataAdapter.Fill(dataTable);
-            foreach (DataRow row in dataTable.Rows)
+            var sqlCommand = new SqlCommand(commandText, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("title", SqlDbType.NChar).Value = title;
+            var sqlDataReader = sqlCommand.ExecuteReader();
+
+            while (sqlDataReader.Read())
             {
-                words.Add(row["Text"].ToString());
+                words.Add(sqlDataReader.GetString(0));
             }
 
             sqlConnection.Close();
             sqlConnection.Dispose();
+            sqlDataReader.Close();
+            sqlDataReader.Dispose();
             return words;
         }
     }
