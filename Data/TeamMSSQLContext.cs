@@ -15,9 +15,9 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "Select [Name] From [Team] where [Name] =@name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
+            const string prcoedure = "TeamExists";
+            var sqlCommand = new SqlCommand(prcoedure, sqlConnection) { CommandType= CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
             var sqlDataReader = sqlCommand.ExecuteReader();
             if (sqlDataReader.HasRows)
             {
@@ -38,11 +38,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "Insert into Team ([Name], [Score], [Turns], [Wins], [Losses]) " +
-                              "Values (@name, 0, 0, 0, 0)";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() == 1)
+            const string procedure = "AddTeam";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) { CommandType = CommandType.StoredProcedure };
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -61,10 +60,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "UPDATE [Team] SET [Score] = [Score] + 1 where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() > 1)
+            const string prcoedure = "IncreaseScore";
+            var sqlCommand = new SqlCommand(prcoedure, sqlConnection) { CommandType = CommandType.StoredProcedure };
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -84,10 +83,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "UPDATE [Team] SET [Score] = [Score] - 1 where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() > 1)
+            const string procedure = "DecreaseScore";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -106,10 +105,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "UPDATE [Team] SET [Turns] = [Turns] + 1 where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() > 1)
+            const string commandText = "IncreaseTurns";
+            var sqlCommand = new SqlCommand(commandText, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -125,10 +124,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "UPDATE [Team] SET [Wins] = [Wins] + 1 where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() > 1)
+            const string procedure = "IncreaseWins";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -144,10 +143,10 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "UPDATE [Team] SET [Losses] = [Losses] + 1 where [Name] = @name";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
-            sqlCommand.Parameters.Add("name", SqlDbType.NVarChar).Value = team.Name;
-            if (sqlCommand.ExecuteNonQuery() > 1)
+            const string procedure = "IncreaseLosses";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("name", SqlDbType.NChar).Value = team.Name;
+            if (sqlCommand.ExecuteNonQuery() > 0)
             {
                 sqlConnection.Close();
                 sqlConnection.Dispose();
@@ -167,8 +166,8 @@ namespace Data
             var sqlConnection = DataBase.MsSql;
             sqlConnection.Open();
 
-            const string commandText = "SELECT * FROM [Team]";
-            var sqlCommand = new SqlCommand(commandText, sqlConnection);
+            const string procedure = "GetTeams";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
             var sqlDataReader = sqlCommand.ExecuteReader();
 
             while (sqlDataReader.Read())
