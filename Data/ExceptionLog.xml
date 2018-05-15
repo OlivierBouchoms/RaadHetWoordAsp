@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Automatically generated, do not modify.-->
+<Exceptions>
+  <Exception>
+    <date>5:40:20 PM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467262</HResult><HelpLink /><InnerException></InnerException><Message>Unable to cast object of type 'System.Int32' to type 'System.String'.</Message><Source>System.Data</Source><StackTrace>   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at Data.WordMssqlContext.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\WordMSSQLContext.cs:line 53
+   at Data.WordRepository.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\WordRepository.cs:line 22
+   at Logic.WordLogic.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Logic\WordLogic.cs:line 34</StackTrace><TargetSite>System.String get_String()</TargetSite></Data></date>
+  </Exception>
+</Exceptions>

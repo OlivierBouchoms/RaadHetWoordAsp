@@ -1,3 +1,0 @@
-Before round:
-
-System throws dice and substracts 2, 1 or 0 points.
