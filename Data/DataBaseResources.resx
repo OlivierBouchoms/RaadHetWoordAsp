@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MsSqlConnection" xml:space="preserve">
-    <value>Server=mssql.fhict.local;Database=dbi391028;User Id=dbi391028;Password=$7d*UEL##uLy</value>
+    <value>Server=tcp:raadhetwoorddb.database.windows.net,1433;Initial Catalog=RaadHetWoordDB;Persist Security Info=False;User ID=i391028;Password=Flotflousa6;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</value>
     <comment>The connectionstring for the database.</comment>
   </data>
   <data name="SqLiteFile" xml:space="preserve">

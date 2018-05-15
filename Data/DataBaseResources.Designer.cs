@@ -61,7 +61,7 @@ namespace Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server=mssql.fhict.local;Database=dbi391028;User Id=dbi391028;Password=$7d*UEL##uLy.
+        ///   Looks up a localized string similar to Server=tcp:raadhetwoorddb.database.windows.net,1433;Initial Catalog=RaadHetWoordDB;Persist Security Info=False;User ID=i391028;Password=Flotflousa6;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;.
         /// </summary>
         internal static string MsSqlConnection {
             get {
