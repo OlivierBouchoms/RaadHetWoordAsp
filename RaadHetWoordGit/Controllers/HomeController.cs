@@ -1,6 +1,7 @@
 ﻿using Data;
 using Logic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using RaadHetWoordGit.ViewModels;
 
 namespace RaadHetWoordGit.Controllers
@@ -25,6 +26,27 @@ namespace RaadHetWoordGit.Controllers
             HttpContext.Session.Clear();
             return View(new LeaderboardViewModel(_teamLogic.GetTopTeams(), "Score"));
         }
+
+        /// <summary>
+        /// About page
+        /// </summary>
+        /// <returns></returns>
+        public ViewResult About()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Error page
+        /// </summary>
+        /// <returns></returns
+        [Route("/Error")]
+        public ViewResult Error()
+        {
+            HttpContext.Session.Clear();
+            return View();
+        }
+
     }
 }
 

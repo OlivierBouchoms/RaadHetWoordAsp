@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RaadHetWoordGit.Data;
@@ -40,7 +41,7 @@ namespace RaadHetWoordGit
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/Home/Error");
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
             }
@@ -50,8 +51,8 @@ namespace RaadHetWoordGit
             }
 
             app.UseStaticFiles();
+            app.UseStatusCodePages();
 
-            app.UseAuthentication();
             app.UseSession();
             app.UseMvc(routes =>
             {

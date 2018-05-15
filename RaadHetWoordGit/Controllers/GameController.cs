@@ -109,13 +109,6 @@ namespace RaadHetWoordGit.Controllers
             _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
-            if (viewModel.Game.CurrentRound == null || viewModel.Game.CurrentRound.Team.Score == 0)
-            {
-                viewModel.Game.CurrentRound = new Round(viewModel.Game);
-                PlaceViewModelInSession(viewModel);
-                return RedirectToAction("PlayGame");
-            }
-
             var tuple = _gameLogic.ThrowDice(viewModel.Game);
             viewModel.Game = tuple.Item1;
             viewModel.ScoreChange = tuple.Item2;

@@ -1,5 +1,6 @@
 ﻿body {
     padding-bottom: 20px;
+    margin-bottom: 7%;
 }
 
 .body-content {
@@ -48,4 +49,12 @@
     padding-top: 7px;
     position: fixed;
     width: 60%;
+}
+
+.map {
+    height: 65vh;
+    position: absolute;
+    width: 60%;
+    max-height: 65%;
+    margin-bottom: -65vh;
 }
