@@ -61,7 +61,7 @@ namespace Data {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RaadHetWoordDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False.
+        ///   Looks up a localized string similar to Server=mssql.fhict.local;Database=dbi391028;User Id=dbi391028;Password=$7d*UEL##uLy.
         /// </summary>
         internal static string MsSqlConnection {
             get {
