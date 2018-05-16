@@ -4,57 +4,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]RaadHetWoord</title>
-   
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/w3.css"/>
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/w3.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+<!-- Navigation -->
 <div class="w3-bar w3-black">
     <div class="body-content">
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Thuispagina</a>
-        <a asp-area="" asp-controller="Game" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Game</a>
-        <a asp-area="" asp-controller="Leaderboards" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white">Leaderboards</a>
-        <a asp-area="" asp-controller="Home" asp-action="About" class="w3-bar-item w3-button w3-black w3-hover-white">Over</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white border-radius-3-top">Thuispagina</a>
+        <a asp-area="" asp-controller="Game" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white border-radius-3-top">Game</a>
+        <a asp-area="" asp-controller="Leaderboards" asp-action="Index" class="w3-bar-item w3-button w3-black w3-hover-white border-radius-3-top">Leaderboards</a>
+        <a asp-area="" asp-controller="Home" asp-action="About" class="w3-bar-item w3-button w3-black w3-hover-white border-radius-3-top">Over</a>
     </div>
 </div>
-<div class="body-content">
-    @RenderBody()
-    <footer class="footer">
-        <p>RaadHetWoord - Olivier Bouchoms</p>
-        <p>Styling with <a href="https://www.w3schools.com/w3css/">W3 CSS</a></p>
-    </footer>
-</div>
+<!-- Content -->
+    <div class="body-content">
+        @RenderBody()
+        <!-- Footer -->
+        <footer class="footer">
+            <p>RaadHetWoord - Olivier Bouchoms</p>
+            <p>Styling with <a href="https://www.w3schools.com/w3css/">W3 CSS</a></p>
+        </footer>
+    </div>
 
-<environment include="Development">
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-</environment>
-<environment exclude="Development">
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery"
-            crossorigin="anonymous"
-            integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-    </script>
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-            crossorigin="anonymous"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-    </script>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
-</environment>
+@*    <environment exclude="Development">*@
+@*        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"*@
+@*                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"*@
+@*                asp-fallback-test="window.jQuery"*@
+@*                crossorigin="anonymous"*@
+@*                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">*@
+@*        </script>*@
+@*        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"*@
+@*                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"*@
+@*                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"*@
+@*                crossorigin="anonymous"*@
+@*                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">*@
+@*        </script>*@
+@*        <script src="~/js/site.min.js" asp-append-version="true"></script>*@
+@*    </environment>*@
 
-@RenderSection("Scripts", false)
+    @RenderSection("Scripts", false)
 </body>
 </html>

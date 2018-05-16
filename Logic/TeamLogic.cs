@@ -156,8 +156,8 @@ namespace Logic
                 new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
                 return teams;
             }
-            if (teams.Count <= 10) return teams;
-            teams.RemoveRange(10, teams.Count - 10);
+            if (teams.Count <= 5) return teams;
+            teams.RemoveRange(5, teams.Count - 5);
             return teams;
         }
     }

@@ -1,15 +1,16 @@
 ﻿@model RaadHetWoordGit.ViewModels.LeaderboardViewModel
 
+<script src="/js/LeaderBoardScripts.js"></script>
+
 <table class="w3-table w3-striped w3-bordered">
     <caption class="w3-text-green">Het beste team in deze categorie is @Model.Teams[0].Name!</caption>
     <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
-    <tr class="w3-green">
+    <tr class="w3-green" id="sortmenu">
         <th scope="col">#</th>
         <th scope="col">Team</th>
-        <th scope="col">Score</th>
-        <th scope="col">Wins</th>
-        <th scope="col">Losses</th>
-        <th scope="col">WinLoss</th>
+        <th scope="col"><a asp-controller="Leaderboards" asp-action="Teams" asp-route-orderby="Score">Score</a></th>
+        <th scope="col"><a asp-controller="Leaderboards" asp-action="Teams" asp-route-orderby="Wins">Wins</a></th>
+        <th scope="col"><a asp-controller="Leaderboards" asp-action="Teams" asp-route-orderby="WinLoss">WinLoss</a></th>
     </tr>
     @for (int i = 0; i < Model.Teams.Count; i++)
     {
@@ -19,7 +20,6 @@
             <td>@Model.Teams[i].Name</td>
             <td>@Model.Teams[i].Score</td>
             <td>@Model.Teams[i].Wins</td>
-            <td>@Model.Teams[i].Losses</td>
             <td>@Model.Teams[i].WinLoss</td>
         </tr>
     }

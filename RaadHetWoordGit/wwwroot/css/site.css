@@ -52,9 +52,75 @@
 }
 
 .map {
-    height: 65vh;
+    height:60vh;
     position: absolute;
     width: 60%;
     max-height: 65%;
     margin-bottom: -65vh;
+}
+
+.sortmenu {
+    margin-bottom: -7%;
+}
+
+.border-radius-3-top {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+@media all and (max-height: 960px) {
+    .map {
+        height: 55vh;
+    }
+}
+
+@media all and (max-height: 768px) {
+    .map {
+        height: 50vh;
+    }
+}
+
+@media all and (max-height: 680px) {
+    .footer {
+        display: none;
+    }
+    .map {
+        height: 55vh;
+    }
+}
+
+@media all and (max-height: 595px) {
+    .map {
+        height: 50vh;
+    }
+}
+
+@media all and (max-height: 535px) {
+    .map {
+        height: 40vh;
+    }
+}
+
+@media all and (max-height: 450px) {
+    #locationtext {
+        display: none;
+    }
+}
+
+@media all and (max-height: 420px) {
+    .map {
+        height: 35vh;
+    }
+}
+
+@media all and (max-height: 365px) {
+    .map {
+        display: none;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .contacticon {
+        display: none!important;
+    }
 }
