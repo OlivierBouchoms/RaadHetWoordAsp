@@ -3,10 +3,11 @@
 
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/LeaderBoardScripts.js"></script>
+<link rel="stylesheet" href="/css/Leaderboard.css" />
 
 <h2>Leaderboards</h2>
 
-<div id="leaderboardcontainer"> 
+<div id="leaderboardcontainer">
     <table class="w3-table w3-striped w3-bordered">
         <caption class="w3-text-green">Het beste team in deze categorie is @Model.Teams[0].Name!</caption>
         <caption>Gesorteerd op @Model.OrderBy.ToLower()</caption>
