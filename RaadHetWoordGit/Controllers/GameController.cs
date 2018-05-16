@@ -37,13 +37,8 @@ namespace RaadHetWoordGit.Controllers
         {
             HttpContext.Session.Clear();
 
-            var viewModel = new GameViewModel
-            {
-                WordlistClass = "hidden",
-                Wordlists = _wordListLogic.GetWordlists()
-            };
 
-            return View(viewModel);
+            return View(new GameViewModel { WarningClass = "hidden", Wordlists = _wordListLogic.GetWordlists() });
         }
         
         /// <summary>

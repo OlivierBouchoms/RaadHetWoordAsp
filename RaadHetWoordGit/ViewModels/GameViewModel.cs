@@ -8,7 +8,6 @@ namespace RaadHetWoordGit.ViewModels
         //Naar UI
         public Game Game { get; set; }
 
-        public string WordlistClass { get; set; }
         public string WarningClass { get; set; }
         public string Winner { get; set; }
 
@@ -19,10 +18,7 @@ namespace RaadHetWoordGit.ViewModels
         public string TeamTwo { get; set; }
         public string Wordlist { get; set; }
 
-        public bool Increase { get; set; }
-
         public int MaxScore { get; set; }
-
         public int ScoreChange { get; set; }
     }
 }

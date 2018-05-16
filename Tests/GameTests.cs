@@ -263,30 +263,24 @@ namespace Tests
                 viewModel.Winner = winner.Name;
                 _teamLogic.IncreaseWins(_gameLogic.GetWinner(viewModel.Game));
                 _teamLogic.IncreaseLosses(_gameLogic.GetLoser(viewModel.Game));
-                return new GameViewModel { Winner = "Gewonnen" };
+                viewModel.Winner = "Gewonnen";
+                return viewModel;
             }
 
-            viewModel.Game.CurrentRound = new Round(viewModel.Game);
-
-            try
-            {
-                viewModel.Game.TeamList[Round.Playerindex - 1] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex - 1]);
-            }
-            catch (Exception e)
-            {
-                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
-                viewModel.Game.TeamList[Round.Playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
-                _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
-            }
+            viewModel.Game.TeamList[Round.Playerindex] = _teamInGameLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
+            _teamLogic.IncreaseTurns(viewModel.Game.TeamList[Round.Playerindex]);
 
             if (viewModel.Game.Wordlist.Words.Count < 10)
             {
                 viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
-                viewModel.WordlistClass = "visible";
             }
 
             _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
+            viewModel.Game.CurrentRound = new Round(viewModel.Game);
+
+            var tuple = _gameLogic.ThrowDice(viewModel.Game);
+            viewModel.Game = tuple.Item1;
+            viewModel.ScoreChange = tuple.Item2;
 
             return viewModel;
         }

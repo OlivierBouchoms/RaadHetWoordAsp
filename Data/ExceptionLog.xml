@@ -2,6 +2,14 @@
 <!--Automatically generated, do not modify.-->
 <Exceptions>
   <Exception>
+    <date>11:35:31 AM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
+    <date>11:32:46 AM<Data>System.ArgumentNullException: Value cannot be null.
+   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38<HResult>-2147467261</HResult><HelpLink /><InnerException></InnerException><Message>Value cannot be null.</Message><Source>Tests</Source><StackTrace>   at Tests.ExceptionTests.TestXmlLogging() in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\RaadHetWoordAsp\Tests\ExceptionTests.cs:line 38</StackTrace><TargetSite>Void TestXmlLogging()</TargetSite></Data></date>
+  </Exception>
+  <Exception>
     <date>5:40:20 PM<Data>System.Collections.ListDictionaryInternal<HResult>-2147467262</HResult><HelpLink /><InnerException></InnerException><Message>Unable to cast object of type 'System.Int32' to type 'System.String'.</Message><Source>System.Data</Source><StackTrace>   at System.Data.SqlClient.SqlBuffer.get_String()
    at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
    at Data.WordMssqlContext.GetWordsFromWordList(String wordlist) in C:\Users\Olivier\Documents\Fontys\Semester 2\Individueel traject\Ontwikkelopdracht\AdminPanelRaadHetWoordGit\Data\WordMSSQLContext.cs:line 53
