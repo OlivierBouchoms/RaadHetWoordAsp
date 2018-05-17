@@ -9,7 +9,7 @@
 }
 
 .border-radius-0 {
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 .border-radius-3 {
@@ -68,6 +68,34 @@
     border-top-right-radius: 4px;
 }
 
+.statscontainer {
+    background: linear-gradient(to right, white, #4CAF50, #4CAF50, #4CAF50, #4CAF50, #4CAF50, #4CAF50, #4CAF50, #4CAF50);
+    color: white;
+    width: 100%;
+}
+
+.statscontainerbottom {
+    background: linear-gradient(#4CAF50, white );
+    height: 30px;
+}
+
+.piecontainer {
+    width: 50%;
+}
+
+.statscontainertext {
+    padding-left: 12%;
+    padding-top: 0.5%;
+}
+
+.statscontainertitle {
+    padding-left: 6%;
+}
+
+.padding-bottom-1 {
+    padding-bottom: 1%;
+}
+
 @media all and (max-height: 960px) {
     .map {
         height: 55vh;
@@ -124,3 +152,4 @@
         display: none!important;
     }
 }
+

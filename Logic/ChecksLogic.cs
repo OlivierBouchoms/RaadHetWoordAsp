@@ -1,4 +1,6 @@
-﻿namespace Logic
+﻿using System;
+
+namespace Logic
 {
     public class ChecksLogic
     {
@@ -44,6 +46,21 @@
             }
 
             return 0;
+        }
+
+        public string GetWinLossClass(decimal winLoss)
+        {
+            if (winLoss < 1)
+            {
+                return "w3-text-red";
+            }
+
+            if (winLoss > 1)
+            {
+                return "w3-text-green";
+            }
+
+            return string.Empty;
         }
     }
 }

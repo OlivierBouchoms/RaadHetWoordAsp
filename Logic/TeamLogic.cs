@@ -160,5 +160,18 @@ namespace Logic
             teams.RemoveRange(5, teams.Count - 5);
             return teams;
         }
+
+        public Team GetTeam(int id)
+        {
+            try
+            {
+                return _repo.GetTeam(id);
+            }
+            catch (Exception e)
+            {
+                new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionSqLiteContext())).LogException(e);
+                return new Team();
+            }
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace Data
         {
             return _context.GetTeams();
         }
+
+        public Team GetTeam(int id)
+        {
+            return _context.GetTeam(id);
+        }
     }
 }

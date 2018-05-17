@@ -2,6 +2,7 @@
 {
     public class Team
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Score { get; set; }
         public int Turns { get; set; }
@@ -28,6 +29,18 @@
 
         public Team(string name, int score, int turns, int wins, int losses, decimal scorePerTurn, decimal winLoss)
         {
+            Name = name;
+            Score = score;
+            Turns = turns;
+            Wins = wins;
+            Losses = losses;
+            ScorePerTurn = scorePerTurn;
+            WinLoss = winLoss;
+        }
+
+        public Team(int id, string name, int score, int turns, int wins, int losses, decimal scorePerTurn, decimal winLoss)
+        {
+            Id = id;
             Name = name;
             Score = score;
             Turns = turns;

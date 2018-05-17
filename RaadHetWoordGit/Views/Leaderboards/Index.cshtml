@@ -23,7 +23,7 @@
             var rank = i + 1;
             <tr>
                 <th scope="row">@rank</th>
-                <td>@Model.Teams[i].Name</td>
+                <td><a asp-controller="Team" asp-action="Index" asp-route-id="@Model.Teams[i].Id">@Model.Teams[i].Name</a></td>
                 <td>@Model.Teams[i].Score</td>
                 <td>@Model.Teams[i].Wins</td>
                 <td>@Model.Teams[i].WinLoss</td>

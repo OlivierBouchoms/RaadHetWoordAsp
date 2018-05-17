@@ -189,14 +189,39 @@ namespace Data
 
             while (sqlDataReader.Read())
             {
-                teams.Add(new Team(sqlDataReader.GetString(1), sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(7), sqlDataReader.GetDecimal(6)));
+                teams.Add(new Team(sqlDataReader.GetInt32(0), sqlDataReader.GetString(1), sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(7), sqlDataReader.GetDecimal(6)));
             }
 
             sqlDataReader.Close();
+            sqlDataReader.Dispose();
             sqlConnection.Close();
             sqlConnection.Dispose();
 
             return teams;
+        }
+
+        public Team GetTeam(int id)
+        {
+            var sqlConnection = DataBase.MsSql;
+            sqlConnection.Open();
+
+            const string procedure = "GetTeam";
+            var sqlCommand = new SqlCommand(procedure, sqlConnection) {CommandType = CommandType.StoredProcedure};
+            sqlCommand.Parameters.Add("id", SqlDbType.Int).Value = id;
+            var sqlDataReader = sqlCommand.ExecuteReader();
+            var team = new Team();
+
+            while (sqlDataReader.Read())
+            {
+                team = new Team(id, sqlDataReader.GetString(1), sqlDataReader.GetInt32(2), sqlDataReader.GetInt32(3), sqlDataReader.GetInt32(4), sqlDataReader.GetInt32(5), sqlDataReader.GetDecimal(7), sqlDataReader.GetDecimal(6));
+            }
+
+            sqlDataReader.Close();
+            sqlDataReader.Dispose();
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+
+            return team;
         }
     }
 }

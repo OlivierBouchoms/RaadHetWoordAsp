@@ -3,7 +3,7 @@
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/LeaderBoardScripts.js"></script>
 
-<h3>Welkom op de site van RaadHetWoord!</h3>
+<h2>Welkom op de site van RaadHetWoord!</h2>
 <div class="w3-row">
     <div class="w3-col s12 ">
         <p>
@@ -37,7 +37,7 @@
                     var rank = i + 1;
                     <tr>
                         <th scope="row">@rank</th>
-                        <td>@Model.Teams[i].Name</td>
+                        <td><a asp-controller="Team" asp-action="Index" asp-route-id="@Model.Teams[i].Id">@Model.Teams[i].Name</a></td>
                         <td>@Model.Teams[i].Score</td>
                         <td>@Model.Teams[i].Wins</td>
                     </tr>
