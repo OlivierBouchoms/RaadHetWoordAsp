@@ -1,7 +1,9 @@
-﻿@model RaadHetWoordGit.ViewModels.TeamViewModel 
+﻿@model RaadHetWoordGit.ViewModels.TeamViewModel
 
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/canvasjs.min.js"></script>
+<script src="/js/CanvasScripts.js"></script>
+<script src="/js/TeamScripts.js"></script>
 
 <h2 class="statscontainertitle">Info over team <b>@Model.Team.Name</b></h2>
 
@@ -9,10 +11,10 @@
     <div class="w3-col s6">
         <br />
         <p class="statscontainertext">Naam: @Model.Team.Name</p>
-        <p class="statscontainertext">Overwinningen: @Model.Team.Wins</p>
-        <p class="statscontainertext">Nederlagen: @Model.Team.Losses</p>
+        <p class="statscontainertext">Overwinningen: <span id="wins">@Model.Team.Wins</span></p>
+        <p class="statscontainertext">Nederlagen: <span id="losses">@Model.Team.Losses</span></p>
         <p class="statscontainertext w3-tooltip">
-            Winloss: <span class="@Model.WinLossClass">@Model.Team.WinLoss</span> <span class="w3-text">De verhouding tussen het aantal overwinningen en het aantal nederlagen.</span>
+            Winloss: <span id="winloss">@Model.Team.WinLoss</span> <span class="w3-text">De verhouding tussen het aantal overwinningen en het aantal nederlagen.</span>
         </p>
         <p class="statscontainertext">Score: @Model.Team.Score</p>
         <p class="statscontainertext">Beurten: @Model.Team.Turns</p>
@@ -20,35 +22,3 @@
     </div>
     <div id="chartcontainer" class="w3-col s6"></div>
 </div>
-
-<script>
-    $(document).ready(loadChart());
-
-    function loadChart() {
-        var chart = new CanvasJS.Chart("chartcontainer",
-            {
-                animationEnabled: true,
-                data: [
-                    {
-                        type: "pie",
-                        startAngle: 0,
-                        yValueFormatString: "##0.00\"%\"",
-                        indexLabel: "{label} {y}",
-                        dataPoints: [
-                            {
-                                y: @Model.Team.Wins / (@Model.Team.Losses +  @Model.Team.Wins
-                                ) * 100,
-                                label: "Wins"
-                            },
-                            {
-                                y: @Model.Team.Losses / (@Model.Team.Losses +  @Model.Team.Wins
-                                ) * 100,
-                                label: "Losses"
-                            }
-                        ]
-                    }
-                ]
-            });
-        chart.render();
-    }
-</script>

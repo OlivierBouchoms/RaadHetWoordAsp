@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace Logic
+﻿namespace Logic
 {
-    public class ChecksLogic
+    public class ValidationLogic
     {
         /// <summary>
         /// Trim the strings and check for duplicates/empty values
@@ -36,31 +34,6 @@ namespace Logic
             }
 
             return input;
-        }
-
-        public int ReverseValue(int input)
-        {
-            if (input == 0)
-            {
-                return 1;
-            }
-
-            return 0;
-        }
-
-        public string GetWinLossClass(decimal winLoss)
-        {
-            if (winLoss < 1)
-            {
-                return "w3-text-red";
-            }
-
-            if (winLoss > 1)
-            {
-                return "w3-text-green";
-            }
-
-            return string.Empty;
         }
     }
 }

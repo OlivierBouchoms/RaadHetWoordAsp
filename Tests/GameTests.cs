@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Data;
 using Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,7 +10,7 @@ namespace Tests
     [TestClass]
     public class GameTests
     {
-        private ChecksLogic _checksLogic;
+        private ValidationLogic _validationLogic;
         private GameLogic _gameLogic;
         private TeamLogic _teamLogic;
         private TeamInGameLogic _teamInGameLogic;
@@ -19,7 +18,7 @@ namespace Tests
 
         private void Initialize()
         {
-            _checksLogic = new ChecksLogic();
+            _validationLogic = new ValidationLogic();
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
             _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
@@ -33,7 +32,7 @@ namespace Tests
         public void TestAddTeams()
         {
             Initialize();
-            Assert.IsTrue(_checksLogic.ValuesAreValid("teamOne", "teamTwo"));
+            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo"));
         }
 
         /// <summary>
@@ -43,7 +42,7 @@ namespace Tests
         public void TestAddTeamsNull()
         {
             Initialize();
-            Assert.IsFalse(_checksLogic.ValuesAreValid(null, "teamTwo"));
+            Assert.IsFalse(_validationLogic.ValuesAreValid(null, "teamTwo"));
 
         }
 
@@ -54,7 +53,7 @@ namespace Tests
         public void TestAddTeamsDuplicate()
         {
             Initialize();
-            Assert.IsFalse(_checksLogic.ValuesAreValid("hoi", "hoi"));
+            Assert.IsFalse(_validationLogic.ValuesAreValid("hoi", "hoi"));
         }
 
         /// <summary>
@@ -66,7 +65,7 @@ namespace Tests
             Initialize();
             for (int i = 5; i < 25; i++)
             {
-                Assert.IsTrue(i == _checksLogic.MaxScore(i));
+                Assert.IsTrue(i == _validationLogic.MaxScore(i));
             }
         }
 
@@ -79,7 +78,7 @@ namespace Tests
             Initialize();
             for (int i = 1; i > -2; i--)
             {
-                Assert.IsTrue(_checksLogic.MaxScore(i) == 2);
+                Assert.IsTrue(_validationLogic.MaxScore(i) == 2);
             }
         }
 
@@ -91,7 +90,7 @@ namespace Tests
         {
             Initialize();
             
-            Assert.IsTrue(_checksLogic.ValuesAreValid("teamOne", "teamTwo") && _checksLogic.MaxScore(4) == 4);
+            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScore(4) == 4);
         }
 
         /// <summary>
@@ -102,7 +101,7 @@ namespace Tests
         {
             Initialize();
 
-            Assert.IsTrue(!_checksLogic.ValuesAreValid("teamOne", null) && _checksLogic.MaxScore(4) == 4);
+            Assert.IsTrue(!_validationLogic.ValuesAreValid("teamOne", null) && _validationLogic.MaxScore(4) == 4);
         }
 
         /// <summary>
@@ -113,7 +112,7 @@ namespace Tests
         {
             Initialize();
 
-            Assert.IsTrue(_checksLogic.ValuesAreValid("teamOne", "teamTwo") && _checksLogic.MaxScore(-1) == 2);
+            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScore(-1) == 2);
         }
 
         /// <summary>
@@ -227,7 +226,7 @@ namespace Tests
         /// </summary>
         public GameViewModel Index(GameViewModel viewModel, bool test)
         {
-            if (!_checksLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
+            if (!_validationLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
             {
                 viewModel.WarningClass = "visible";
                 viewModel.Wordlists = _wordListLogic.GetWordlists();
@@ -240,7 +239,7 @@ namespace Tests
                 new Team(viewModel.TeamTwo)
             };
 
-            viewModel.Game = new Game(_checksLogic.MaxScore(viewModel.MaxScore), teams);
+            viewModel.Game = new Game(_validationLogic.MaxScore(viewModel.MaxScore), teams);
             viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
             viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
 

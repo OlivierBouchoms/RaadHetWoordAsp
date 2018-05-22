@@ -57,7 +57,6 @@ namespace Data
             sqlConnection.Open();
 
             const string commandText = "GetWordsFromWordlist";
-            var dataTable = new DataTable();
             var sqlCommand = new SqlCommand(commandText, sqlConnection) {CommandType = CommandType.StoredProcedure};
             sqlCommand.Parameters.Add("title", SqlDbType.NChar).Value = title;
             var sqlDataReader = sqlCommand.ExecuteReader();
