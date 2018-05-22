@@ -5,6 +5,10 @@ namespace RaadHetWoordGit.ViewModels
 {
     public class GameViewModel
     {
+        public GameViewModel()
+        {
+            WarningClass = "hidden";
+        }
         //Naar UI
         public Game Game { get; set; }
 

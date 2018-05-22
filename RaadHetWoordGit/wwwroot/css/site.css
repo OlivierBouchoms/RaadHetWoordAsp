@@ -153,3 +153,11 @@
     }
 }
 
+.custom {
+    width: 100%;
+    text-align: center
+}
+
+.borderbottom {
+    border-bottom: 1px solid grey;
+}

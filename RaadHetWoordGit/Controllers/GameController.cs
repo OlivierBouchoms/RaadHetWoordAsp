@@ -29,16 +29,14 @@ namespace RaadHetWoordGit.Controllers
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
             _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
         }
-
+        
         /// <summary>
         /// Opening the Index page for the first time.
         /// </summary>
         public ViewResult Index()
         {
             HttpContext.Session.Clear();
-
-
-            return View(new GameViewModel { WarningClass = "hidden", Wordlists = _wordListLogic.GetWordlists() });
+            return View(new GameViewModel { Wordlists = _wordListLogic.GetWordlists() });
         }
         
         /// <summary>
