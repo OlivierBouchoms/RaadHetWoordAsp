@@ -8,7 +8,7 @@ var start;
 var totaltime = 30;
 
 //Start the timer when document is loaded
-$(document).ready(startTimer() );
+$(document).ready(startTimer());
 
 //Send a request to increase or decrease a team its score
 function changeScore(event) {
