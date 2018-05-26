@@ -51,7 +51,7 @@ namespace RaadHetWoordGit.Controllers
                 viewModel.WarningClass = "visible";
                 viewModel.Wordlists = _wordListLogic.GetWordlists();
                 ViewData["Warning"] = "Let op!";
-                ViewData["ErrorText"] = "Namen zijn niet correct ingevoerd.";
+                ViewData["ErrorText"] = "Velden zijn niet correct ingevoerd.";
                 return View(viewModel);
             }
 

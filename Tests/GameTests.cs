@@ -90,7 +90,7 @@ namespace Tests
         {
             Initialize();
             
-            Assert.IsFalse(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScoreValid(5));
+            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScoreValid(5));
         }
 
         /// <summary>
