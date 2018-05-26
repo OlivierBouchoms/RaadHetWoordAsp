@@ -6,13 +6,13 @@ using System.Xml.Linq;
 
 namespace Data
 {
-    public class ExceptionXMLContext : IExceptionContext
+    public class ExceptionXmlContext : IExceptionContext
     {
         public bool LogException(Exception e)
         {
             var innerException = string.Empty;
             var message = string.Empty;
-            var path = XML.GetPath();
+            var path = Xml.GetPath();
 
             if (e.InnerException != null) { innerException = e.InnerException.ToString(); }
             if (e.Message != null) { message = e.Message; }

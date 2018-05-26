@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace Data
 {
-    public class WordListMSSQLContext : IWordListContext
+    public class WordListMssqlContext : IWordListContext
     {
         public List<string> GetWordlists()
         {

@@ -20,7 +20,7 @@ namespace Logic
             }
             catch (Exception exception)
             {
-                _repo = new ExceptionLogRepository(new ExceptionXMLContext());
+                _repo = new ExceptionLogRepository(new ExceptionXmlContext());
                 try
                 {
                     return _repo.LogException(exception);

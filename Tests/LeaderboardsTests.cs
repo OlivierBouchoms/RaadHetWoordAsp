@@ -11,7 +11,7 @@ namespace Tests
 
         private void Initialize()
         {
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
         }
 
         /// <summary>

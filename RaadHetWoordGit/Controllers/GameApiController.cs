@@ -19,7 +19,7 @@ namespace RaadHetWoordGit.Controllers
         public GameApiController()
         {
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
         }
 
         [HttpPost]

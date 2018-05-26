@@ -5,7 +5,7 @@ using Models;
 
 namespace Data
 {
-    public class TeamMSSQLContext : ITeamContext
+    public class TeamMssqlContext : ITeamContext
     {
         /// <summary>
         /// Checks if a team already exists in the database

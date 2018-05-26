@@ -11,7 +11,7 @@ namespace RaadHetWoordGit.Controllers
 
         public TeamController()
         {
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
         }
 
         public ViewResult Index(int id)

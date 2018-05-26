@@ -39,7 +39,7 @@ namespace Tests
             }
             catch (Exception e)
             {
-                logged = new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionXMLContext())).LogException(e);
+                logged = new ExceptionLogLogic(new ExceptionLogRepository(new ExceptionXmlContext())).LogException(e);
             }
             Assert.IsTrue(logged);
         }

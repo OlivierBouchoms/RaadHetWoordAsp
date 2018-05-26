@@ -25,9 +25,9 @@ namespace RaadHetWoordGit.Controllers
         {
             _validationLogic = new ValidationLogic();
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMssqlContext()));
         }
         
         /// <summary>
@@ -46,7 +46,7 @@ namespace RaadHetWoordGit.Controllers
         public ActionResult Index(GameViewModel viewModel)
         {
             HttpContext.Session.Clear();
-            if (!_validationLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo))
+            if (!_validationLogic.ValuesAreValid(viewModel.TeamOne, viewModel.TeamTwo) || !_validationLogic.MaxScoreValid(viewModel.MaxScore))
             {
                 viewModel.WarningClass = "visible";
                 viewModel.Wordlists = _wordListLogic.GetWordlists();
@@ -55,7 +55,7 @@ namespace RaadHetWoordGit.Controllers
                 return View(viewModel);
             }
 
-            viewModel.Game = _gameLogic.InitializeGame(_validationLogic.MaxScore(viewModel.MaxScore), viewModel.TeamOne, viewModel.TeamTwo, _wordListLogic.GetWords(viewModel.Wordlist));
+            viewModel.Game = _gameLogic.InitializeGame(viewModel.MaxScore, viewModel.TeamOne, viewModel.TeamTwo, _wordListLogic.GetWords(viewModel.Wordlist));
 
             _teamLogic.AddTeam(viewModel.Game.TeamList[0]);
             _teamLogic.AddTeam(viewModel.Game.TeamList[1]);

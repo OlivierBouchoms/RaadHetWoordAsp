@@ -11,7 +11,7 @@ namespace Tests
 
         public void Initialize()
         {
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMssqlContext()));
         }
 
         /// <summary>

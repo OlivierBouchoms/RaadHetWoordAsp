@@ -26,14 +26,14 @@
         /// <summary>
         /// Validates the MaxScore int to prevent a too low or null value.
         /// </summary>
-        public int MaxScore(int input)
+        public bool MaxScoreValid(int input)
         {
             if (input < 2)
             {
-                return 2;
+                return false;
             }
-
-            return input;
+            
+            return true;
         }
     }
 }

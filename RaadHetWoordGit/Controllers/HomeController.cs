@@ -14,7 +14,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         public HomeController()
         {
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
         }
 
         /// <summary>

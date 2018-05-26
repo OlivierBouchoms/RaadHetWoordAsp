@@ -21,8 +21,8 @@ namespace Tests
             _validationLogic = new ValidationLogic();
             _gameLogic = new GameLogic(new GameRepository(new GameMemoryContext()));
             _teamInGameLogic = new TeamInGameLogic(new TeamInGameRepository(new TeamInGameMemoryContext()));
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
-            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
+            _wordListLogic = new WordListLogic(new WordListRepository(new WordListMssqlContext()));
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Tests
             Initialize();
             for (int i = 5; i < 25; i++)
             {
-                Assert.IsTrue(i == _validationLogic.MaxScore(i));
+                Assert.IsTrue(_validationLogic.MaxScoreValid(i));
             }
         }
 
@@ -78,7 +78,7 @@ namespace Tests
             Initialize();
             for (int i = 1; i > -2; i--)
             {
-                Assert.IsTrue(_validationLogic.MaxScore(i) == 2);
+                Assert.IsFalse(_validationLogic.MaxScoreValid(i));
             }
         }
 
@@ -90,7 +90,7 @@ namespace Tests
         {
             Initialize();
             
-            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScore(4) == 4);
+            Assert.IsFalse(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScoreValid(5));
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Tests
         {
             Initialize();
 
-            Assert.IsTrue(!_validationLogic.ValuesAreValid("teamOne", null) && _validationLogic.MaxScore(4) == 4);
+            Assert.IsTrue(!_validationLogic.ValuesAreValid("teamOne", null) && _validationLogic.MaxScoreValid(4));
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Tests
         {
             Initialize();
 
-            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && _validationLogic.MaxScore(-1) == 2);
+            Assert.IsTrue(_validationLogic.ValuesAreValid("teamOne", "teamTwo") && !_validationLogic.MaxScoreValid(-1));
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Tests
                 new Team(viewModel.TeamTwo)
             };
 
-            viewModel.Game = new Game(_validationLogic.MaxScore(viewModel.MaxScore), teams);
+            viewModel.Game = new Game(viewModel.MaxScore, teams);
             viewModel.Game = _gameLogic.AddTeams(teams, viewModel.Game);
             viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
 

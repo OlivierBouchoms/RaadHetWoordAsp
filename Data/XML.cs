@@ -1,6 +1,6 @@
 ﻿namespace Data
 {
-    internal class XML
+    internal class Xml
     {
         private static string FileName => XmlResources.XmlFile;
 

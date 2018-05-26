@@ -14,7 +14,7 @@ namespace RaadHetWoordGit.Controllers
         /// </summary>
         public LeaderboardsController()
         {
-            _teamLogic = new TeamLogic(new TeamRepository(new TeamMSSQLContext()));
+            _teamLogic = new TeamLogic(new TeamRepository(new TeamMssqlContext()));
         }
 
         /// <summary>
