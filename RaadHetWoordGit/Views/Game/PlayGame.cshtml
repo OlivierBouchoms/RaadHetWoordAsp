@@ -2,8 +2,8 @@
 
 <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/GameScripts.min.js"></script>
+<link rel="stylesheet" href="/css/Game.css" />
 
-<!-- Overzicht van teams -->
 <div class="row">
     <div class="w3-col s6 w3-center">
         <h3>Huidige team: @Model.Game.CurrentRound.Team.Name</h3>
@@ -15,12 +15,11 @@
 </div>
 <div class="row">
     <form asp-action="ScoreBoard" asp-controller="Game">
-        <input class="hidden" id="btnnextround" type="submit" value=""/>
+        <input class="hidden" id="btnnextround" type="submit" value="" />
     </form>
 </div>
 
-<!-- Overzicht van woorden -->
-@for (int i = 1; i <= 5; i++)
+@for (int i = 0; i < 5; i++)
 {
     <div class="w3-button w3-red w3-block w3-hover-white w3-margin-bottom border-radius-3" id="word @i" onclick="changeScore(event)">@Model.Game.Wordlist.Words[i]</div>
 }

@@ -98,8 +98,11 @@ namespace RaadHetWoordGit.Controllers
             {
                 viewModel.Game = _gameLogic.AddWordlist(viewModel.Game, new Wordlist(_wordListLogic.GetWords(viewModel.Wordlist)));
             }
+            else
+            {
+                _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
+            }
 
-            _wordListLogic.RemoveWords(viewModel.Game.Wordlist.Words);
             viewModel.Game.CurrentRound = new Round(viewModel.Game);
 
             var tuple = _gameLogic.ThrowDice(viewModel.Game);

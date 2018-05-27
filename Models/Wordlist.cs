@@ -5,7 +5,7 @@ namespace Models
     public class Wordlist
     {
         public readonly string Title;
-        public readonly List<string> Words;
+        public List<string> Words { get; set; }
 
         public Wordlist(string title)
         {

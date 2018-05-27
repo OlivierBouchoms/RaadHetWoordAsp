@@ -26,11 +26,9 @@ function changeScore(event) {
             success: function () {
                 if (_increase) {
                     element.classList.add("correct");
-                    _increase = false;
-
-                } else {
+                } 
+                else {
                     element.classList.remove("correct");
-                    _increase = true;
                 }
             },
             error: function () {
